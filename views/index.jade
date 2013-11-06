@@ -1,5 +1,31 @@
 extends layout
 
-block content
-  h1= title
-  p Welcome to #{title}
+block head
+  link(rel='stylesheet', href='/stylesheets/homepage.css')
+block footer
+  script(src='/javascripts/homepage.js')
+
+
+block body
+  h1 NAME
+  h2 The social app for gays, with an active lifestyle.
+  h3 A community for guys who are interested in an active lifestyle from fitness and health, to working out and outdoor sports.
+  // h3 Get talking and meet up with men from your area.
+
+  p We are invite only at the moment. Request an invite:
+    input(type='email', placeholder='Email')
+  
+  p Have an invite code?&nbsp;
+    a(href='#') Claim it here.
+
+  
+  footer
+    ul
+      li 
+        a(href='/about') About
+      li
+        a(href='/terms') Terms &amp; Conditions
+      li
+        a(href='/privacy') Privacy Policy
+      li
+        a(href='/contact') Contact

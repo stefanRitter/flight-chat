@@ -1,7 +1,25 @@
 doctype 5
 html
   head
+    meta(charset="utf-8")
+    meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+    meta(name="author", content="NAME NAME NAME")
+    meta(name="keywords", content="sport, active, health, gay, gym, outdoor, fitness, lifestyle, dating, chat, gps, friends, iphone, android, free")
+    meta(name="description", content="The social app for gays, with an active healthy lifestyle.")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
+
+    block head
+    
+    //if IE
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
   body
-    block content
+    block body
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    
+    block footer
