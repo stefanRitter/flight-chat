@@ -1,0 +1,15 @@
+# OS X
+.DS_STORE
+
+# NPM
+node_modules/
+
+# sass
+.sass-cache/
+
+# eclipse
+.project
+
+
+temp/
+tmp/
