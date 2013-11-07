@@ -104,7 +104,7 @@ a {
 /* line 29, ../../sass/homepage.sass */
 h1, h2, h3, p {
   padding: 10px;
-  margin: 1% 1% 0 1%;
+  margin: 1% 2% 0 2%;
   font-weight: 400;
   line-height: 1.5em;
 }
@@ -145,7 +145,12 @@ form.invite-request input {
   border: 0;
 }
 
-/* line 57, ../../sass/homepage.sass */
+/* line 56, ../../sass/homepage.sass */
+.prompt {
+  margin: 1% 2% 0 2%;
+}
+
+/* line 59, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -153,13 +158,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 63, ../../sass/homepage.sass */
+/* line 65, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 67, ../../sass/homepage.sass */
+/* line 69, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 10px;
