@@ -72,7 +72,9 @@ html, body {
 /* line 8, ../../sass/homepage.sass */
 html {
   font-family: Lato, "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 300;
   font-size: 10px;
+  text-align: center;
   color: white;
   background: url(/images/weighttraining.jpg) no-repeat top center fixed;
   -webkit-background-size: cover;
@@ -82,67 +84,82 @@ html {
   display: table;
 }
 
-/* line 16, ../../sass/homepage.sass */
+/* line 18, ../../sass/homepage.sass */
 body {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 20, ../../sass/homepage.sass */
+/* line 22, ../../sass/homepage.sass */
 a {
   color: inherit;
 }
 
-/* line 23, ../../sass/homepage.sass */
-h1, h2, h3, p {
+/* line 25, ../../sass/homepage.sass */
+.bg-black-transp {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 29, ../../sass/homepage.sass */
+h1, h2, h3, p {
   padding: 10px;
   margin: 1% 1% 0 1%;
   font-weight: 400;
   line-height: 1.5em;
-  text-align: center;
 }
 
-/* line 32, ../../sass/homepage.sass */
+/* line 35, ../../sass/homepage.sass */
 h1 {
   font-weight: 700;
   font-size: 3em;
 }
 
-/* line 35, ../../sass/homepage.sass */
+/* line 38, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
   font-weight: 700;
   margin-bottom: 8%;
-}
-
-/* line 39, ../../sass/homepage.sass */
-h3 {
-  font-size: 2em;
-}
-
-/* line 41, ../../sass/homepage.sass */
-p {
-  font-size: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 /* line 44, ../../sass/homepage.sass */
+h3 {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+/* line 47, ../../sass/homepage.sass */
+p {
+  font-size: 1.6em;
+  font-weight: 300;
+}
+
+/* line 51, ../../sass/homepage.sass */
+form.invite-request {
+  display: inline-block;
+}
+/* line 53, ../../sass/homepage.sass */
+form.invite-request input {
+  border: 0;
+}
+
+/* line 57, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   background-color: black;
-  text-align: center;
   font-weight: 300;
 }
-/* line 51, ../../sass/homepage.sass */
+/* line 63, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 55, ../../sass/homepage.sass */
+/* line 67, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 10px;

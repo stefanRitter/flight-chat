@@ -7,7 +7,9 @@ html, body
 
 html
   font-family: Lato, "Lucida Grande", Helvetica, Arial, sans-serif
+  font-weight: 300
   font-size: 10px
+  text-align: center
   color: White
   background: url(/images/weighttraining.jpg) no-repeat top center fixed
   +background-size(cover)
@@ -20,14 +22,15 @@ body
 a
   color: inherit
 
-h1, h2, h3, p
+.bg-black-transp
   background-color: Black
   background-color: rgba(0,0,0,0.5)
+
+h1, h2, h3, p
   padding: 10px
   margin: 1% 1% 0 1%
   font-weight: 400
   line-height: 1.5em
-  text-align: center
 
 h1
   font-weight: 700
@@ -36,17 +39,26 @@ h2
   font-size: 2.5em
   font-weight: 700
   margin-bottom: 8%
+  text-transform: uppercase
+  letter-spacing: 3px
 h3
   font-size: 2em
+  font-weight: 300
 p
   font-size: 1.6em
+  font-weight: 300
+
+form.invite-request
+  display: inline-block
+  input
+    border: 0
+
 
 footer
   position: absolute
   bottom: 0
   width: 100%
   background-color: Black
-  text-align: center
   font-weight: 300
   ul
     margin: 0 auto
