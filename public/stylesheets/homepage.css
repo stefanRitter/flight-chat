@@ -79,48 +79,55 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: table;
 }
 
-/* line 15, ../../sass/homepage.sass */
+/* line 16, ../../sass/homepage.sass */
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 20, ../../sass/homepage.sass */
 a {
   color: inherit;
 }
 
-/* line 18, ../../sass/homepage.sass */
+/* line 23, ../../sass/homepage.sass */
 h1, h2, h3, p {
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.7);
-  float: left;
-  clear: both;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
-  margin: 1%;
+  margin: 1% 1% 0 1%;
   font-weight: 400;
   line-height: 1.5em;
+  text-align: center;
 }
 
-/* line 28, ../../sass/homepage.sass */
+/* line 32, ../../sass/homepage.sass */
 h1 {
   font-weight: 700;
   font-size: 3em;
 }
 
-/* line 31, ../../sass/homepage.sass */
+/* line 35, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
   font-weight: 700;
+  margin-bottom: 8%;
 }
 
-/* line 34, ../../sass/homepage.sass */
+/* line 39, ../../sass/homepage.sass */
 h3 {
   font-size: 2em;
 }
 
-/* line 36, ../../sass/homepage.sass */
+/* line 41, ../../sass/homepage.sass */
 p {
   font-size: 1.6em;
 }
 
-/* line 39, ../../sass/homepage.sass */
+/* line 44, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -129,13 +136,13 @@ footer {
   text-align: center;
   font-weight: 300;
 }
-/* line 46, ../../sass/homepage.sass */
+/* line 51, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 50, ../../sass/homepage.sass */
+/* line 55, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 10px;
