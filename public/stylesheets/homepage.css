@@ -102,6 +102,11 @@ a {
 }
 
 /* line 29, ../../sass/homepage.sass */
+.speparate {
+  margin-bottom: 8%;
+}
+
+/* line 32, ../../sass/homepage.sass */
 h1, h2, h3, p {
   padding: 10px;
   margin: 1% 2% 0 2%;
@@ -109,48 +114,48 @@ h1, h2, h3, p {
   line-height: 1.5em;
 }
 
-/* line 35, ../../sass/homepage.sass */
+/* line 38, ../../sass/homepage.sass */
 h1 {
   font-weight: 700;
   font-size: 3em;
 }
 
-/* line 38, ../../sass/homepage.sass */
+/* line 41, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
   font-weight: 700;
-  margin-bottom: 8%;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-/* line 44, ../../sass/homepage.sass */
+/* line 46, ../../sass/homepage.sass */
 h3 {
   font-size: 2em;
   font-weight: 300;
 }
 
-/* line 47, ../../sass/homepage.sass */
+/* line 49, ../../sass/homepage.sass */
 p {
   font-size: 1.6em;
   font-weight: 300;
 }
 
-/* line 51, ../../sass/homepage.sass */
+/* line 53, ../../sass/homepage.sass */
 form.invite-request {
   display: inline-block;
+  margin-bottom: 15px;
 }
-/* line 53, ../../sass/homepage.sass */
+/* line 56, ../../sass/homepage.sass */
 form.invite-request input {
   border: 0;
 }
 
-/* line 56, ../../sass/homepage.sass */
+/* line 59, ../../sass/homepage.sass */
 .prompt {
   margin: 1% 2% 0 2%;
 }
 
-/* line 59, ../../sass/homepage.sass */
+/* line 62, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -158,13 +163,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 65, ../../sass/homepage.sass */
+/* line 68, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 69, ../../sass/homepage.sass */
+/* line 72, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 10px;

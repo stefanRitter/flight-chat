@@ -8,9 +8,9 @@ exports.index = function(req, res){
 };
 
 exports.about = function(req, res){
-  res.render('index', { title: 'Trybes' });
+  res.render('about', { title: 'Trybes - About' });
 };
 
 exports.claim = function(req, res){
-  res.render('index', { title: 'Trybes' });
+  res.render('index', { title: 'Trybes - Claim Invite' });
 };
