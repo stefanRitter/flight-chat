@@ -13,6 +13,10 @@ html
   background: url(/images/weighttraining.jpg) no-repeat top center fixed
   +background-size(cover)
   display: table
+  +transition(all 1s)
+
+  &.background-outdoor
+    background-image: url(/images/outdoor.jpg)
 
 body
   display: table-cell
@@ -60,7 +64,7 @@ h3
   font-size: 2em
   font-weight: 300
 p
-  font-size: 1.6em
+  font-size: 1.8em
   font-weight: 300
 
 form.invite-request
@@ -79,6 +83,7 @@ form.invite-request
     height: 32px
     width: 100px
     vertical-align: bottom
+    font-weight: bold
 
 
 .prompt
