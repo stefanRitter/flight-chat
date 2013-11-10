@@ -5,12 +5,12 @@
 
 exports.index = function(req, res){
   'use strict';
-  res.render('index', { title: 'Trybes' });
+  res.render('index', { title: 'TRYBES' });
 };
 
 exports.about = function(req, res){
   'use strict';
-  res.render('about', { title: 'Trybes - About' });
+  res.render('about', { title: 'TRYBES - About' });
 };
 
 
