@@ -10,9 +10,9 @@ jQuery(function() {
   imgSpinnerBlack.className = 'animRotateRound';
 
   // cicle background
-  //setInterval(function() {
-  //  $('html').toggleClass('background-outdoor');
-  //}, 3000);
+  /*setInterval(function() {
+   $('html').toggleClass('background-outdoor');
+  }, 3000);*/
 
   $('button').on('click touch', function(e) {
     e.preventDefault();

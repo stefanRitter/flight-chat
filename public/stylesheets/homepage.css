@@ -87,7 +87,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   }
 }
 
-/* line 34, ../../sass/_animations.sass */
+/* line 35, ../../sass/_animations.sass */
 .animRotateRound {
   -webkit-animation: rotateRound 0.8s linear infinite;
   animation: rotateRound 0.8s linear infinite;
