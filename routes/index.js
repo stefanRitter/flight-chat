@@ -34,7 +34,7 @@ module.exports = exports = function(app, db) {
     emails = db.collection('emails');
     email = { '_id': emailAddress,
               'date': new Date(),
-              'ip': req.ips};
+              'ip': req.ip};
 
     emails.insert(email, function(err,doc) {
       if (err) { return console.error(err); }
