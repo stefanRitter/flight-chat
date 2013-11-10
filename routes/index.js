@@ -33,7 +33,8 @@ module.exports = exports = function(app, db) {
     // persist if valid
     emails = db.collection('emails');
     email = { '_id': emailAddress,
-              'date': new Date()};
+              'date': new Date(),
+              'ip': req.ip};
 
     emails.insert(email, function(err,doc) {
       if (err) { return console.error(err); }
