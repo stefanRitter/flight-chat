@@ -1,0 +1,35 @@
+
+// ********************************************************************************** PLACEHOLDERS & MIXINS
+
+=animation($anim, $forward: false)
+  -webkit-animation: $anim
+  animation: $anim
+
+  @if $forward == true
+    -webkit-animation-fill-mode: forwards
+    animation-fill-mode: forwards
+
+
+// ********************************************************************************** ANIM DEF -webkit-
+
+@-webkit-keyframes rotateRound 
+  0%   
+    -webkit-transform: rotate(0)
+  
+  100% 
+    -webkit-transform: rotate(360deg)
+
+
+// ********************************************************************************** ANIM DEF W3C
+
+@keyframes rotateRound
+  0%   
+    transform: rotate(0)
+  
+  100% 
+    transform: rotate(360deg)
+
+// ********************************************************************************** ANIM CLASSES
+
+.animRotateRound
+  +animation( rotateRound 0.8s linear infinite, true )

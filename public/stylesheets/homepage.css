@@ -63,13 +63,45 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 6, ../../sass/homepage.sass */
+@-webkit-keyframes rotateRound {
+  /* line 16, ../../sass/_animations.sass */
+  0% {
+    -webkit-transform: rotate(0);
+  }
+
+  /* line 19, ../../sass/_animations.sass */
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateRound {
+  /* line 26, ../../sass/_animations.sass */
+  0% {
+    transform: rotate(0);
+  }
+
+  /* line 29, ../../sass/_animations.sass */
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* line 34, ../../sass/_animations.sass */
+.animRotateRound {
+  -webkit-animation: rotateRound 0.8s linear infinite;
+  animation: rotateRound 0.8s linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* line 7, ../../sass/homepage.sass */
 html {
   width: 100%;
   height: 100%;
 }
 
-/* line 10, ../../sass/homepage.sass */
+/* line 11, ../../sass/homepage.sass */
 html {
   font-weight: 300;
   font-size: 10px;
@@ -86,57 +118,58 @@ html {
   -o-transition: all 1s;
   transition: all 1s;
 }
-/* line 20, ../../sass/homepage.sass */
+/* line 21, ../../sass/homepage.sass */
 html.background-outdoor {
   background-image: url(/images/outdoor.jpg);
 }
 @media (max-width: 800px) {
-  /* line 10, ../../sass/homepage.sass */
+  /* line 11, ../../sass/homepage.sass */
   html {
     font-size: 6px;
   }
 }
 
-/* line 26, ../../sass/homepage.sass */
+/* line 27, ../../sass/homepage.sass */
 body {
   display: table-cell;
   vertical-align: middle;
   position: relative;
 }
 
-/* line 32, ../../sass/homepage.sass */
+/* line 33, ../../sass/homepage.sass */
 h1, h2, h3, h4 {
   font-family: "Open Sans", Helvetica, sans-serif;
+  text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
 }
 
-/* line 36, ../../sass/homepage.sass */
+/* line 37, ../../sass/homepage.sass */
 html, body, p, div, input, button {
   font-family: "Open Sans", Helvetica, sans-serif;
   letter-spacing: 1px;
 }
 
-/* line 42, ../../sass/homepage.sass */
+/* line 43, ../../sass/homepage.sass */
 a {
   color: inherit;
   font-family: inherit;
 }
-/* line 45, ../../sass/homepage.sass */
+/* line 46, ../../sass/homepage.sass */
 a.plain {
   text-decoration: none;
 }
 
-/* line 48, ../../sass/homepage.sass */
+/* line 49, ../../sass/homepage.sass */
 .bg-black-transp {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 52, ../../sass/homepage.sass */
+/* line 53, ../../sass/homepage.sass */
 .separate {
   margin-bottom: 5%;
 }
 
-/* line 55, ../../sass/homepage.sass */
+/* line 56, ../../sass/homepage.sass */
 h1, h2, h3, p {
   padding: 10px;
   margin: 1% 2% 0 2%;
@@ -144,32 +177,38 @@ h1, h2, h3, p {
   line-height: 1.5em;
 }
 
-/* line 61, ../../sass/homepage.sass */
+/* line 62, ../../sass/homepage.sass */
 h1 {
   font-weight: 400;
   font-size: 5em;
   padding: 0;
 }
-/* line 65, ../../sass/homepage.sass */
-h1.brand-header {
+/* line 67, ../../sass/homepage.sass */
+h1.brand-header a {
   vertical-align: bottom;
   position: relative;
   left: -1em;
 }
-/* line 69, ../../sass/homepage.sass */
-h1.brand-header img {
-  width: 2em;
+/* line 71, ../../sass/homepage.sass */
+h1.brand-header a img {
+  width: 1.3em;
   position: relative;
   bottom: -0.17em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid black;
 }
-/* line 73, ../../sass/homepage.sass */
-h1.brand-header span {
+/* line 77, ../../sass/homepage.sass */
+h1.brand-header a span {
   position: relative;
-  top: -0.42em;
+  top: -0.06em;
   left: 0.3em;
 }
 
-/* line 78, ../../sass/homepage.sass */
+/* line 82, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
   font-weight: 600;
@@ -177,32 +216,63 @@ h2 {
   letter-spacing: 3px;
 }
 
-/* line 83, ../../sass/homepage.sass */
+/* line 87, ../../sass/homepage.sass */
 h3 {
   font-size: 2em;
   font-weight: 300;
 }
 
-/* line 86, ../../sass/homepage.sass */
+/* line 90, ../../sass/homepage.sass */
 p {
   font-size: 1.8em;
   font-weight: 300;
 }
 
-/* line 90, ../../sass/homepage.sass */
+/* line 94, ../../sass/homepage.sass */
+.fitted-container {
+  display: inline-block;
+  text-align: justify;
+  width: 60%;
+}
+@media (max-width: 1150px) {
+  /* line 94, ../../sass/homepage.sass */
+  .fitted-container {
+    width: 70%;
+  }
+}
+@media (max-width: 860px) {
+  /* line 94, ../../sass/homepage.sass */
+  .fitted-container {
+    width: 80%;
+  }
+}
+@media (max-width: 540px) {
+  /* line 94, ../../sass/homepage.sass */
+  .fitted-container {
+    width: 90%;
+  }
+}
+@media (max-width: 340px) {
+  /* line 94, ../../sass/homepage.sass */
+  .fitted-container {
+    width: 96%;
+  }
+}
+
+/* line 107, ../../sass/homepage.sass */
 form.invite-request {
   display: inline-block;
   margin-bottom: 15px;
   vertical-align: bottom;
 }
-/* line 94, ../../sass/homepage.sass */
+/* line 111, ../../sass/homepage.sass */
 form.invite-request input {
   border: 0;
   width: 180px;
   height: 30px;
   vertical-align: bottom;
 }
-/* line 99, ../../sass/homepage.sass */
+/* line 116, ../../sass/homepage.sass */
 form.invite-request button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -215,19 +285,27 @@ form.invite-request button {
   font-size: 12px;
   vertical-align: bottom;
 }
+/* line 125, ../../sass/homepage.sass */
+form.invite-request button:focus {
+  outline: 0;
+}
+/* line 127, ../../sass/homepage.sass */
+form.invite-request button img {
+  height: 100%;
+}
 
-/* line 110, ../../sass/homepage.sass */
+/* line 131, ../../sass/homepage.sass */
 .prompt {
   margin: 1% 2% 0 2%;
 }
 
-/* line 113, ../../sass/homepage.sass */
+/* line 134, ../../sass/homepage.sass */
 .footer-spacer {
   width: 100%;
   height: 40px;
 }
 
-/* line 116, ../../sass/homepage.sass */
+/* line 137, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -235,13 +313,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 122, ../../sass/homepage.sass */
+/* line 143, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 126, ../../sass/homepage.sass */
+/* line 147, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 12px;
@@ -249,7 +327,7 @@ footer ul li {
   padding: 10px 0;
 }
 @media (max-width: 800px) {
-  /* line 126, ../../sass/homepage.sass */
+  /* line 147, ../../sass/homepage.sass */
   footer ul li {
     font-size: 10px;
   }

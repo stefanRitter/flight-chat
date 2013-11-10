@@ -2,6 +2,7 @@
 @import "compass/css3"
 
 @import "colours"
+@import "animations"
 
 html
   width: 100%
@@ -31,7 +32,7 @@ body
 // **** FONTS
 h1, h2, h3, h4
   font-family: 'Open Sans', Helvetica, sans-serif
-  //+text-shadow(rgba(0,0,0,0.01) 0 0 1px)
+  +text-shadow(rgba(255,255,255,0.01) 0 0 1px)
 
 html, body, p, div, input, button
   font-family: 'Open Sans', Helvetica, sans-serif
@@ -63,17 +64,20 @@ h1
   font-size: 5em
   padding: 0
   &.brand-header
-    vertical-align: bottom
-    position: relative
-    left: -1em
-    img
-      width: 2em
+    a
+      vertical-align: bottom
       position: relative
-      bottom: -0.17em
-    span
-      position: relative
-      top: -0.42em
-      left: 0.3em
+      left: -1em
+      img
+        width: 1.3em
+        position: relative
+        bottom: -0.17em
+        +border-radius(50%)
+        border: 1px solid Black
+      span
+        position: relative
+        top: -0.06em
+        left: 0.3em
 
 h2
   font-size: 2.5em
@@ -86,6 +90,19 @@ h3
 p
   font-size: 1.8em
   font-weight: 300
+
+.fitted-container
+  display: inline-block
+  text-align: justify
+  width: 60%
+  @media (max-width: 1150px)
+    width: 70%
+  @media (max-width: 860px)
+    width: 80%
+  @media (max-width: 540px)
+    width: 90%
+  @media (max-width: 340px)
+    width: 96%
 
 form.invite-request
   display: inline-block
@@ -105,6 +122,10 @@ form.invite-request
     width: 100px
     font-size: 12px
     vertical-align: bottom
+    &:focus
+      outline: 0
+    img
+      height: 100%
 
 
 .prompt

@@ -2,7 +2,7 @@ extends layout
 
 block head
   link(rel='stylesheet', href='/stylesheets/homepage.css')
-block footer
+block scripts
   script(src='/javascripts/homepage.js')
 
 
@@ -11,9 +11,21 @@ block body
     a.plain(href='/')
       img(src="/images/logo-blue.png" alt="TRYBES logo")
       span TRYBES
-  
-  h2.bg-black-transp What is Trybes?
+  h2.separate.bg-black-transp The social app for active men who like men.
 
-  h2.bg-black-transp Get in touch
+  // h3.bg-black-transp TRYBES is a social app for active men who like men.
 
-  h2.bg-black-transp Terms &amp; Privacy
+  h3.bg-black-transp
+    .fitted-container.
+      TRYBES is an online, mobile community for men who value an active lifestyle and a hassle-free way to get in touch with other guys, couples or groups who share the same interests.
+
+  h3.bg-black-transp
+    .fitted-container.
+      TRYBES is a networking app that gets men in touch through sports: Whether that means meeting guys from your gym, instantly finding a tennis partner for an after work game, or organising a group for an occasional weekend hike or surf, it's all up to you.
+
+block footer
+  ul
+    li 
+      a(href='/') Home
+    li &copy; 2013
+    li Made in London
