@@ -106,38 +106,37 @@ body {
 
 /* line 32, ../../sass/homepage.sass */
 h1, h2, h3, h4 {
-  font-family: Lato, Helvetica, sans-serif;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+  font-family: "Open Sans", Helvetica, sans-serif;
 }
 
 /* line 36, ../../sass/homepage.sass */
-html, body, p, div, input {
-  font-family: Lato, Helvetica, sans-serif;
+html, body, p, div, input, button {
+  font-family: "Open Sans", Helvetica, sans-serif;
   letter-spacing: 1px;
 }
 
-/* line 41, ../../sass/homepage.sass */
+/* line 42, ../../sass/homepage.sass */
 a {
   color: inherit;
   font-family: inherit;
 }
-/* line 44, ../../sass/homepage.sass */
+/* line 45, ../../sass/homepage.sass */
 a.plain {
   text-decoration: none;
 }
 
-/* line 47, ../../sass/homepage.sass */
+/* line 48, ../../sass/homepage.sass */
 .bg-black-transp {
   background-color: black;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 51, ../../sass/homepage.sass */
+/* line 52, ../../sass/homepage.sass */
 .separate {
   margin-bottom: 5%;
 }
 
-/* line 54, ../../sass/homepage.sass */
+/* line 55, ../../sass/homepage.sass */
 h1, h2, h3, p {
   padding: 10px;
   margin: 1% 2% 0 2%;
@@ -145,70 +144,88 @@ h1, h2, h3, p {
   line-height: 1.5em;
 }
 
-/* line 60, ../../sass/homepage.sass */
+/* line 61, ../../sass/homepage.sass */
 h1 {
   font-weight: 400;
   font-size: 5em;
+  padding: 0;
+}
+/* line 65, ../../sass/homepage.sass */
+h1.brand-header {
+  vertical-align: bottom;
+}
+/* line 67, ../../sass/homepage.sass */
+h1.brand-header img {
+  width: 2em;
+  position: relative;
+  bottom: -0.17em;
+}
+/* line 71, ../../sass/homepage.sass */
+h1.brand-header span {
+  position: relative;
+  top: -0.42em;
+  left: 0.3em;
 }
 
-/* line 63, ../../sass/homepage.sass */
+/* line 76, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-/* line 68, ../../sass/homepage.sass */
+/* line 81, ../../sass/homepage.sass */
 h3 {
   font-size: 2em;
   font-weight: 300;
 }
 
-/* line 71, ../../sass/homepage.sass */
+/* line 84, ../../sass/homepage.sass */
 p {
   font-size: 1.8em;
   font-weight: 300;
 }
 
-/* line 75, ../../sass/homepage.sass */
+/* line 88, ../../sass/homepage.sass */
 form.invite-request {
   display: inline-block;
   margin-bottom: 15px;
+  vertical-align: bottom;
 }
-/* line 78, ../../sass/homepage.sass */
+/* line 92, ../../sass/homepage.sass */
 form.invite-request input {
   border: 0;
   width: 180px;
   height: 30px;
   vertical-align: bottom;
 }
-/* line 83, ../../sass/homepage.sass */
+/* line 97, ../../sass/homepage.sass */
 form.invite-request button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: 0;
-  background: #cde8ea;
-  color: #17191e;
+  background: #293651;
+  color: inherit;
   height: 32px;
   width: 100px;
+  font-size: 12px;
   vertical-align: bottom;
-  font-weight: bold;
 }
 
-/* line 94, ../../sass/homepage.sass */
+/* line 108, ../../sass/homepage.sass */
 .prompt {
   margin: 1% 2% 0 2%;
 }
 
-/* line 97, ../../sass/homepage.sass */
+/* line 111, ../../sass/homepage.sass */
 .footer-spacer {
   width: 100%;
   height: 40px;
 }
 
-/* line 100, ../../sass/homepage.sass */
+/* line 114, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -216,13 +233,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 106, ../../sass/homepage.sass */
+/* line 120, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 110, ../../sass/homepage.sass */
+/* line 124, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 12px;
@@ -230,7 +247,7 @@ footer ul li {
   padding: 10px 0;
 }
 @media (max-width: 800px) {
-  /* line 110, ../../sass/homepage.sass */
+  /* line 124, ../../sass/homepage.sass */
   footer ul li {
     font-size: 10px;
   }

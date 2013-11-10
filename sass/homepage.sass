@@ -30,12 +30,13 @@ body
 
 // **** FONTS
 h1, h2, h3, h4
-  font-family: Lato, Helvetica, sans-serif
-  +text-shadow(rgba(0,0,0,0.01) 0 0 1px)
+  font-family: 'Open Sans', Helvetica, sans-serif
+  //+text-shadow(rgba(0,0,0,0.01) 0 0 1px)
 
-html, body, p, div, input
-  font-family: Lato, Helvetica, sans-serif
+html, body, p, div, input, button
+  font-family: 'Open Sans', Helvetica, sans-serif
   letter-spacing: 1px
+  //+text-shadow(rgba(0,0,0,0.01) 0 0 1px)
 // **** FONTS
 
 a
@@ -46,7 +47,7 @@ a
 
 .bg-black-transp
   background-color: Black
-  background-color: rgba(0,0,0,0.5)
+  background-color: rgba(0,0,0,0.6)
 
 .separate
   margin-bottom: 5%
@@ -60,9 +61,21 @@ h1, h2, h3, p
 h1
   font-weight: 400
   font-size: 5em
+  padding: 0
+  &.brand-header
+    vertical-align: bottom
+    img
+      width: 2em
+      position: relative
+      bottom: -0.17em
+    span
+      position: relative
+      top: -0.42em
+      left: 0.3em
+
 h2
   font-size: 2.5em
-  font-weight: 700
+  font-weight: 600
   text-transform: uppercase
   letter-spacing: 3px
 h3
@@ -75,6 +88,7 @@ p
 form.invite-request
   display: inline-block
   margin-bottom: 15px
+  vertical-align: bottom
   input
     border: 0
     width: 180px
@@ -83,12 +97,12 @@ form.invite-request
   button
     +appearance(none)
     border: 0
-    background: $trybesLightBlue
-    color: $trybesBlack
+    background: $trybesDarkBlue
+    color: inherit
     height: 32px
     width: 100px
+    font-size: 12px
     vertical-align: bottom
-    font-weight: bold
 
 
 .prompt
