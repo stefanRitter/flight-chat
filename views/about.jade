@@ -22,10 +22,12 @@ block body
       TRYBES is a networking app that gets men in touch through sports: Whether that means meeting guys from your gym, instantly finding a tennis partner for an after work game, or organising a group for an occasional weekend hike or surf, it's all up to you.
 
   .bg-black-transp.prompt
-    p We're launching soon - sign up for a reminder:
-    form.invite-request
-      input(type='email', placeholder='Email')
-      button Remind me
+    p.no-margin We are launching soon - sign up for a reminder:
+    form.invite-request(method="post")
+      input(type='email', placeholder='Email', name='email')
+      button(type='submit') Remind me
+    br
+    span.hidden.error Sorry, your email address was invalid. Please correct any mistakes and try again.
 
 block footer
   ul

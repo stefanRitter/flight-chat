@@ -15,10 +15,18 @@ block body
   h2.separate.bg-black-transp The social app for active men who like men.
 
   .bg-black-transp.prompt
-    p We're launching soon - sign up for a reminder:
-    form.invite-request
-      input(type='email', placeholder='Email')
-      button Remind me
+    if !success
+      p.no-margin We are launching soon - sign up for a reminder:
+      form.invite-request(method="post")
+        input(type='email', placeholder='Email', name='email')
+        button(type='submit') Remind me
+      br
+      span.hidden.error Sorry, your email address was invalid. Please correct any mistakes and try again.
+      if error
+        br
+        span.error= error
+    else
+      p Thanks! We will alert you when we launch.
 
 block footer
   ul

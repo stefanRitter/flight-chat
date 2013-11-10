@@ -229,50 +229,55 @@ p {
 }
 
 /* line 93, ../../sass/homepage.sass */
+.no-margin {
+  margin: 0;
+}
+
+/* line 96, ../../sass/homepage.sass */
 .fitted-container {
   display: inline-block;
   text-align: justify;
   width: 60%;
 }
 @media (max-width: 1150px) {
-  /* line 93, ../../sass/homepage.sass */
+  /* line 96, ../../sass/homepage.sass */
   .fitted-container {
     width: 70%;
   }
 }
 @media (max-width: 860px) {
-  /* line 93, ../../sass/homepage.sass */
+  /* line 96, ../../sass/homepage.sass */
   .fitted-container {
     width: 80%;
   }
 }
 @media (max-width: 540px) {
-  /* line 93, ../../sass/homepage.sass */
+  /* line 96, ../../sass/homepage.sass */
   .fitted-container {
     width: 90%;
   }
 }
 @media (max-width: 340px) {
-  /* line 93, ../../sass/homepage.sass */
+  /* line 96, ../../sass/homepage.sass */
   .fitted-container {
     width: 96%;
   }
 }
 
-/* line 106, ../../sass/homepage.sass */
+/* line 109, ../../sass/homepage.sass */
 form.invite-request {
   display: inline-block;
   margin-bottom: 15px;
   vertical-align: bottom;
 }
-/* line 110, ../../sass/homepage.sass */
+/* line 113, ../../sass/homepage.sass */
 form.invite-request input {
   border: 0;
   width: 180px;
   height: 30px;
   vertical-align: bottom;
 }
-/* line 115, ../../sass/homepage.sass */
+/* line 118, ../../sass/homepage.sass */
 form.invite-request button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -285,27 +290,41 @@ form.invite-request button {
   font-size: 12px;
   vertical-align: bottom;
 }
-/* line 124, ../../sass/homepage.sass */
+/* line 127, ../../sass/homepage.sass */
 form.invite-request button:focus {
   outline: 0;
 }
-/* line 126, ../../sass/homepage.sass */
+/* line 129, ../../sass/homepage.sass */
 form.invite-request button img {
   height: 100%;
 }
 
-/* line 130, ../../sass/homepage.sass */
+/* line 132, ../../sass/homepage.sass */
+.error {
+  display: inline-block;
+  color: #d44513;
+  margin: 0 1% 1% 1%;
+  font-size: 1.6em;
+  font-weight: 400;
+}
+
+/* line 139, ../../sass/homepage.sass */
+.hidden {
+  display: none;
+}
+
+/* line 142, ../../sass/homepage.sass */
 .prompt {
   margin: 1% 2% 0 2%;
 }
 
-/* line 133, ../../sass/homepage.sass */
+/* line 145, ../../sass/homepage.sass */
 .footer-spacer {
   width: 100%;
   height: 40px;
 }
 
-/* line 136, ../../sass/homepage.sass */
+/* line 148, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -313,13 +332,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 142, ../../sass/homepage.sass */
+/* line 154, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 146, ../../sass/homepage.sass */
+/* line 158, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 12px;
@@ -327,7 +346,7 @@ footer ul li {
   padding: 10px 0;
 }
 @media (max-width: 800px) {
-  /* line 146, ../../sass/homepage.sass */
+  /* line 158, ../../sass/homepage.sass */
   footer ul li {
     font-size: 10px;
   }
