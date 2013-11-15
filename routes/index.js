@@ -10,14 +10,20 @@ module.exports = exports = function(app, db) {
   app.get('/about', about);
   app.post('/about', addEmail);
 
+  app.get('/app', loadApp);
+
 
   // request handlers
-  function index(req, res){
+  function index(req, res) {
     res.render('index', { title: 'TRYBES' });
   }
 
-  function about(req, res){
+  function about(req, res) {
     res.render('about', { title: 'TRYBES - About' });
+  }
+
+  function loadApp(req, res) {
+    res.sendfile('./views/app.html');
   }
 
   function addEmail(req, res) {

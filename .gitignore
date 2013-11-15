@@ -1,15 +1,53 @@
-# OS X
-.DS_STORE
+# Phonegap #
+############
+platforms
+phonegap/.cordova/config.json
 
-# NPM
-node_modules/
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# sass
-.sass-cache/
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# eclipse
-.project
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-temp/
-tmp/
+# Node.js #
+###########
+npm-debug.log
+node_modules
+
+# Bower #
+#########
+public/bower_components
+
+# Compass #
+###########
+.sass-cache

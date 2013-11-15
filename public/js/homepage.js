@@ -5,8 +5,8 @@ jQuery(function() {
   var imgOutdoor = new Image(),
       imgSpinnerBlack = new Image();
   
-  imgOutdoor.src = '/images/outdoor.jpg';
-  imgSpinnerBlack.src = '/images/spinner-white.png';
+  imgOutdoor.src = '/img/outdoor.jpg';
+  imgSpinnerBlack.src = '/img/spinner-white.png';
   imgSpinnerBlack.className = 'animRotateRound';
 
   // cicle background
