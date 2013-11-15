@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "dependencies": {
