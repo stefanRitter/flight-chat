@@ -44,10 +44,6 @@ Thumbs.db
 npm-debug.log
 node_modules
 
-# Bower #
-#########
-public/bower_components
-
 # Compass #
 ###########
 .sass-cache
