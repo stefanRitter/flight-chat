@@ -115,7 +115,58 @@ body {
   animation-fill-mode: forwards;
 }
 
-/* line 8, ../../sass/application.sass */
+/* line 3, ../../sass/_general.sass */
+header, section {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* line 9, ../../sass/application.sass */
 html, body {
-  background-color: green;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 13, ../../sass/application.sass */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 100%;
+  background-color: black;
+}
+
+/* line 22, ../../sass/application.sass */
+section {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 27, ../../sass/application.sass */
+section:nth-child(1) {
+  background: green;
+}
+
+/* line 31, ../../sass/application.sass */
+section:nth-child(2) {
+  background: yellow;
+  -webkit-transform: translate(100%, -100%);
+  -moz-transform: translate(100%, -100%);
+  -ms-transform: translate(100%, -100%);
+  -o-transform: translate(100%, -100%);
+  transform: translate(100%, -100%);
+}
+
+/* line 35, ../../sass/application.sass */
+section:nth-child(3) {
+  background: orange;
+  -webkit-transform: translate(200%, -200%);
+  -moz-transform: translate(200%, -200%);
+  -ms-transform: translate(200%, -200%);
+  -o-transform: translate(200%, -200%);
+  transform: translate(200%, -200%);
 }

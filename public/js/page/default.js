@@ -20,6 +20,10 @@ define(function (require) {
 
   function initialize() {
     // myComponent.attachTo(document);
+
+    // start on feedView
+    location.href = '#';
+    location.href = '#feedView';
   }
 
 });
