@@ -5,30 +5,4 @@
 
 @import general
 @import header
-
-
-section
-  @extend %composite-layer
-  width: 100%
-  height: 100%
-  +transition(transform 0.5s)
-
-section:nth-child(1)
-  background: Yellow
-  +transform(translate(0,0))
-  z-index: 1
-
-section:nth-child(2)
-  background: Green
-  z-index: 2
-  +transform(translate(0,-100%))
-  &.out
-    +transform(translate(-100%,-100%))
-
-section:nth-child(3)
-  background: Orange
-  z-index: 3
-  +transform(translate(0,-200%))
-  &.out
-    +transform(translate(100%,-200%))
-    
+@import sections

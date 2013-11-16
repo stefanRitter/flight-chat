@@ -19,6 +19,7 @@ define(function (require) {
    */
 
   function initialize() {
+    FastClick.attach(document.body);
     switchSection.attachTo('header.main-header li');
   }
 });
