@@ -129,7 +129,7 @@ header.main-header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 40px;
+  height: 50px;
   width: 100%;
   background-color: black;
   color: white;
@@ -147,6 +147,11 @@ header.main-header ul li {
   display: table-cell;
   vertical-align: middle;
   cursor: pointer;
+}
+/* line 21, ../../sass/_header.sass */
+header.main-header ul li.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* line 10, ../../sass/application.sass */
