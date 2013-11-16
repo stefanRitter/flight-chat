@@ -146,6 +146,7 @@ header.main-header ul li {
   width: 106.6px;
   display: table-cell;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 /* line 10, ../../sass/application.sass */
