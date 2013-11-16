@@ -1,12 +1,12 @@
-define(function (require) {
 
+define(function (require) {
   'use strict';
 
   /**
    * Module dependencies
    */
 
-  // var myComponent = require('component/my_component');
+  var switchSection = require('component_ui/switch_section');
 
   /**
    * Module exports
@@ -19,11 +19,6 @@ define(function (require) {
    */
 
   function initialize() {
-    // myComponent.attachTo(document);
-
-    // start on feedView
-    location.href = '#';
-    location.href = '#feedView';
+    switchSection.attachTo('header.main-header li');
   }
-
 });

@@ -1,37 +1,34 @@
 
-@import "compass/css3"
-
 @import base
 @import colours
 @import animations
+
 @import general
+@import header
 
-html, body
-  width: 100%
-  height: 100%
-
-header
-  @extend %composite-layer
-  position: fixed
-  top: 0
-  left: 0
-  height: 40px
-  width: 100%
-  background-color: Black
 
 section
   @extend %composite-layer
   width: 100%
   height: 100%
+  +transition(transform 0.5s)
 
 section:nth-child(1)
-  background: Green
-  //+transform(translate(0,0))
+  background: Yellow
+  +transform(translate(0,0))
+  z-index: 1
 
 section:nth-child(2)
-  background: Yellow
-  +transform(translate(100%,-100%))
+  background: Green
+  z-index: 2
+  +transform(translate(0,-100%))
+  &.out
+    +transform(translate(-100%,-100%))
 
 section:nth-child(3)
   background: Orange
-  +transform(translate(200%,-200%))
+  z-index: 3
+  +transform(translate(0,-200%))
+  &.out
+    +transform(translate(100%,-200%))
+    

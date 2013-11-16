@@ -11,17 +11,23 @@
   </head>
   <body>
 
-    <section id="profileView"></section>
     <section id="feedView"></section>
-    <section id="messageView"></section>
+    <section id="profileView" class="out"></section>
+    <section id="messageView" class="out"></section>
     
-    <header></header>
+    <header class="main-header">
+      <ul>
+        <li data-id="#profileView">Profile</li>
+        <li data-id="#feedView">Feed</li>
+        <li data-id="#messageView">Messages</li>
+      </ul>
+    </header>
     
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.min.js"></script>
-    <script src="bower_components/es5-shim/es5-sham.min.js"></script>
+    <!--[if IE]>
+      <script src="bower_components/es5-shim/es5-shim.min.js"></script>
+      <script src="bower_components/es5-shim/es5-sham.min.js"></script>
     <![endif]-->
-    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
   </body>
 </html>
