@@ -14,5 +14,6 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signinPage').fadeIn();
+    formSubmit.attachTo('#signinPage button');
   }
 });

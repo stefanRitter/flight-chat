@@ -248,14 +248,29 @@ section:nth-child(3).out {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 10, ../../sass/signin_page/_signin_page.sass */
+/* line 9, ../../sass/signin_page/_signin_page.sass */
+#signinPage form img {
+  width: 100px;
+}
+/* line 12, ../../sass/signin_page/_signin_page.sass */
 #signinPage input, #signinPage button {
   width: 230px;
+  height: 30px;
   margin-top: 15px;
   padding: 10px;
 }
-/* line 15, ../../sass/signin_page/_signin_page.sass */
+/* line 18, ../../sass/signin_page/_signin_page.sass */
 #signinPage button {
   width: 250px;
+  height: 50px;
   margin-left: -5px;
+  background-color: #222e42;
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  text-indent: 8px;
+}
+/* line 27, ../../sass/signin_page/_signin_page.sass */
+#signinPage button img {
+  width: 30px;
 }
