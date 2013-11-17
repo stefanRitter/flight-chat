@@ -138,13 +138,13 @@ body {
 
 /* line 34, ../../sass/homepage.sass */
 h1, h2, h3, h4 {
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
   text-shadow: rgba(255, 255, 255, 0.01) 0 0 1px;
 }
 
 /* line 38, ../../sass/homepage.sass */
 html, body, p, div, input, button {
-  font-family: "Open Sans", Helvetica, sans-serif;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
 }
 

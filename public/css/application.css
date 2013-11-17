@@ -237,29 +237,29 @@ section:nth-child(3).out {
   transform: translate(100%, -200%);
 }
 
-/* line 1, ../../sass/signin_page/_signin_page.sass */
+/* line 2, ../../sass/signin_page/_signin_page.sass */
 #signinPage {
   background-color: black;
   color: white;
   text-align: center;
 }
-/* line 6, ../../sass/signin_page/_signin_page.sass */
+/* line 7, ../../sass/signin_page/_signin_page.sass */
 #signinPage form {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 9, ../../sass/signin_page/_signin_page.sass */
+/* line 10, ../../sass/signin_page/_signin_page.sass */
 #signinPage form img {
   width: 100px;
 }
-/* line 12, ../../sass/signin_page/_signin_page.sass */
+/* line 13, ../../sass/signin_page/_signin_page.sass */
 #signinPage input, #signinPage button {
   width: 230px;
   height: 30px;
   margin-top: 15px;
   padding: 10px;
 }
-/* line 18, ../../sass/signin_page/_signin_page.sass */
+/* line 19, ../../sass/signin_page/_signin_page.sass */
 #signinPage button {
   width: 250px;
   height: 50px;
@@ -270,7 +270,7 @@ section:nth-child(3).out {
   letter-spacing: 2px;
   text-indent: 8px;
 }
-/* line 27, ../../sass/signin_page/_signin_page.sass */
+/* line 28, ../../sass/signin_page/_signin_page.sass */
 #signinPage button img {
   width: 30px;
 }
