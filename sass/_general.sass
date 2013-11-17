@@ -3,10 +3,21 @@
   +transform(translateZ(0))
 
 
+#firstLoad
+  z-index: 0
+  position: absolute
+  top: 50%
+  left: 50%
+  img
+    margin-left: -50px
+    margin-top: -50px
+    width: 100px
+
 .app-page
   width: 100%
   height: 100%
   display: none
+  z-index: 1
 
 input, button
   +appearance(none)
