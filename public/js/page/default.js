@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var switchPage = require('component_ui/switch_page'),
-      authenticate = require('component_data/authenticate');
+      authenticate = require('component_data/authenticate_user');
 
 
   // exports
