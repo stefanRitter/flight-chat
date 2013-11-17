@@ -10,27 +10,54 @@
     <link rel="stylesheet" href="css/application.css">
   </head>
   <body>
-
-    <section id="feedView">
-    </section>
     
+    <div id="appPage" class="app-page">
+      <section id="feedView">
+      </section>
+      
 
-    <section id="profileView" class="out">
-    </section>
-    
+      <section id="profileView" class="out">
+      </section>
+      
 
-    <section id="messageView" class="out">
-    </section>
+      <section id="messageView" class="out">
+      </section>
 
 
-    <header class="main-header">
+      <header class="main-header">
+        <ul>
+          <li data-id="#profileView">Profile</li>
+          <li data-id="#feedView" class="active">Feed</li>
+          <li data-id="#messageView">Messages</li>
+        </ul>
+      </header>
+    </div>
+
+
+    <div id="signinPage" class="app-page">
+      <div class="display-table">
+        <form>
+          <input type="email" placeholder="Email" name="email">
+          <br>
+          <input type="password" placeholder="Password" name="password">
+          <br>
+          <button type="submit">Enter</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div id="signupPage" class="app-page">
       <ul>
-        <li data-id="#profileView">Profile</li>
-        <li data-id="#feedView" class="active">Feed</li>
-        <li data-id="#messageView">Messages</li>
+        <li>Enter Name, location, profession</li>
+        <li>Upload at least one face picture for validation</li>
+        <li>Choose your sports</li>
       </ul>
-    </header>
-
+      <p>
+        Already a member?
+        <button>Sign in</button>
+      </p>
+    </div>
 
     <!--[if IE]>
       <script src="bower_components/es5-shim/es5-shim.min.js"></script>

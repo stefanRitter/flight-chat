@@ -23,8 +23,10 @@ require(
     debug.enable(true);
     compose.mixin(registry, [advice.withAdvice, withLogging]);
 
-    require(['page/default'], function(initializeDefault) {
-      initializeDefault();
+    FastClick.attach(document.body);
+
+    require(['page/default'], function(initializePage) {
+      initializePage();
     });
   }
 );

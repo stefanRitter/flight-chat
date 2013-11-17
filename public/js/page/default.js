@@ -2,24 +2,18 @@
 define(function (require) {
   'use strict';
 
-  /**
-   * Module dependencies
-   */
+  // dependencies
+  var switchPage = require('component_ui/switch_page'),
+      authenticate = require('component_data/authenticate');
 
-  var switchSection = require('component_ui/switch_section');
 
-  /**
-   * Module exports
-   */
-
+  // exports
   return initialize;
 
-  /**
-   * Module function
-   */
 
+  // module function
   function initialize() {
-    FastClick.attach(document.body);
-    switchSection.attachTo('header.main-header li');
+    switchPage.attachTo(document);
+    authenticate.attachTo(document);
   }
 });
