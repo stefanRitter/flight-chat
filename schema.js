@@ -1,3 +1,7 @@
+var db = {},
+    x = 'longitude',
+    y = 'latitude';
+
 
 db.users.insert({
   _id: 0,
@@ -5,14 +9,8 @@ db.users.insert({
   email: 'stefan@stefanritter.com',
   images: ['aws//img1.jpg'],
   sports: ['tennis'],
-  lo: 5.4,
-  la: 85.9,
+  location: [x, y],
   buddies: [ 1, 2, 3]
-});
-
-db.sports.insert({
-  _id: 'tennis',
-  users: [ 0, 1, 2, 3, 4]
 });
 
 db.requests.insert({
@@ -20,4 +18,20 @@ db.requests.insert({
   lo: 56,
   la: 40,
   sport: 'tennis'
+});
+
+db.conversations.insert({
+  _id: 0,
+  users: [0,1],
+  messages: [ {
+    user: 0,
+    text: 'hey you',
+    img: 'aws/5.jpg'
+  }]
+});
+
+// could just be a global javascript object
+db.sports.insert({
+  _id: 'tennis',
+  icon: '&amp;'
 });
