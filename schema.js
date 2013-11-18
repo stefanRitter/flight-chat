@@ -12,13 +12,19 @@ db.users.insert({
   location: [x, y],
   buddies: [ 1, 2, 3]
 });
+db.users.enforceIndex({sports:1});
+db.users.enforceIndex({location:'2d'});
+
 
 db.requests.insert({
   _id: 0,
-  lo: 56,
-  la: 40,
+  location: [x,y],
   sport: 'tennis'
 });
+db.requests.enforceIndex({sports:1});
+db.requests.enforceIndex({location:'2d'});
+
+
 
 db.conversations.insert({
   _id: 0,
@@ -29,6 +35,8 @@ db.conversations.insert({
     img: 'aws/5.jpg'
   }]
 });
+db.conversations.enforceIndex({users:1});
+
 
 // could just be a global javascript object
 db.sports.insert({
