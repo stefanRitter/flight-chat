@@ -5,7 +5,7 @@ jQuery(function() {
   var imgOutdoor = new Image(),
       imgSpinnerBlack = new Image();
   
-  imgOutdoor.src = '/img/outdoor.jpg';
+  //imgOutdoor.src = '/img/outdoor.jpg';
   imgSpinnerBlack.src = '/img/spinner-white.png';
   imgSpinnerBlack.className = 'animRotateRound';
 
