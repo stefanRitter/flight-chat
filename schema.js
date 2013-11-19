@@ -7,7 +7,7 @@ db.users.insert({
   _id: 0,
   name: 'Stefan',
   email: 'stefan@stefanritter.com',
-  images: ['aws//img1.jpg'],
+  images: ['aws/img1.jpg'],
   sports: ['tennis'],
   location: [x, y],
   buddies: [ 1, 2, 3]
@@ -16,10 +16,14 @@ db.users.enforceIndex({sports:1});
 db.users.enforceIndex({location:'2d'});
 
 
+
 db.requests.insert({
   _id: 0,
   location: [x,y],
-  sport: 'tennis'
+  sport: 'tennis',
+  text: '',
+  user: 0,
+  image: 'aws/300.jg'
 });
 db.requests.enforceIndex({sports:1});
 db.requests.enforceIndex({location:'2d'});
