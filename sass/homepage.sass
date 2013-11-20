@@ -8,25 +8,23 @@
 html, body
   width: 100%
   height: 100%
+  background-color: Black
 
 html
   font-weight: 300
   font-size: 10px
   text-align: center
   color: White
-  background-color: Black
-  background: url(/img/weighttraining.jpg) no-repeat top center fixed
-  +background-size(cover)
-  display: table
-  +transition(all 1s)
-
-  &.background-outdoor
-    background-image: url(/img/outdoor.jpg)
-
   @media (max-width: 800px)
     font-size: 6px
 
 body
+  display: table
+  overflow: hidden
+  background: url(/img/weighttraining.jpg) no-repeat top center fixed
+  +background-size(cover)
+
+.content
   display: table-cell
   vertical-align: middle
   position: relative
