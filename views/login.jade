@@ -11,9 +11,9 @@ html
     form(method="post")
       table
         tr
-          td(class="label") Username
+          td(class="label") Email
           td
-            input(type="text" name="username" value=username)
+            input(type="text" name="email" value=email)
 
         tr
           td(class="label") Password
@@ -21,6 +21,6 @@ html
             input(type="password" name="password" value="")
         
         tr
-          td(class="error")= login_error
+          td(class="error")= loginError
       
       input(type="submit")

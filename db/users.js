@@ -1,77 +1,63 @@
 var bcrypt = require('bcrypt-nodejs');
 
-/* The UsersDAO must be constructed with a connected database object */
-function UsersDAO(db) {
-    "use strict";
-
-    /* If this constructor is called without the "new" operator, "this" points
-     * to the global object. Log a warning and call it correctly. */
-    if (false === (this instanceof UsersDAO)) {
-        console.log('Warning: UsersDAO constructor called without "new" operator');
-        return new UsersDAO(db);
-    }
-
-    var users = db.collection("users");
-
-    this.addUser = function(username, password, email, callback) {
-        "use strict";
-
-        // Generate password hash
-        var salt = bcrypt.genSaltSync();
-        var password_hash = bcrypt.hashSync(password, salt);
-
-        // Create user document
-        var user = {'_id': username, 'password': password_hash};
-
-        // Add email if set
-        if (email != "") {
-            user['email'] = email;
-        }
-
-        // TODO: hw2.3
-        users.insert(user, function (err, result) {
-            "use strict";
-
-            if (!err) {
-                console.log("Inserted new user");
-                return callback(null, result[0]);
-            }
-
-            return callback(err, null);
-        });
-    }
-
-    this.validateLogin = function(username, password, callback) {
-        "use strict";
-
-        // Callback to pass to MongoDB that validates a user document
-        function validateUserDoc(err, user) {
-            "use strict";
-
-            if (err) return callback(err, null);
-
-            if (user) {
-                if (bcrypt.compareSync(password, user.password)) {
-                    callback(null, user);
-                }
-                else {
-                    var invalid_password_error = new Error("Invalid password");
-                    // Set an extra field so we can distinguish this from a db error
-                    invalid_password_error.invalid_password = true;
-                    callback(invalid_password_error, null);
-                }
-            }
-            else {
-                var no_such_user_error = new Error("User: " + user + " does not exist");
-                // Set an extra field so we can distinguish this from a db error
-                no_such_user_error.no_such_user = true;
-                callback(no_such_user_error, null);
-            }
-        }
-
-        // TODO: hw2.3
-        users.findOne({ '_id' : username }, validateUserDoc);
-    }
-}
-
 module.exports.UsersDAO = UsersDAO;
+
+function UsersDAO(db) {
+  'use strict';
+
+  /* If this constructor is called without the "new" operator, "this" points
+   * to the global object. Log a warning and call it correctly. */
+  if (false === (this instanceof UsersDAO)) {
+    console.error('Warning: UsersDAO constructor called without "new" operator');
+    return new UsersDAO(db);
+  }
+
+  var users = db.collection('users');
+
+  this.createNewUser = function(email, password, callback) {
+
+    // Generate password hash
+    var salt = bcrypt.genSaltSync(),
+        passwordHash = bcrypt.hashSync(password, salt),
+        user;
+
+    // Create user document
+    user = {'email': email, 'password': passwordHash};
+
+    // persist
+    users.insert(user, function (err, result) {
+      if (err) { return callback(err, null); }
+      
+      console.log('Inserted new user');
+      return callback(null, result[0]);
+    });
+  };
+
+
+  this.validateLogin = function(email, password, callback) {
+    
+    users.findOne({ 'email' : email }, validateUserDoc);
+
+    function validateUserDoc(err, user) {
+      if (err) { return callback(err, null); }
+
+      if (user) {
+        if (bcrypt.compareSync(password, user.password)) {
+          callback(null, user);
+        }
+        else {
+          var invalidPasswordError = new Error('Invalid password');
+          // Set an extra field so we can distinguish this from a db error
+          invalidPasswordError.invalidPassword = true;
+          callback(invalidPasswordError, null);
+        }
+      }
+      else {
+        var noSuchUserError = new Error('User: ' + user + ' does not exist');
+        // Set an extra field so we can distinguish this from a db error
+        noSuchUserError.noSuchUser = true;
+        callback(noSuchUserError, null);
+      }
+    }
+  };
+}

@@ -5,6 +5,9 @@ module.exports = exports = function(app, db) {
 
   var sessionHandler = new SessionHandler(db);
 
+  // Middleware to check if a user is logged in
+  app.use(sessionHandler.isLoggedInMiddleware);
+
 
   // homepage routes
   app.get('/', index);
