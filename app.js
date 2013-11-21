@@ -28,9 +28,8 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   
-  app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
-  
+  app.use(app.router);
   
   // development only
   if ('development' === app.get('env')) {

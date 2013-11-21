@@ -32,6 +32,8 @@ module.exports = exports = function(app, db) {
   app.get('/app/signup', sessionHandler.displaySignupPage);
   app.post('/app/signup', sessionHandler.handleSignup);
 
+  // 404
+  app.get('*', function(req, res) { res.sendfile('./views/404.html'); });
 
 
   // request handlers
