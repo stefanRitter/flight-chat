@@ -1,0 +1,41 @@
+doctype 5
+html
+  head
+  title TRYBES - Signup
+  style(type="text/css").
+    .label {text-align: right}
+    .error {color: red}
+
+  body
+    p
+      | Already a user?
+      a(href="/app/login") Login
+    
+    h2 Signup
+    form(method="post")
+      table
+        tr
+          td(class="label") Username
+          td
+            input(type="text" name="username" value=username)
+          td(class="error")= username_error
+
+        tr
+          td(class="label") Password
+          td
+            input(type="password" name="password" value="")
+          td(class="error")= password_error
+
+        tr
+          td(class="label") Verify Password
+          td
+            input type="password" name="verify" value=""
+          td(class="error")= verify_error            
+
+        tr
+          td(class="label") Email (optional)
+          td
+            input(type="text" name="email" value=email)
+          td(class="error")= email_error
+
+      input(type="submit")

@@ -1,0 +1,26 @@
+doctype 5
+html
+  head
+  title TRYBES - Login
+  style(type="text/css").
+    .label {text-align: right}
+    .error {color: red}
+
+  body
+    h2 Login
+    form(method="post")
+      table
+        tr
+          td(class="label") Username
+          td
+            input(type="text" name="username" value=username)
+
+        tr
+          td(class="label") Password
+          td
+            input(type="password" name="password" value="")
+        
+        tr
+          td(class="error")= login_error
+      
+      input(type="submit")

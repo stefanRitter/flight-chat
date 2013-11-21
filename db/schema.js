@@ -14,6 +14,7 @@ db.users.insert({
 });
 db.users.enforceIndex({sports:1});
 db.users.enforceIndex({location:'2d'});
+db.users.enforceIndex({email:1},{unique: true});
 
 
 

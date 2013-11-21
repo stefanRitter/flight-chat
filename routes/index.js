@@ -1,16 +1,34 @@
+var SessionHandler = require('./session');
 
 module.exports = exports = function(app, db) {
   'use strict';
 
+  var sessionHandler = new SessionHandler(db);
 
-  // routes
+
+  // homepage routes
   app.get('/', index);
   app.post('/', addEmail);
 
   app.get('/about', about);
   app.post('/about', addEmail);
 
+
+  // app namespace
   app.get('/app', loadApp);
+  app.get('/app/', function(req, res) { res.redirect('/app'); });
+
+  // Login form
+  app.get('/app/login', sessionHandler.displayLoginPage);
+  app.post('/app/login', sessionHandler.handleLoginRequest);
+
+  // Logout page
+  app.get('/app/logout', sessionHandler.displayLogoutPage);
+
+  // Signup form
+  app.get('/app/signup', sessionHandler.displaySignupPage);
+  app.post('/app/signup', sessionHandler.handleSignup);
+
 
 
   // request handlers
