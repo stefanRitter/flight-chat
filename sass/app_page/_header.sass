@@ -5,20 +5,21 @@ header.main-header
   z-index: 5000
   top: 0
   left: 0
-  height: 50px
+  height: 40px
   width: 100%
-  background-color: Black
+  background-color: $trybesDarkBlue
   color: White
   text-align: center
-  display: table
   ul
-    display: table-row
     list-style: none
+    width: 300px
+    margin: 0 auto
     li
-      width: 106.6px
-      display: table-cell
-      vertical-align: middle
+      display: block
+      float: left
+      width: 100px
+      height: 40px
+      line-height: 40px
       cursor: pointer
       &.active
         font-weight: bold
-        text-decoration: underline
