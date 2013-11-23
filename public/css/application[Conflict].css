@@ -204,16 +204,6 @@ input, button {
   display: table;
 }
 
-/* line 31, ../../sass/_general.sass */
-.logo {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
 /* line 2, ../../sass/app_page/_header.sass */
 header.main-header {
   position: fixed;
@@ -316,17 +306,24 @@ section:nth-child(3).out {
   vertical-align: middle;
 }
 /* line 10, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage form img, #signupPage form img {
+#signinPage form img.logo, #signupPage form img.logo {
   width: 100px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-bottom: 25px;
 }
-/* line 13, ../../sass/auth_pages/_auth_pages.sass */
+/* line 16, ../../sass/auth_pages/_auth_pages.sass */
 #signinPage input, #signinPage button, #signupPage input, #signupPage button {
   width: 230px;
   height: 30px;
   margin-top: 15px;
   padding: 10px;
 }
-/* line 19, ../../sass/auth_pages/_auth_pages.sass */
+/* line 22, ../../sass/auth_pages/_auth_pages.sass */
 #signinPage button, #signupPage button {
   width: 250px;
   height: 50px;
@@ -337,11 +334,11 @@ section:nth-child(3).out {
   letter-spacing: 2px;
   text-indent: 8px;
 }
-/* line 28, ../../sass/auth_pages/_auth_pages.sass */
+/* line 31, ../../sass/auth_pages/_auth_pages.sass */
 #signinPage button img, #signupPage button img {
   width: 30px;
 }
-/* line 31, ../../sass/auth_pages/_auth_pages.sass */
+/* line 34, ../../sass/auth_pages/_auth_pages.sass */
 #signinPage .error, #signupPage .error {
   color: #d44513;
   margin-top: 15px;

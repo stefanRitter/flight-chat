@@ -45,6 +45,7 @@
           <input type="password" placeholder="Password" name="password">
           <br>
           <button type="submit">Join | Enter</button>
+          <p class="error"></p>
         </form>
       </div>
     </div>
@@ -52,19 +53,36 @@
 
 
     <div id="signupPage" class="app-page">
-      <ul>
-        <li>Enter Name, location, profession</li>
-        <li>Upload at least one face picture for validation</li>
-        <li>Choose your sports</li>
-      </ul>
-      <p>
-        Already a member?
-        <button>Sign in</button>
-      </p>
+      <div class="display-table">
+        <p>Signup below: | back to Sign in</p>
+        <form>
+          <img src="/img/logo.png" class="logo" alt="TRYBES logo">
+          <br>
+          <input type="email" placeholder="Email" name="email">
+          <br>
+          <input type="password" placeholder="Password" name="password">
+          <br>
+          <input type="text" placeholder="Name" name="name">
+          <br>
+          <br>
+          <input type="number" placeholder="Age" name="age">
+          <br>
+          <label>Choose your sports:</label>
+          <input type="text" placeholder="Sports" name="sports">
+          <br>
+          <label>Upload pictures:</label>
+          <input type="text" placeholder="Pictures" name="pictures">
+          <p>Note: to join you must have at least one face shot</p>
+          <br>
+          <button type="submit">Request Access</button>
+        </form>
+      </div>
     </div>
 
+
+
     <div id="firstLoad">
-      <img src="/img/logo.png" alt="TRYBES logo" class="animPulse">
+      <img src="/img/logo.png" alt="TRYBES logo" class="logo animPulse">
     </div>
     
     <!--[if IE]>

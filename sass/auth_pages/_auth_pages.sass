@@ -1,5 +1,5 @@
 
-#signinPage
+#signinPage, #signupPage
   background-color: Black
   color: White
   text-align: center
@@ -7,11 +7,8 @@
   form
     display: table-cell
     vertical-align: middle
-    img.logo
+    img
       width: 100px
-      +border-radius(50%)
-      border: 2px solid White
-      margin-bottom: 25px
 
   input, button
     width: 230px
@@ -30,3 +27,7 @@
     text-indent: 8px
     img
       width: 30px
+
+  .error
+    color: $trybesRed
+    margin-top: 15px
