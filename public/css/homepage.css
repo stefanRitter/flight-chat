@@ -235,19 +235,13 @@ h1.brand-header a {
 h1.brand-header a img {
   width: 1.5em;
   margin-left: -0.2em;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  border: 1px solid white;
 }
-/* line 74, ../../sass/homepage.sass */
+/* line 72, ../../sass/homepage.sass */
 h1.brand-header a span {
   letter-spacing: 10px;
 }
 
-/* line 77, ../../sass/homepage.sass */
+/* line 75, ../../sass/homepage.sass */
 h2 {
   font-size: 2.5em;
   font-weight: 400;
@@ -255,24 +249,24 @@ h2 {
   letter-spacing: 3px;
 }
 
-/* line 82, ../../sass/homepage.sass */
+/* line 80, ../../sass/homepage.sass */
 h3 {
   font-size: 2em;
   font-weight: 300;
 }
 
-/* line 85, ../../sass/homepage.sass */
+/* line 83, ../../sass/homepage.sass */
 p {
   font-size: 1.8em;
   font-weight: 300;
 }
 
-/* line 89, ../../sass/homepage.sass */
+/* line 87, ../../sass/homepage.sass */
 .no-margin {
   margin: 0;
 }
 
-/* line 92, ../../sass/homepage.sass */
+/* line 90, ../../sass/homepage.sass */
 .fitted-container {
   display: inline-block;
   text-align: justify;
@@ -281,44 +275,44 @@ p {
   line-height: 1.5em;
 }
 @media (max-width: 1000px) {
-  /* line 92, ../../sass/homepage.sass */
+  /* line 90, ../../sass/homepage.sass */
   .fitted-container {
     width: 70%;
   }
 }
 @media (max-width: 800px) {
-  /* line 92, ../../sass/homepage.sass */
+  /* line 90, ../../sass/homepage.sass */
   .fitted-container {
     width: 60%;
   }
 }
 @media (max-width: 540px) {
-  /* line 92, ../../sass/homepage.sass */
+  /* line 90, ../../sass/homepage.sass */
   .fitted-container {
     width: 90%;
   }
 }
 @media (max-width: 340px) {
-  /* line 92, ../../sass/homepage.sass */
+  /* line 90, ../../sass/homepage.sass */
   .fitted-container {
     width: 96%;
   }
 }
 
-/* line 107, ../../sass/homepage.sass */
+/* line 105, ../../sass/homepage.sass */
 form.invite-request {
   display: inline-block;
   margin-bottom: 15px;
   vertical-align: bottom;
 }
-/* line 111, ../../sass/homepage.sass */
+/* line 109, ../../sass/homepage.sass */
 form.invite-request input {
   border: 0;
   width: 180px;
   height: 30px;
   vertical-align: bottom;
 }
-/* line 116, ../../sass/homepage.sass */
+/* line 114, ../../sass/homepage.sass */
 form.invite-request button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -331,16 +325,16 @@ form.invite-request button {
   font-size: 12px;
   vertical-align: bottom;
 }
-/* line 125, ../../sass/homepage.sass */
+/* line 123, ../../sass/homepage.sass */
 form.invite-request button:focus {
   outline: 0;
 }
-/* line 127, ../../sass/homepage.sass */
+/* line 125, ../../sass/homepage.sass */
 form.invite-request button img {
   height: 100%;
 }
 
-/* line 130, ../../sass/homepage.sass */
+/* line 128, ../../sass/homepage.sass */
 .error {
   display: inline-block;
   color: #d44513;
@@ -349,23 +343,23 @@ form.invite-request button img {
   font-weight: 400;
 }
 
-/* line 137, ../../sass/homepage.sass */
+/* line 135, ../../sass/homepage.sass */
 .hidden {
   display: none;
 }
 
-/* line 140, ../../sass/homepage.sass */
+/* line 138, ../../sass/homepage.sass */
 .prompt {
   margin: 1% 2% 0 2%;
 }
 
-/* line 143, ../../sass/homepage.sass */
+/* line 141, ../../sass/homepage.sass */
 .footer-spacer {
   width: 100%;
   height: 40px;
 }
 
-/* line 146, ../../sass/homepage.sass */
+/* line 144, ../../sass/homepage.sass */
 footer {
   position: absolute;
   bottom: 0;
@@ -373,13 +367,13 @@ footer {
   background-color: black;
   font-weight: 300;
 }
-/* line 152, ../../sass/homepage.sass */
+/* line 150, ../../sass/homepage.sass */
 footer ul {
   margin: 0 auto;
   list-style: none;
   width: 320px;
 }
-/* line 156, ../../sass/homepage.sass */
+/* line 154, ../../sass/homepage.sass */
 footer ul li {
   display: inline-block;
   font-size: 12px;
@@ -387,7 +381,7 @@ footer ul li {
   padding: 10px 0;
 }
 @media (max-width: 800px) {
-  /* line 156, ../../sass/homepage.sass */
+  /* line 154, ../../sass/homepage.sass */
   footer ul li {
     font-size: 10px;
   }

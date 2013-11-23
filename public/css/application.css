@@ -204,16 +204,6 @@ input, button {
   display: table;
 }
 
-/* line 31, ../../sass/_general.sass */
-.logo {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
 /* line 2, ../../sass/app_page/_header.sass */
 header.main-header {
   position: fixed;
