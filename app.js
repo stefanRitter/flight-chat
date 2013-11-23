@@ -15,6 +15,10 @@ mongoClient.connect(datastoreURI, function(err, db) {
   'use strict';
   if (err) { throw err; }
 
+  // get session handler
+  var SessionHandler = require('./routes/session'),
+      sessionHandler = new SessionHandler(db);
+
   // all environments
   app.set('port', process.env.PORT || 3000);
   app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +32,9 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   
+  // sessions middleware
+  app.use(sessionHandler.isLoggedInMiddleware);
+
   app.use(express.static(path.join(__dirname, 'public')));
   app.use(app.router);
   
@@ -42,7 +49,7 @@ mongoClient.connect(datastoreURI, function(err, db) {
   }
 
   // routes
-  routes(app, db);
+  routes(app, db, sessionHandler);
 
   // server
   http.createServer(app).listen(app.get('port'), function(){

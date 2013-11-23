@@ -45,6 +45,16 @@ function SessionHandler (db) {
                             verifyError:''});
   };
   
+  this.isAuthenticated = function(req, res, next) {
+    console.error('GET: isAuthenticated');
+    if (req.email) {
+      console.log('OK');
+      res.send(200);
+    } else {
+      console.log('ERROR');
+      res.send(401);
+    }
+  };
 
 
   // POST

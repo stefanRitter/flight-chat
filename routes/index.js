@@ -1,13 +1,6 @@
-var SessionHandler = require('./session');
 
-module.exports = exports = function(app, db) {
+module.exports = exports = function(app, db, sessionHandler) {
   'use strict';
-
-  var sessionHandler = new SessionHandler(db);
-
-  // Middleware to check if a user is logged in
-  app.use(sessionHandler.isLoggedInMiddleware);
-
 
   // homepage routes
   app.get('/', index);
@@ -17,14 +10,17 @@ module.exports = exports = function(app, db) {
   app.post('/about', addEmail);
 
 
-  // app namespace
+
+  // APP NAMESPACE
   app.get('/app', loadApp);
   app.get('/app/', function(req, res) { res.redirect('/app'); });
 
+  
+  // AUTHENTICATION
   // Login form
   app.get('/app/login', sessionHandler.displayLoginPage);
   app.post('/app/login', sessionHandler.handleLoginRequest);
-
+  
   // Logout page
   app.get('/app/logout', sessionHandler.displayLogoutPage);
 
@@ -32,8 +28,13 @@ module.exports = exports = function(app, db) {
   app.get('/app/signup', sessionHandler.displaySignupPage);
   app.post('/app/signup', sessionHandler.handleSignup);
 
+  // authenticated?
+  app.get('/app/authenticated', sessionHandler.isAuthenticated);
+
+  
+
   // 404
-  app.get('*', function(req, res) { res.sendfile('./views/404.html'); });
+  app.get('*', function(req, res) { res.status(404).sendfile('./views/404.html'); });
 
 
   // request handlers

@@ -2,29 +2,60 @@
 define(function (require) {
   'use strict';
 
-  var defineComponent = require('flight/lib/component');
+  var defineComponent = require('flight/lib/component'),
+      __DOMAIN = require('component_data/domain');
 
   return defineComponent(authenicate);
 
   function authenicate() {
     // attributes
-    this.authenticateUser = function (e, user) {
-      var existingUser = false,
-          newUser = false;
+    this.existingUser = false;
+    this.newUser = false;
 
-      if (existingUser) {
+    this.triggerSwitch = function () {
+      if (this.existingUser) {
         this.trigger('uiSwitchPage', {name: 'appPage'});
-      } else if (newUser) {
+      } else if (this.newUser) {
         this.trigger('uiSwitchPage', {name: 'signupPage'});
       } else {
         this.trigger('uiSwitchPage', {name: 'signinPage'});
       }
     };
 
+    this.isAuthenticatedUser = function (e, user) {
+      var _this = this;
+      $.ajax(__DOMAIN + '/app/authenticated', {
+        method: 'GET',
+        statusCode: {
+          401: function() {
+            _this.triggerSwitch();
+          },
+          200: function() {
+            _this.existingUser = true;
+            _this.triggerSwitch();
+          }
+        }
+      });
+    };
+
+    this.authenticateUser = function() {
+      var _this = this;
+      $.ajax(__DOMAIN + '/app/login', {
+        method: 'POST'
+      });
+
+      /* three options:
+        1 - login successful    => redirect to appPage
+        2 - password wrong      => show error message to try again
+        3 - user doesn't exist  => redirect to SignUp
+      */
+
+    };
+
     // initialize
     this.after('initialize', function () {
-      this.on('authenicate', this.authenticateUser);
-      this.authenticateUser();
+      this.on('dataUserLogin', this.authenticateUser);
+      this.isAuthenticatedUser();
     });
   }
 });
