@@ -22,7 +22,7 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.post('/app/login', sessionHandler.handleLoginRequest);
   
   // Logout page
-  app.get('/app/logout', sessionHandler.displayLogoutPage);
+  app.get('/app/logout', sessionHandler.handleLogout);
 
   // Signup form
   app.get('/app/signup', sessionHandler.displaySignupPage);

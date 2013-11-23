@@ -69,28 +69,70 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     -webkit-transform: rotate(0);
   }
 
-  /* line 19, ../../sass/_animations.sass */
+  /* line 18, ../../sass/_animations.sass */
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
-@keyframes rotateRound {
+@-webkit-keyframes pulse {
+  /* line 22, ../../sass/_animations.sass */
+  0% {
+    -webkit-transform: scale(0.8);
+  }
+
+  /* line 24, ../../sass/_animations.sass */
+  50% {
+    -webkit-transform: scale(1.2);
+  }
+
   /* line 26, ../../sass/_animations.sass */
+  100% {
+    -webkit-transform: scale(0.8);
+  }
+}
+
+@keyframes rotateRound {
+  /* line 32, ../../sass/_animations.sass */
   0% {
     transform: rotate(0);
   }
 
-  /* line 29, ../../sass/_animations.sass */
+  /* line 34, ../../sass/_animations.sass */
   100% {
     transform: rotate(360deg);
   }
 }
 
-/* line 35, ../../sass/_animations.sass */
+@keyframes pulse {
+  /* line 38, ../../sass/_animations.sass */
+  0% {
+    transform: scale(0.8);
+  }
+
+  /* line 40, ../../sass/_animations.sass */
+  50% {
+    transform: scale(1.2);
+  }
+
+  /* line 42, ../../sass/_animations.sass */
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* line 47, ../../sass/_animations.sass */
 .animRotateRound {
   -webkit-animation: rotateRound 0.8s linear infinite;
   animation: rotateRound 0.8s linear infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/* line 50, ../../sass/_animations.sass */
+.animPulse {
+  -webkit-animation: pulse 2s ease-in-out infinite;
+  animation: pulse 2s ease-in-out infinite;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }

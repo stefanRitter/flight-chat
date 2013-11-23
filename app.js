@@ -31,12 +31,10 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  
+  app.use(express.static(path.join(__dirname, 'public')));
+
   // sessions middleware
   app.use(sessionHandler.isLoggedInMiddleware);
-
-  app.use(express.static(path.join(__dirname, 'public')));
-  app.use(app.router);
   
   // development only
   if ('development' === app.get('env')) {
@@ -49,6 +47,7 @@ mongoClient.connect(datastoreURI, function(err, db) {
   }
 
   // routes
+  app.use(app.router);
   routes(app, db, sessionHandler);
 
   // server

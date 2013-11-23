@@ -29,29 +29,25 @@ function SessionHandler (db) {
   this.displayLoginPage = function(req, res, next) {
     return res.render('login', {email:'', password:'', loginError:''});
   };
-
-  this.displayLogoutPage = function(req, res, next) {
-    var sessionId = req.cookies.session;
-    
-    sessions.endSession(sessionId, function (err) {
-      res.cookie('session', '');
-      return res.redirect('/');
-    });
-  };
-
   this.displaySignupPage =  function(req, res, next) {
     res.render('signup', {  email:'', password:'',
                             passwordError:'', emailError:'',
                             verifyError:''});
   };
+
+  this.handleLogout = function(req, res, next) {
+    var sessionId = req.cookies.session;
+    
+    sessions.endSession(sessionId, function (err) {
+      res.cookie('session', '');
+      return res.send(200);
+    });
+  };
   
   this.isAuthenticated = function(req, res, next) {
-    console.error('GET: isAuthenticated');
     if (req.email) {
-      console.log('OK');
       res.send(200);
     } else {
-      console.log('ERROR');
       res.send(401);
     }
   };

@@ -15,22 +15,37 @@
 @-webkit-keyframes rotateRound 
   0%   
     -webkit-transform: rotate(0)
-  
   100% 
     -webkit-transform: rotate(360deg)
 
+@-webkit-keyframes pulse 
+  0%   
+    -webkit-transform: scale(0.8)
+  50% 
+    -webkit-transform: scale(1.2)
+  100%
+    -webkit-transform: scale(0.8)
 
 // ********************************************************************************** ANIM DEF W3C
 
 @keyframes rotateRound
   0%   
     transform: rotate(0)
-  
   100% 
     transform: rotate(360deg)
 
+@keyframes pulse
+  0%   
+    transform: scale(0.8)
+  50% 
+    transform: scale(1.2)
+  100%
+    transform: scale(0.8)
 
 // ********************************************************************************** ANIM CLASSES
 
 .animRotateRound
   +animation( rotateRound 0.8s linear infinite, true )
+
+.animPulse
+  +animation( pulse 2s ease-in-out infinite, true )
