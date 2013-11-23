@@ -9,8 +9,12 @@ define(function (require) {
 
   function authenicate() {
     // attributes
+    this.defaultAttrs({
+      submitButtons: 'input[type=submit], button[type=submit]'
+    });
     this.existingUser = false;
     this.newUser = false;
+
 
     this.triggerSwitch = function () {
       if (this.existingUser) {
@@ -38,18 +42,21 @@ define(function (require) {
       });
     };
 
-    this.authenticateUser = function() {
+    this.authenticateUser = function(e, data) {
       var _this = this;
-      $.ajax(__DOMAIN + '/app/login', {
-        method: 'POST'
-      });
+      console.log(data);
+      //$.ajax(__DOMAIN + '/app/login', {
+      //  method: 'POST'
+      //});
 
       /* three options:
         1 - login successful    => redirect to appPage
         2 - password wrong      => show error message to try again
         3 - user doesn't exist  => redirect to SignUp
       */
-
+      setTimeout( function() {
+        _this.trigger(_this.select('submitButtons'), 'uiFormProcessed', {});
+      }, 2000);
     };
 
     // initialize

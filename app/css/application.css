@@ -186,10 +186,11 @@ header.main-header, section {
   width: 100%;
   height: 100%;
   display: none;
+  overflow: auto;
   z-index: 1;
 }
 
-/* line 22, ../../sass/_general.sass */
+/* line 23, ../../sass/_general.sass */
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -197,7 +198,7 @@ input, button {
   border: 0;
 }
 
-/* line 26, ../../sass/_general.sass */
+/* line 27, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;

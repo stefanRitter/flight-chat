@@ -25,13 +25,13 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.set('view engine', 'jade');
   app.enable('strict routing');
   app.use(express.compress());
-  app.use(express.favicon(__dirname + '/public/img/favicon.ico'));
+  app.use(express.favicon(__dirname + '/app/img/favicon.ico'));
   
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, 'app')));
 
   // sessions middleware
   app.use(sessionHandler.isLoggedInMiddleware);

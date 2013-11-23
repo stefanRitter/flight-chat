@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   // configuration
   grunt.initConfig({
     yeoman: {
-      app: 'public',
+      app: 'app',
       dist: 'dist'
     },
     pkg: grunt.file.readJSON('package.json'),
