@@ -26,6 +26,7 @@ define(function (require) {
       }
     };
 
+
     this.isAuthenticatedUser = function (e, user) {
       var _this = this;
       $.ajax(__DOMAIN + '/app/authenticated', {
@@ -42,27 +43,56 @@ define(function (require) {
       });
     };
 
-    this.authenticateUser = function(e, data) {
-      var _this = this;
-      console.log(data);
-      //$.ajax(__DOMAIN + '/app/login', {
-      //  method: 'POST'
-      //});
 
-      /* three options:
-        1 - login successful    => redirect to appPage
-        2 - password wrong      => show error message to try again
-        3 - user doesn't exist  => redirect to SignUp
-      */
-      setTimeout( function() {
-        _this.trigger(_this.select('submitButtons'), 'uiFormProcessed', {});
-      }, 2000);
+    this.authenticateUser = function(e, data) {
+      var _this = this,
+          formData = data.formData,
+          email = formData[0].value,
+          password = formData[1].value;
+      
+      // reset
+      this.existingUser = false;
+      this.newUser = false;
+      
+      if (!validateEmail(email)) {
+        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid email'});
+      }
+      if (password === '') {
+        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'missing password'});
+      }
+
+      $.ajax(__DOMAIN + '/app/login', {
+        method: 'POST',
+        data: formData
+
+      }).done(function(data) {
+        if (data.error) {
+          if (data.error.noSuchUser) {
+            _this.newUser = true;
+          } else if (data.error.invalidPassword) {
+            return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'wrong password'});
+          }
+        } else {
+          _this.existingUser = true;
+        }
+        _this.triggerSwitch();
+
+      }).fail(function(err){
+        _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
+      });
     };
+
 
     // initialize
     this.after('initialize', function () {
       this.on('dataUserLogin', this.authenticateUser);
       this.isAuthenticatedUser();
     });
+
+
+    // helpers
+    function validateEmail(email) {
+      return email.match(/^[\S]+@[\S]+\.[\S]+$/);
+    }
   }
 });

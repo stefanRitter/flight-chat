@@ -17,14 +17,13 @@ module.exports = exports = function(app, db, sessionHandler) {
 
   
   // AUTHENTICATION
-  // Login form
-  app.get('/app/login', sessionHandler.displayLoginPage);
+  // login
   app.post('/app/login', sessionHandler.handleLoginRequest);
   
-  // Logout page
+  // logout
   app.get('/app/logout', sessionHandler.handleLogout);
 
-  // Signup form
+  // signup
   app.get('/app/signup', sessionHandler.displaySignupPage);
   app.post('/app/signup', sessionHandler.handleSignup);
 

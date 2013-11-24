@@ -7,7 +7,7 @@ header.main-header
   left: 0
   height: 40px
   width: 100%
-  background-color: $trybesDarkBlue
+  background-color: Black
   color: White
   text-align: center
   ul
@@ -17,9 +17,17 @@ header.main-header
     li
       display: block
       float: left
+      position: relative
       width: 100px
       height: 40px
       line-height: 40px
       cursor: pointer
+      .arrow-up
+        position: absolute
+        left: 40px
+        top: 30px
+        visibility: hidden
       &.active
         font-weight: bold
+        .arrow-up
+          visibility: visible

@@ -15,6 +15,8 @@ function SessionHandler (db) {
   // MIDDLEWARE
   this.isLoggedInMiddleware = function(req, res, next) {
     var sessionId = req.cookies.session;
+    console.log('session: ' + sessionId);
+
     sessions.getUserEmail(sessionId, function(err, email) {
       if (!err && email) {
         req.email = email;
@@ -26,9 +28,6 @@ function SessionHandler (db) {
 
 
   // GET
-  this.displayLoginPage = function(req, res, next) {
-    return res.render('login', {email:'', password:'', loginError:''});
-  };
   this.displaySignupPage =  function(req, res, next) {
     res.render('signup', {  email:'', password:'',
                             passwordError:'', emailError:'',
@@ -65,10 +64,10 @@ function SessionHandler (db) {
 
       if (err) {
         if (err.noSuchUser) {
-          return res.render('login', {email: email, password:'', loginError:'No such user'});
+          return res.json({error: {noSuchUser: true}});
         }
         else if (err.invalidPassword) {
-          return res.render('login', {email: email, password:'', loginError:'Invalid password'});
+          return res.json({error: {invalidPassword: true}});
         }
         else {
           // Some other kind of error
@@ -80,7 +79,7 @@ function SessionHandler (db) {
         if (err) { return next(err); }
 
         res.cookie('session', sessionId);
-        return res.redirect('/welcome');
+        return res.json({sessionId: sessionId});
       });
     });
   };
