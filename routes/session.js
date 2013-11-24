@@ -51,6 +51,11 @@ function SessionHandler (db) {
     }
   };
 
+  this.displayPasswordReset = function(req, res, next) {
+    res.render('reset_password', {error: ''});
+  };
+
+
 
   // POST
   this.handleLoginRequest = function(req, res, next) {
@@ -119,6 +124,11 @@ function SessionHandler (db) {
       return res.render('signup', errors);
     }
   };
+  
+  this.handlePasswordReset = function(req, res, next) {
+    res.render('reset_password', {error: 'sorry this is still under construction, plz email: team@trybes.org'});
+  };
+
 
 
   // HELPERS

@@ -20,7 +20,7 @@ module.exports = exports = function(app, db, sessionHandler) {
   // login
   app.post('/app/login', sessionHandler.handleLoginRequest);
   
-  // logout
+  // logout!
   app.get('/app/logout', sessionHandler.handleLogout);
 
   // signup
@@ -29,6 +29,10 @@ module.exports = exports = function(app, db, sessionHandler) {
 
   // authenticated?
   app.get('/app/authenticated', sessionHandler.isAuthenticated);
+
+  // password reset
+  app.get('/app/reset_password', sessionHandler.displayPasswordReset);
+  app.post('/app/reset_password', sessionHandler.handlePasswordReset);
 
   
 
