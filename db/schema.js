@@ -10,7 +10,8 @@ db.users.insert({
   images: ['aws/img1.jpg'],
   sports: ['tennis'],
   location: [x, y],
-  buddies: [ 1, 2, 3]
+  buddies: [ 1, 2, 3],
+  verified: false
 });
 db.users.enforceIndex({sports:1});
 db.users.enforceIndex({location:'2d'});
