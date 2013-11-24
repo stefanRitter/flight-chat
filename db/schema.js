@@ -11,7 +11,12 @@ db.users.insert({
   sports: ['tennis'],
   location: [x, y],
   buddies: [ 1, 2, 3],
-  verified: false
+  verified: false,
+
+  created: Date,
+  lastModified: Date,
+  logins: 5,
+  lastLogin: Date
 });
 db.users.enforceIndex({sports:1});
 db.users.enforceIndex({location:'2d'});
