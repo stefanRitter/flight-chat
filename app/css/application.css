@@ -208,15 +208,20 @@ a {
   color: #222e42;
   text-decoration: none;
 }
+/* line 32, ../../sass/_general.sass */
+a.white-link {
+  color: white;
+  border-bottom: 3px white solid;
+}
 
-/* line 33, ../../sass/_general.sass */
+/* line 36, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 38, ../../sass/_general.sass */
+/* line 41, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -329,29 +334,29 @@ section:nth-child(3).out {
 }
 
 /* line 2, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage, #signupPage {
+#signinPage, #signupPage, #signupPage2 {
   background-color: black;
   color: white;
   text-align: center;
 }
 /* line 7, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage form, #signupPage form {
+#signinPage form, #signupPage form, #signupPage2 form {
   display: table-cell;
   vertical-align: middle;
 }
 /* line 10, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage form img, #signupPage form img {
+#signinPage form img, #signupPage form img, #signupPage2 form img {
   width: 100px;
 }
 /* line 13, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage input, #signinPage button, #signupPage input, #signupPage button {
+#signinPage input, #signinPage button, #signupPage input, #signupPage button, #signupPage2 input, #signupPage2 button {
   width: 230px;
   height: 30px;
   margin-top: 15px;
   padding: 10px;
 }
 /* line 19, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage button, #signupPage button {
+#signinPage button, #signupPage button, #signupPage2 button {
   width: 250px;
   height: 50px;
   margin-left: -5px;
@@ -362,11 +367,15 @@ section:nth-child(3).out {
   text-indent: 8px;
 }
 /* line 28, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage button img, #signupPage button img {
+#signinPage button img, #signupPage button img, #signupPage2 button img {
   width: 30px;
 }
 /* line 31, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage .error, #signupPage .error {
+#signinPage .error, #signupPage .error, #signupPage2 .error {
   color: #d44513;
   margin-top: 15px;
+}
+/* line 35, ../../sass/auth_pages/_auth_pages.sass */
+#signinPage .reset-password, #signupPage .reset-password, #signupPage2 .reset-password {
+  display: none;
 }

@@ -44,9 +44,15 @@
           <br>
           <input type="password" placeholder="Password" name="password">
           <br>
-          <button type="submit">Join | Enter</button>
+          <button type="submit">Enter</button>
           <p class="error"></p>
-          <p class="reset-password"><a href="/app/reset_password" target="_blank">forgot your password?</a></p>
+          <p class="reset-password"><br><a href="/app/reset_password" target="_blank">forgot your password?</a><br></p>
+          <p>
+            <br>
+            <a href="signupPage" class="js-app-link white-link">Sign up</a>
+            <br>
+            <br>
+          </p>
         </form>
       </div>
     </div>
@@ -58,7 +64,9 @@
         <form dataEvent="dataSignup">
           <img src="/img/logo.png" class="logo" alt="TRYBES logo">
           <br>
-          <p>Signup below: | back to Sign in</p>
+          <br>
+          <a href="signinPage" class="js-app-link white-link">back to Sign in</a>
+          <br>
           <br>
           <input type="email" placeholder="Email" name="email">
           <br>
@@ -68,12 +76,26 @@
           <br>
           <input type="number" placeholder="Age" name="age">
           <br>
+          <button type="submit" href="signupPage2" class="js-app-link">Next</button>
+          <p class="error"></p>
+        </form>
+      </div>
+    </div>
+
+    <div id="signupPage2" class="app-page">
+      <div class="display-table">
+        <form dataEvent="dataSignup">
+          <img src="/img/logo.png" class="logo" alt="TRYBES logo">
+          <br>
+          <br>
           <label>Choose your sports:</label>
+          <br>
           <input type="text" placeholder="Sports" name="sports">
           <br>
           <label>Upload pictures:</label>
+          <br>
           <input type="text" placeholder="Pictures" name="pictures">
-          <p>Note: to join you must have at least one face shot</p>
+          <p>Note: to gain access you must have at least one face shot</p>
           <br>
           <button type="submit">Request Access</button>
           <p class="error"></p>
@@ -81,7 +103,6 @@
         </form>
       </div>
     </div>
-
 
 
     <div id="firstLoad">

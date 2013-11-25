@@ -9,7 +9,11 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.get('/about', about);
   app.post('/about', addEmail);
 
-  
+  // APP NAMESPACE
+  app.get('/app', loadApp);
+  app.get('/app/', function(req, res) { res.redirect('/app'); });
+
+
   // AUTHENTICATION
   // login
   app.post('/app/login', sessionHandler.handleLoginRequest);

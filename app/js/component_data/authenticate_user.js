@@ -70,6 +70,7 @@ define(function (require) {
           if (data.error.noSuchUser) {
             _this.newUser = true;
           } else if (data.error.invalidPassword) {
+            $('.reset-password').show();
             return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'wrong password'});
           }
         } else {
