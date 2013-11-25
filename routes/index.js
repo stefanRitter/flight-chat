@@ -9,12 +9,6 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.get('/about', about);
   app.post('/about', addEmail);
 
-
-
-  // APP NAMESPACE
-  app.get('/app', loadApp);
-  app.get('/app/', function(req, res) { res.redirect('/app'); });
-
   
   // AUTHENTICATION
   // login
@@ -34,10 +28,11 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.get('/app/reset_password', sessionHandler.displayPasswordReset);
   app.post('/app/reset_password', sessionHandler.handlePasswordReset);
 
-  
+
 
   // 404
   app.get('*', function(req, res) { res.status(404).sendfile('./views/404.html'); });
+
 
 
   // request handlers

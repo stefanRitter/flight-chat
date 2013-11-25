@@ -23,7 +23,6 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.set('port', process.env.PORT || 3000);
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'jade');
-  app.enable('strict routing');
   app.use(express.compress());
   app.use(express.favicon(__dirname + '/app/img/favicon.ico'));
   
