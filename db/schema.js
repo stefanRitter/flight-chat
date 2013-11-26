@@ -18,9 +18,9 @@ db.users.insert({
   logins: 5,
   lastLogin: Date
 });
-db.users.enforceIndex({sports:1});
-db.users.enforceIndex({location:'2d'});
-db.users.enforceIndex({email:1},{unique: true});
+db.users.ensureIndex({sports:1});
+db.users.ensureIndex({location:'2d'});
+db.users.ensureIndex({email:1},{unique: true});
 
 
 

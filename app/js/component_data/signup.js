@@ -36,17 +36,9 @@ define(function (require) {
         data: formData
       }).done(function(data) {
         if (data.error) {
-          if (data.error.noSuchUser) {
-            return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'no such user'});
-          } else if (data.error.invalidPassword) {
-            $('.reset-password').show();
-            return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'wrong password'});
-          }
-        } else {
-          _this.existingUser = true;
+          return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: data.error});
         }
-        _this.triggerSwitch();
-
+        _this.trigger('uiSwitchPage', {name: 'signupPage2'});
       }).fail(function(err){
         _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
       });

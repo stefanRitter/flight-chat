@@ -161,7 +161,6 @@ html {
 /* line 21, ../../sass/homepage.sass */
 body {
   display: table;
-  overflow: hidden;
   background: url(/img/weighttraining.jpg) no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -169,11 +168,12 @@ body {
   background-size: cover;
 }
 
-/* line 27, ../../sass/homepage.sass */
+/* line 26, ../../sass/homepage.sass */
 .content {
   display: table-cell;
   vertical-align: middle;
   position: relative;
+  overflow: auto;
 }
 
 /* line 33, ../../sass/homepage.sass */

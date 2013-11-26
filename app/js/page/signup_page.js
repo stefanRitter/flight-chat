@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var formSubmit = require('component_ui/form_submit'),
-      signup1handler = require('component_data/signup_1');
+      signup1handler = require('component_data/signup');
 
 
   // exports

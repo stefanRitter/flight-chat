@@ -33,7 +33,7 @@ function SessionHandler (db) {
     
     sessions.endSession(sessionId, function (err) {
       res.cookie('session', '');
-      return res.send(200);
+      return res.redirect('/app');
     });
   };
   
@@ -84,7 +84,7 @@ function SessionHandler (db) {
   };
 
 
-  this.handleSignup = function(req, res, next) {
+  this.handleSignupOne = function(req, res, next) {
     var email = req.body.email,
         password = req.body.password,
         name = req.body.name,
@@ -95,8 +95,8 @@ function SessionHandler (db) {
 
         if (err) {
           // this was a duplicate
-          if (err.code === '11000') {
-            errors.error = 'Email already in use. Please choose another';
+          if (err.code === 11000) {
+            errors.error = 'Email already in use. Please choose another or try signing in.';
             return res.json(errors);
           }
           // this was a different error
@@ -127,17 +127,20 @@ function SessionHandler (db) {
 
   // HELPERS
   function validateSignup(name, email, password, errors) {
-    var PASS_RE = /^.{3,20}$/,
-        EMAIL_RE = /^[\S]+@[\S]+\.[\S]+$/;
+    var EMAIL_RE = /^[\S]+@[\S]+\.[\S]+$/;
 
     errors.error = '';
 
-    //if (!PASS_RE.test(password)) {
-    //  errors.passwordError = 'invalid password.';
-    //  return false;
-    //}
+    if (name === '') {
+      errors.error = 'missing username';
+      return false;
+    }
     if (!EMAIL_RE.test(email)) {
       errors.error = 'invalid email address';
+      return false;
+    }
+    if (password === '') {
+      errors.error = 'missing password';
       return false;
     }
     return true;
