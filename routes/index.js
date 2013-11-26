@@ -22,8 +22,8 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.get('/app/logout', sessionHandler.handleLogout);
 
   // signup
-  app.get('/app/signup', sessionHandler.displaySignupPage);
-  app.post('/app/signup', sessionHandler.handleSignup);
+  app.post('/app/signup_one', sessionHandler.handleSignup);
+  app.post('/app/signup_two', sessionHandler.handleSignup);
 
   // authenticated?
   app.get('/app/authenticated', sessionHandler.isAuthenticated);

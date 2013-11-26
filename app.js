@@ -7,7 +7,7 @@ var express = require('express'),
     path = require('path'),
     app = express(),
     errorHandler = require('./routes/error').errorHandler,
-    datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/test';
+    datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
 
 
 // connect to database

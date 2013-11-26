@@ -28,12 +28,6 @@ function SessionHandler (db) {
 
 
   // GET
-  this.displaySignupPage =  function(req, res, next) {
-    res.render('signup', {  email:'', password:'',
-                            passwordError:'', emailError:'',
-                            verifyError:''});
-  };
-
   this.handleLogout = function(req, res, next) {
     var sessionId = req.cookies.session;
     
@@ -84,26 +78,26 @@ function SessionHandler (db) {
         if (err) { return next(err); }
 
         res.cookie('session', sessionId);
-        return res.json({sessionId: sessionId});
+        return res.json({});
       });
     });
   };
 
-  this.handleSignup = function(req, res, next) {
 
+  this.handleSignup = function(req, res, next) {
     var email = req.body.email,
         password = req.body.password,
-        verify = req.body.verify,
-        errors = {'email': email};
+        name = req.body.name,
+        errors = {};
 
-    if (validateSignup(email, password, verify, errors)) {
-      users.createNewUser(email, password, function(err, user) {
+    if (validateSignup(name, email, password, errors)) {
+      users.createNewUser(name, email, password, function(err, user) {
 
         if (err) {
           // this was a duplicate
           if (err.code === '11000') {
-            errors.emailError = 'Email already in use. Please choose another';
-            return res.render('signup', errors);
+            errors.error = 'Email already in use. Please choose another';
+            return res.json(errors);
           }
           // this was a different error
           else {
@@ -115,16 +109,16 @@ function SessionHandler (db) {
           if (err) { return next(err); }
 
           res.cookie('session', sessionId);
-          return res.redirect('/app');
+          return res.json({user: user});
         });
       });
-    }
-    else {
+    } else {
       console.log('user did not validate');
-      return res.render('signup', errors);
+      return res.json(errors);
     }
   };
-  
+
+
   this.handlePasswordReset = function(req, res, next) {
     res.render('reset_password', {error: 'sorry this is still under construction, plz email: team@trybes.org'});
   };
@@ -132,24 +126,18 @@ function SessionHandler (db) {
 
 
   // HELPERS
-  function validateSignup(email, password, verify, errors) {
+  function validateSignup(name, email, password, errors) {
     var PASS_RE = /^.{3,20}$/,
         EMAIL_RE = /^[\S]+@[\S]+\.[\S]+$/;
 
-    errors.passwordError = '';
-    errors.verifyError = '';
-    errors.emailError = '';
+    errors.error = '';
 
-    if (!PASS_RE.test(password)) {
-      errors.passwordError = 'invalid password.';
-      return false;
-    }
-    if (password !== verify) {
-      errors.verifyError = "passwords don't match";
-      return false;
-    }
+    //if (!PASS_RE.test(password)) {
+    //  errors.passwordError = 'invalid password.';
+    //  return false;
+    //}
     if (!EMAIL_RE.test(email)) {
-      errors.emailError = 'invalid email address';
+      errors.error = 'invalid email address';
       return false;
     }
     return true;

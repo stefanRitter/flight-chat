@@ -12,44 +12,17 @@ define(function (require) {
     this.defaultAttrs({
       submitButtons: 'input[type=submit], button[type=submit]'
     });
-    this.existingUser = false;
 
-
-    this.triggerSwitch = function () {
-      if (this.existingUser) {
-        this.trigger('uiSwitchPage', {name: 'appPage'});
-      } else {
-        this.trigger('uiSwitchPage', {name: 'signinPage'});
-      }
-    };
-
-
-    this.isAuthenticatedUser = function (e, user) {
-      var _this = this;
-      $.ajax(__DOMAIN + '/app/authenticated', {
-        method: 'GET',
-        statusCode: {
-          401: function() {
-            _this.triggerSwitch();
-          },
-          200: function() {
-            _this.existingUser = true;
-            _this.triggerSwitch();
-          }
-        }
-      });
-    };
-
-
-    this.authenticateUser = function(e, data) {
+    this.signupUser = function(e, data) {
       var _this = this,
           formData = data.formData,
-          email = formData[0].value,
-          password = formData[1].value;
-      
-      // reset
-      this.existingUser = false;
-      
+          name = formData[0].value,
+          email = formData[1].value,
+          password = formData[2].value;
+
+      if (name === '') {
+        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'please pick a user name'});
+      }
       if (!validateEmail(email)) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid email'});
       }
@@ -57,10 +30,10 @@ define(function (require) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'missing password'});
       }
 
-      $.ajax(__DOMAIN + '/app/login', {
+
+      $.ajax(__DOMAIN + '/app/signup_one', {
         method: 'POST',
         data: formData
-
       }).done(function(data) {
         if (data.error) {
           if (data.error.noSuchUser) {
@@ -82,8 +55,7 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
-      this.on('dataUserLogin', this.authenticateUser);
-      this.isAuthenticatedUser();
+      this.on('dataSignup1', this.signupUser);
     });
 
 

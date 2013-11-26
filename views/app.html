@@ -61,36 +61,38 @@
 
     <div id="signupPage" class="app-page">
       <div class="display-table">
-        <form dataEvent="dataSignup">
+        <form data-event="dataSignup1">
           <img src="/img/logo.png" class="logo" alt="TRYBES logo">
           <br>
           <br>
           <a href="signinPage" class="js-app-link white-link">back to Sign in</a>
           <br>
           <br>
+          <input type="text" placeholder="Name" name="name">
+          <br>
           <input type="email" placeholder="Email" name="email">
           <br>
           <input type="password" placeholder="Password" name="password">
           <br>
-          <input type="text" placeholder="Name" name="name">
-          <br>
-          <input type="number" placeholder="Age" name="age">
-          <br>
-          <button type="submit" href="signupPage2" class="js-app-link">Next</button>
+          <button type="submit">Next</button>
           <p class="error"></p>
+          <label>We will only send an email if it's regarding your account. No spam. No commercials.</label>
         </form>
       </div>
     </div>
 
     <div id="signupPage2" class="app-page">
       <div class="display-table">
-        <form dataEvent="dataSignup">
+        <form data-event="dataSignup2">
           <img src="/img/logo.png" class="logo" alt="TRYBES logo">
           <br>
           <br>
           <label>Choose your sports:</label>
           <br>
           <input type="text" placeholder="Sports" name="sports">
+          <br>
+          <br>
+          <input type="number" placeholder="Age" name="age">
           <br>
           <label>Upload pictures:</label>
           <br>

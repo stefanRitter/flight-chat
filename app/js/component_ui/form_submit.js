@@ -16,14 +16,14 @@ define(function (require) {
     this.$error = {};
     this.buttonText = '';
     this.event = '';
-
+    this.active = false;
 
     this.submit = function(e) {
       e.preventDefault();
       this.off('click touch', this.submit);
       this.on('click touch', this.doNothing);
-      
-      this.buttonText = this.$node.text();
+      this.active = true;
+
       this.$node.html(loader);
       this.$siblings.css('opacity', 0.6);
       
@@ -46,8 +46,10 @@ define(function (require) {
 
 
     this.processFormErrors = function(e, error) {
-      this.reactivateFrom(e);
-      this.$error.text(error.error);
+      if (this.active) {
+        this.reactivateFrom(e);
+        this.$error.text(error.error);
+      }
     };
 
 
@@ -55,6 +57,7 @@ define(function (require) {
     this.after('initialize', function () {
       this.$siblings = this.$node.siblings('input');
       this.$form = this.$node.closest('form');
+      this.buttonText = this.$node.text();
       this.$error = this.$form.find('.error');
       this.event = this.$form.data('event');
 

@@ -14,7 +14,7 @@ function UsersDAO(db) {
 
   var users = db.collection('users');
 
-  this.createNewUser = function(email, password, callback) {
+  this.createNewUser = function(name, email, password, callback) {
 
     // Generate password hash
     var salt = bcrypt.genSaltSync(),
@@ -22,7 +22,7 @@ function UsersDAO(db) {
         user;
 
     // Create user document
-    user = {'email': email, 'password': passwordHash};
+    user = {'name': name, 'email': email, 'password': passwordHash};
 
     // persist
     users.insert(user, function (err, result) {
