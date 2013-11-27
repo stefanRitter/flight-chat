@@ -22,7 +22,7 @@ module.exports = exports = function(app, db, sessionHandler) {
   app.get('/app/logout', sessionHandler.handleLogout);
 
   // signup
-  app.post('/app/signup_one', sessionHandler.handleSignupOne);
+  app.post('/app/signup', sessionHandler.handleSignup);
 
   // authenticated?
   app.get('/app/authenticated', sessionHandler.isAuthenticated);

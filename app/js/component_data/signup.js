@@ -31,14 +31,14 @@ define(function (require) {
       }
 
 
-      $.ajax(__DOMAIN + '/app/signup_one', {
+      $.ajax(__DOMAIN + '/app/signup', {
         method: 'POST',
         data: formData
       }).done(function(data) {
         if (data.error) {
           return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: data.error});
         }
-        _this.trigger('uiSwitchPage', {name: 'signupPage2'});
+        _this.trigger('uiSwitchPage', {name: 'appPage'});
       }).fail(function(err){
         _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
       });
@@ -47,7 +47,7 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
-      this.on('dataSignup1', this.signupUser);
+      this.on('dataSignup', this.signupUser);
     });
 
 

@@ -84,7 +84,7 @@ function SessionHandler (db) {
   };
 
 
-  this.handleSignupOne = function(req, res, next) {
+  this.handleSignup = function(req, res, next) {
     var email = req.body.email,
         password = req.body.password,
         name = req.body.name,
