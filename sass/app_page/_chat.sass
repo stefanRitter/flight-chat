@@ -1,0 +1,26 @@
+.chat
+  display: inline-block
+  background-color: $trybesLightGray
+  max-width: 400px
+  min-width: 300px
+  height: 40px
+  margin: 2px 0
+  &.active
+    background-color: $trybesRed
+  .chat-conversation-body
+    width: 90%
+    float: right
+    position: relative
+    overflow: hidden
+    height: 40px
+    background-color: inherit
+    +transition(height 0.5s)
+    &.show
+      height: 500px
+      overflow: auto
+      z-index: 10
+  .chat-message
+    text-align: left
+    .chat-message-author
+      display: inline-block
+    .chat-message-text

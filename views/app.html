@@ -13,22 +13,70 @@
     
     <div id="appPage" class="app-page">
       <section id="feedView">
+        <div class="header-space"></div>
       </section>
       
 
       <section id="profileView" class="out">
+        <p><a href="/app/logout">Logout</a></p>
+        <div class="header-space"></div>
       </section>
       
 
       <section id="messageView" class="out">
+        <div class="chat">
+          <div class="chat-conversation-body">
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="chat-conversation-body">
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat active">
+          <div class="chat-conversation-body">
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat">
+          <div class="chat-conversation-body">
+            <div class="chat-message">
+              <strong class="chat-message-author">Name:</strong>
+              <span class="chat-message-text">Hey</span>
+            </div>
+          </div>
+        </div>
+        <div class="header-space"></div>
       </section>
 
 
       <header class="main-header">
         <ul>
-          <li data-id="#profileView"><span class="arrow-up"></span>Profile</li>
-          <li data-id="#feedView" class="active"><span class="arrow-up"></span>Feed</li>
-          <li data-id="#messageView"><span class="arrow-up"></span>@</li>
+          <li data-id="#profileView"><span class="arrow-down"></span>Profile</li>
+          <li data-id="#feedView" class="active"><span class="arrow-down"></span>Feed</li>
+          <li data-id="#messageView"><span class="arrow-down"></span>@</li>
         </ul>
       </header>
     </div>
@@ -38,7 +86,7 @@
     <div id="signinPage" class="app-page">
       <div class="display-table">
         <form data-event="dataUserLogin">
-          <img src="/img/logo.png" class="logo" alt="TRYBES logo">
+          <img src="img/logo.png" class="logo" alt="TRYBES logo">
           <br>
           <input type="email" placeholder="Email" name="email">
           <br>
@@ -46,7 +94,7 @@
           <br>
           <button type="submit">Enter</button>
           <p class="error"></p>
-          <p class="reset-password"><br><a href="/app/reset_password" target="_blank">forgot your password?</a><br></p>
+          <p class="reset-password"><br><a href="http://www.trybes.org/app/reset_password" target="_blank">forgot your password?</a><br></p>
           <p>
             <br>
             <a href="signupPage" class="js-app-link white-link">Sign up</a>
@@ -62,7 +110,7 @@
     <div id="signupPage" class="app-page">
       <div class="display-table">
         <form data-event="dataSignup">
-          <img src="/img/logo.png" class="logo" alt="TRYBES logo">
+          <img src="img/logo.png" class="logo" alt="TRYBES logo">
           <br>
           <br>
           <a href="signinPage" class="js-app-link white-link">back to Sign in</a>
@@ -84,7 +132,7 @@
 
 
     <div id="firstLoad">
-      <img src="/img/logo.png" alt="TRYBES logo" class="logo animPulse">
+      <img src="img/logo.png" alt="TRYBES logo" class="logo animPulse">
     </div>
     
     <!--[if IE]>

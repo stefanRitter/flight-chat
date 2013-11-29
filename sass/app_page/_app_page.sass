@@ -1,31 +1,41 @@
+#appPage
+  overflow: hidden
 
-@import header
+  a
+    color: inherit
 
-section
-  @extend %composite-layer
-  width: 100%
-  height: 100%
-  position: relative
-  background-color: $trybesDarkBlue
-  color: White
-  +transition(transform 0.5s)
+  @import header
 
-// feed
-section:nth-child(1)
-  +transform(translate(0,0))
-  z-index: 1
+  section
+    @extend %composite-layer
+    width: 100%
+    height: 100%
+    position: relative
+    background-color: $trybesDarkBlue
+    color: White
+    overflow: auto
+    +transition(transform 0.5s)
 
-// profile
-section:nth-child(2)
-  z-index: 2
-  +transform(translate(0,-100%))
-  &.out
-    +transform(translate(-100%,-100%))
+  // feed
+  section#feedView
+    +transform(translate(0,0))
+    z-index: 1
 
-// messages
-section:nth-child(3)
-  z-index: 3
-  +transform(translate(0,-200%))
-  &.out
-    +transform(translate(100%,-200%))
-    
+  // profile
+  section#profileView
+    z-index: 2
+    +transform(translate(0,-100%))
+    &.out
+      +transform(translate(-100%,-100%))
+
+  // messages
+  section#messageView
+    z-index: 3
+    text-align: center
+    +transform(translate(0,-200%))
+    &.out
+      +transform(translate(100%,-200%))
+    @import chat
+
+  .header-space
+    height: 40px

@@ -4,18 +4,15 @@ define(function (require) {
 
   var defineComponent = require('flight/lib/component');
 
-  return defineComponent(appLink);
+  return defineComponent(toggleChat);
 
-  function appLink() {
-    this.link = '';
+  function toggleChat() {
 
     // initialize
     this.after('initialize', function () {
-      this.link = this.$node.attr('href');
-
       this.on('click touch', function(e) {
         e.preventDefault();
-        this.trigger('uiSwitchPage', {name: this.link} );
+        this.$node.find('.chat-conversation-body').toggleClass('show');
       });
     });
   }
