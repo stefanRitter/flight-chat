@@ -4,9 +4,9 @@ define(function (require) {
 
   var defineComponent = require('flight/lib/component');
 
-  return defineComponent(appLink);
+  return defineComponent(pageLink);
 
-  function appLink() {
+  function pageLink() {
     this.link = '';
 
     // initialize

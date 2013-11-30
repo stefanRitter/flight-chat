@@ -3,8 +3,8 @@
   +transform(translateZ(0))
 
 #firstLoad
-  z-index: 0
-  position: absolute
+  z-index: 7000
+  position: fixed
   top: 50%
   left: 50%
   img
@@ -12,12 +12,21 @@
     margin-top: -50px
     width: 100px
 
-.app-page
+.app-page, .app-view
   width: 100%
   height: 100%
   display: none
   overflow: auto
   z-index: 1
+
+.app-view
+  position: fixed
+  z-index: 6000
+  @extend %composite-layer
+  +transform(translate(100%, -100%))
+  +transition(transform 0.3s)
+  &.show
+    +transform(translate(0, -100%))
 
 input, button
   +appearance(none)

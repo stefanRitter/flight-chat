@@ -3,7 +3,7 @@ header.main-header
   @extend %composite-layer
   position: fixed
   z-index: 5000
-  bottom: 0
+  top: 0
   left: 0
   height: 40px
   width: 100%
@@ -22,15 +22,15 @@ header.main-header
       height: 40px
       line-height: 40px
       cursor: pointer
-      .arrow-down
+      .arrow-up
         position: absolute
         left: 40px
-        top: 0
+        top: 30px
         visibility: hidden
       &.active
         font-weight: bold
-        .arrow-down
+        .arrow-up
           visibility: visible
 
 .header-space
-  height: 40px
+  height: 43px

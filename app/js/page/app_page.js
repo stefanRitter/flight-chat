@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var switchSection = require('component_ui/switch_section'),
-      chatToggle = require('component_ui/chat_toggle'),
+      viewLink = require('component_ui/view_link'),
       formSubmit = require('component_ui/form_submit');
 
 
@@ -20,6 +20,6 @@ define(function (require) {
     
     switchSection.attachTo('header.main-header li');
     formSubmit.attachTo('#appPage button[type=submit]');
-    chatToggle.attachTo('.chat');
+    viewLink.attachTo('.js-view-link');
   }
 });

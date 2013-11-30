@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var formSubmit = require('component_ui/form_submit'),
-      appLink = require('component_ui/app_link');
+      pageLink = require('component_ui/page_link');
 
 
   // exports
@@ -15,7 +15,7 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signinPage').fadeIn();
-    appLink.attachTo('#signinPage .js-app-link');
+    pageLink.attachTo('#signinPage .js-page-link');
     formSubmit.attachTo('#signinPage button');
   }
 });
