@@ -19,17 +19,19 @@ define(function (require) {
       var _this = this;
       $(window).on('resize', function() {
         _this.height = $('#appPage').height() - 47;
-        if (_this.$chatBody.hasClass('show')) {
+        if (_this.$node.hasClass('show')) {
           _this.$chatBody.css({height: _this.height});
         }
       });
 
       this.on('click touch', function(e) {
-        if (!this.$chatBody.hasClass('show')) {
-          this.$chatBody.css({height: this.height, position: 'fixed'}).addClass('show');
+        if (!this.$node.hasClass('show')) {
+          this.$node.addClass('show').removeClass('active');
+          this.$chatBody.css({height: this.height, position: 'fixed'});
         } else {
           if ($(e.target).hasClass('js-chat-toggle')) {
-            this.$chatBody.css({height: 37, position: 'relative'}).removeClass('show');
+            this.$node.removeClass('show');
+            this.$chatBody.css({height: 37, position: 'relative'});
           }
         }
       });

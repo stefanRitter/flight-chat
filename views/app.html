@@ -17,7 +17,7 @@
       </section>
       
 
-      <section id="profileView" class="out">
+      <section id="profileView" class="out profile">
         <p><a href="/app/logout">Logout</a></p>
         <div class="header-space"></div>
       </section>
@@ -45,11 +45,14 @@
                 <span class="chat-message-text">Test, test</span>
               </div>
             </div>
-            <form class="chat-input">
-              <input type="text" name="" value="">
+            <form class="chat-input" data-event="dataSendChatMessage">
+              <input type="text" name="text" value="" placeholder="  Send a message...">
+              <input type="hidden" name="chatId" value="">
               <button type="submit">go</button>
+              <button class="js-toggle-image-uploader">img</button>
             </form>
           </div>
+          <div class="chat-show-indicator"></div>
         </div>
         <div class="chat">
           <div class="js-chat-toggle"></div>
@@ -63,31 +66,23 @@
                 <strong class="chat-message-author">Paul:</strong>
                 <span class="chat-message-text">Hey, how are you?</span>
               </div>
-            </div>
-            <form class="chat-input">
-              <input type="text" name="" value="">
-              <button type="submit">go</button>
-            </form>
-          </div>
-        </div>
-        <div class="chat active">
-          <div class="js-chat-toggle"></div>
-          <div class="chat-conversation-body">
-            <div class="chat-messages">
               <div class="chat-message">
                 <strong class="chat-message-author">Gerhard:</strong>
-                <span class="chat-message-text">Hey</span>
+                <span class="chat-message-text">Bam, this is amazing!</span>
               </div>
               <div class="chat-message">
                 <strong class="chat-message-author">Paul:</strong>
-                <span class="chat-message-text">Hey, how are you?</span>
+                <span class="chat-message-text">Test, test</span>
               </div>
             </div>
-            <form class="chat-input">
-              <input type="text" name="" value="">
+            <form class="chat-input" data-event="dataSendChatMessage">
+              <input type="text" name="text" value="" placeholder="  Send a message...">
+              <input type="hidden" name="chatId" value="">
               <button type="submit">go</button>
+              <button class="js-toggle-image-uploader">img</button>
             </form>
           </div>
+          <div class="chat-show-indicator"></div>
         </div>
         <div class="chat">
           <div class="js-chat-toggle"></div>
@@ -101,12 +96,23 @@
                 <strong class="chat-message-author">Paul:</strong>
                 <span class="chat-message-text">Hey, how are you?</span>
               </div>
+              <div class="chat-message">
+                <strong class="chat-message-author">Gerhard:</strong>
+                <span class="chat-message-text">Bam, this is amazing!</span>
+              </div>
+              <div class="chat-message">
+                <strong class="chat-message-author">Paul:</strong>
+                <span class="chat-message-text">Test, test</span>
+              </div>
             </div>
-            <form class="chat-input">
-              <input type="text" name="" value="">
+            <form class="chat-input" data-event="dataSendChatMessage">
+              <input type="text" name="text" value="" placeholder="  Send a message...">
+              <input type="hidden" name="chatId" value="">
               <button type="submit">go</button>
+              <button class="js-toggle-image-uploader">img</button>
             </form>
           </div>
+          <div class="chat-show-indicator"></div>
         </div>
         <div class="header-space"></div>
       </section>

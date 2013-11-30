@@ -4,7 +4,8 @@ define(function (require) {
 
   // dependencies
   var switchSection = require('component_ui/switch_section'),
-      toggleChat = require('component_ui/toggle_chat');
+      chatToggle = require('component_ui/chat_toggle'),
+      formSubmit = require('component_ui/form_submit');
 
 
   // exports
@@ -16,7 +17,9 @@ define(function (require) {
     $('.app-page').hide();
     $('#appPage').fadeIn();
     $('#signupPage, #signinPage').remove();
+    
     switchSection.attachTo('header.main-header li');
-    toggleChat.attachTo('.chat');
+    formSubmit.attachTo('#appPage button[type=submit]');
+    chatToggle.attachTo('.chat');
   }
 });

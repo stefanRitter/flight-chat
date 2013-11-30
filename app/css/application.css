@@ -196,37 +196,38 @@ input, button {
   -moz-appearance: none;
   appearance: none;
   border: 0;
+  vertical-align: bottom;
 }
 
-/* line 26, ../../sass/_general.sass */
+/* line 27, ../../sass/_general.sass */
 button {
   cursor: pointer;
 }
 
-/* line 29, ../../sass/_general.sass */
+/* line 30, ../../sass/_general.sass */
 a {
   color: #222e42;
   text-decoration: none;
 }
-/* line 32, ../../sass/_general.sass */
+/* line 33, ../../sass/_general.sass */
 a.white-link {
   color: white;
   border-bottom: 3px white solid;
 }
 
-/* line 36, ../../sass/_general.sass */
+/* line 37, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 39, ../../sass/_general.sass */
+/* line 40, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 44, ../../sass/_general.sass */
+/* line 45, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -235,7 +236,7 @@ strong {
   border-bottom: 10px solid #222e42;
 }
 
-/* line 51, ../../sass/_general.sass */
+/* line 52, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
@@ -295,7 +296,162 @@ strong {
 #appPage header.main-header ul li.active .arrow-down {
   visibility: visible;
 }
-/* line 9, ../../sass/app_page/_app_page.sass */
+/* line 35, ../../sass/app_page/_header.sass */
+#appPage .header-space {
+  height: 40px;
+}
+/* line 1, ../../sass/app_page/_chat.sass */
+#appPage .chat {
+  display: inline-block;
+  background-color: #d8d8d9;
+  width: 314px;
+  height: 40px;
+  margin-top: 3px;
+  color: black;
+  position: relative;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+/* line 10, ../../sass/app_page/_chat.sass */
+#appPage .chat.active {
+  background-color: #d44513;
+}
+/* line 13, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-show-indicator {
+  position: absolute;
+  top: 17px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  -webkit-transform: rotate(0);
+  -moz-transform: rotate(0);
+  -ms-transform: rotate(0);
+  -o-transform: rotate(0);
+  transform: rotate(0);
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform 0.5s;
+}
+/* line 24, ../../sass/app_page/_chat.sass */
+#appPage .chat .js-chat-toggle {
+  width: 24px;
+  height: 40px;
+  cursor: pointer;
+}
+/* line 28, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-conversation-body {
+  width: 290px;
+  position: relative;
+  top: 3px;
+  overflow: hidden;
+  height: 37px;
+  background-color: inherit;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
+  -o-transition: height 0.5s;
+  transition: height 0.5s;
+}
+/* line 36, ../../sass/app_page/_chat.sass */
+#appPage .chat .js-chat-toggle, #appPage .chat .chat-conversation-body {
+  float: left;
+  top: 3px;
+}
+/* line 40, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-messages {
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: bottom 0.5s;
+  -moz-transition: bottom 0.5s;
+  -o-transition: bottom 0.5s;
+  transition: bottom 0.5s;
+}
+/* line 45, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-message {
+  text-align: left;
+  min-height: 30px;
+  padding: 5px;
+  line-height: 1.3em;
+}
+/* line 50, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-message .chat-message-author {
+  display: inline-block;
+}
+/* line 52, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-message .chat-message-text {
+  font-style: italic;
+}
+/* line 55, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-input {
+  height: 36px;
+  position: absolute;
+  bottom: 36px;
+  -webkit-transition: bottom 0.5s;
+  -moz-transition: bottom 0.5s;
+  -o-transition: bottom 0.5s;
+  transition: bottom 0.5s;
+}
+/* line 60, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-input input {
+  width: 208px;
+  height: 30px;
+  margin-left: 4px;
+}
+/* line 64, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-input button {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  background-color: #cde8ea;
+}
+/* line 69, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-input button img {
+  width: 20px;
+  margin-top: 3px;
+}
+/* line 72, ../../sass/app_page/_chat.sass */
+#appPage .chat .chat-input button.js-toggle-image-uploader {
+  background-color: #d44513;
+}
+/* line 75, ../../sass/app_page/_chat.sass */
+#appPage .chat.show {
+  background-color: #a4a4a7;
+}
+/* line 77, ../../sass/app_page/_chat.sass */
+#appPage .chat.show .chat-conversation-body {
+  margin-left: 24px;
+}
+/* line 79, ../../sass/app_page/_chat.sass */
+#appPage .chat.show .js-chat-toggle, #appPage .chat.show .chat-conversation-body {
+  overflow: auto;
+  z-index: 10;
+}
+/* line 82, ../../sass/app_page/_chat.sass */
+#appPage .chat.show .chat-input {
+  bottom: 0;
+}
+/* line 84, ../../sass/app_page/_chat.sass */
+#appPage .chat.show .chat-messages {
+  bottom: 40px;
+}
+/* line 86, ../../sass/app_page/_chat.sass */
+#appPage .chat.show .chat-show-indicator {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+/* line 1, ../../sass/app_page/_profile.sass */
+#appPage .profile {
+  text-align: center;
+}
+/* line 11, ../../sass/app_page/_app_page.sass */
 #appPage section {
   width: 100%;
   height: 100%;
@@ -308,7 +464,7 @@ strong {
   -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
 }
-/* line 20, ../../sass/app_page/_app_page.sass */
+/* line 22, ../../sass/app_page/_app_page.sass */
 #appPage section#feedView {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
@@ -317,7 +473,7 @@ strong {
   transform: translate(0, 0);
   z-index: 1;
 }
-/* line 25, ../../sass/app_page/_app_page.sass */
+/* line 27, ../../sass/app_page/_app_page.sass */
 #appPage section#profileView {
   z-index: 2;
   -webkit-transform: translate(0, -100%);
@@ -326,7 +482,7 @@ strong {
   -o-transform: translate(0, -100%);
   transform: translate(0, -100%);
 }
-/* line 28, ../../sass/app_page/_app_page.sass */
+/* line 30, ../../sass/app_page/_app_page.sass */
 #appPage section#profileView.out {
   -webkit-transform: translate(-100%, -100%);
   -moz-transform: translate(-100%, -100%);
@@ -334,7 +490,7 @@ strong {
   -o-transform: translate(-100%, -100%);
   transform: translate(-100%, -100%);
 }
-/* line 32, ../../sass/app_page/_app_page.sass */
+/* line 34, ../../sass/app_page/_app_page.sass */
 #appPage section#messageView {
   z-index: 3;
   text-align: center;
@@ -344,98 +500,13 @@ strong {
   -o-transform: translate(0, -200%);
   transform: translate(0, -200%);
 }
-/* line 36, ../../sass/app_page/_app_page.sass */
+/* line 38, ../../sass/app_page/_app_page.sass */
 #appPage section#messageView.out {
   -webkit-transform: translate(100%, -200%);
   -moz-transform: translate(100%, -200%);
   -ms-transform: translate(100%, -200%);
   -o-transform: translate(100%, -200%);
   transform: translate(100%, -200%);
-}
-/* line 1, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat {
-  display: inline-block;
-  background-color: #d8d8d9;
-  width: 314px;
-  height: 40px;
-  margin-top: 3px;
-}
-/* line 7, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat.active {
-  background-color: #d44513;
-}
-/* line 9, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .js-chat-toggle {
-  width: 24px;
-  height: 40px;
-  cursor: pointer;
-}
-/* line 13, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-conversation-body {
-  width: 290px;
-  position: relative;
-  top: 3px;
-  overflow: hidden;
-  height: 37px;
-  background-color: inherit;
-  -webkit-transition: height 0.5s;
-  -moz-transition: height 0.5s;
-  -o-transition: height 0.5s;
-  transition: height 0.5s;
-}
-/* line 21, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-conversation-body.show {
-  margin-left: 24px;
-}
-/* line 23, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .js-chat-toggle, #appPage section#messageView .chat .chat-conversation-body {
-  float: left;
-  top: 3px;
-}
-/* line 26, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .js-chat-toggle.show, #appPage section#messageView .chat .chat-conversation-body.show {
-  overflow: auto;
-  z-index: 10;
-}
-/* line 29, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-messages {
-  position: absolute;
-  bottom: 40px;
-}
-/* line 32, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-input {
-  height: 36px;
-  position: absolute;
-  bottom: 0;
-}
-/* line 36, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-input input {
-  width: 240px;
-  height: 30px;
-  margin-left: 6px;
-}
-/* line 40, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-input button {
-  width: 32px;
-  height: 32px;
-}
-/* line 43, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-message {
-  text-align: left;
-  padding: 5px;
-  line-height: 1.3em;
-}
-/* line 47, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-message .chat-message-author {
-  display: inline-block;
-}
-/* line 49, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-message .chat-message-text {
-  font-style: italic;
-}
-/* line 40, ../../sass/app_page/_app_page.sass */
-#appPage .header-space {
-  height: 40px;
 }
 
 /* line 2, ../../sass/auth_pages/_auth_pages.sass */

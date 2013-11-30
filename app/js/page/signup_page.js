@@ -4,7 +4,8 @@ define(function (require) {
 
   // dependencies
   var formSubmit = require('component_ui/form_submit'),
-      signup1handler = require('component_data/signup');
+      signup1handler = require('component_data/signup'),
+      appLink = require('component_ui/app_link');
 
 
   // exports
@@ -15,7 +16,7 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signupPage').fadeIn();
-
+    appLink.attachTo('#signupPage .js-app-link');
     formSubmit.attachTo('#signupPage button');
     signup1handler.attachTo(document);
   }

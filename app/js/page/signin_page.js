@@ -3,7 +3,8 @@ define(function (require) {
   'use strict';
 
   // dependencies
-  var formSubmit = require('component_ui/form_submit');
+  var formSubmit = require('component_ui/form_submit'),
+      appLink = require('component_ui/app_link');
 
 
   // exports
@@ -14,7 +15,7 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signinPage').fadeIn();
-
+    appLink.attachTo('#signinPage .js-app-link');
     formSubmit.attachTo('#signinPage button');
   }
 });

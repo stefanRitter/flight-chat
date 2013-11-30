@@ -5,6 +5,8 @@
     color: inherit
 
   @import header
+  @import chat
+  @import profile
 
   section
     @extend %composite-layer
@@ -35,7 +37,3 @@
     +transform(translate(0,-200%))
     &.out
       +transform(translate(100%,-200%))
-    @import chat
-
-  .header-space
-    height: 40px

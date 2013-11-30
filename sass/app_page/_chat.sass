@@ -4,8 +4,23 @@
   width: 314px
   height: 40px
   margin-top: 3px
+  color: Black
+  position: relative
+  +transition(background-color 0.5s)
   &.active
     background-color: $trybesRed
+  
+  .chat-show-indicator
+    position: absolute
+    top: 20px - 3px
+    left: 12px - 5px
+    width: 0
+    height: 0
+    border-left: 5px solid transparent
+    border-right: 5px solid transparent
+    border-top: 5px solid Black
+    +transform(rotate(0))
+    +transition(transform 0.5s)
   .js-chat-toggle
     width: 24px
     height: 40px
@@ -18,33 +33,58 @@
     height: 37px
     background-color: inherit
     +transition(height 0.5s)
-    &.show
-      margin-left: 24px
   .js-chat-toggle, .chat-conversation-body
     float: left
     top: 3px
-    &.show
-      overflow: auto
-      z-index: 10
+  
   .chat-messages
     position: absolute
-    bottom: 40px
-  .chat-input
-    height: 36px
-    position: absolute
     bottom: 0
-    input
-      width: 240px
-      height: 30px
-      margin-left: 6px
-    button
-      width: 32px
-      height: 32px
+    +transition(bottom 0.5s)
+
   .chat-message
     text-align: left
+    min-height: 30px
     padding: 5px
     line-height: 1.3em
     .chat-message-author
       display: inline-block
     .chat-message-text
       font-style: italic
+  
+  .chat-input
+    height: 36px
+    position: absolute
+    bottom: 36px
+    +transition(bottom 0.5s)
+    input
+      width: 208px
+      height: 30px
+      margin-left: 4px
+    button
+      width: 32px
+      height: 32px
+      overflow: hidden
+      background-color: $trybesLightBlue
+      img
+        width: 20px
+        margin-top: 3px
+      &.js-toggle-image-uploader
+        background-color: $trybesRed
+  
+  &.show
+    background-color: darken($trybesLightGray, 20%)
+    .chat-conversation-body
+      margin-left: 24px
+    .js-chat-toggle, .chat-conversation-body
+      overflow: auto
+      z-index: 10
+    .chat-input
+      bottom: 0
+    .chat-messages
+      bottom: 40px
+    .chat-show-indicator
+      +transform(rotate(180deg))
+
+
+
