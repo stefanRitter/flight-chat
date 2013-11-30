@@ -356,41 +356,82 @@ strong {
 #appPage section#messageView .chat {
   display: inline-block;
   background-color: #d8d8d9;
-  max-width: 400px;
-  min-width: 300px;
+  width: 314px;
   height: 40px;
-  margin: 2px 0;
+  margin-top: 3px;
 }
-/* line 8, ../../sass/app_page/_chat.sass */
+/* line 7, ../../sass/app_page/_chat.sass */
 #appPage section#messageView .chat.active {
   background-color: #d44513;
 }
-/* line 10, ../../sass/app_page/_chat.sass */
-#appPage section#messageView .chat .chat-conversation-body {
-  width: 90%;
-  float: right;
-  position: relative;
-  overflow: hidden;
+/* line 9, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .js-chat-toggle {
+  width: 24px;
   height: 40px;
+  cursor: pointer;
+}
+/* line 13, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-conversation-body {
+  width: 290px;
+  position: relative;
+  top: 3px;
+  overflow: hidden;
+  height: 37px;
   background-color: inherit;
   -webkit-transition: height 0.5s;
   -moz-transition: height 0.5s;
   -o-transition: height 0.5s;
   transition: height 0.5s;
 }
-/* line 18, ../../sass/app_page/_chat.sass */
+/* line 21, ../../sass/app_page/_chat.sass */
 #appPage section#messageView .chat .chat-conversation-body.show {
-  height: 500px;
+  margin-left: 24px;
+}
+/* line 23, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .js-chat-toggle, #appPage section#messageView .chat .chat-conversation-body {
+  float: left;
+  top: 3px;
+}
+/* line 26, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .js-chat-toggle.show, #appPage section#messageView .chat .chat-conversation-body.show {
   overflow: auto;
   z-index: 10;
 }
-/* line 22, ../../sass/app_page/_chat.sass */
+/* line 29, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-messages {
+  position: absolute;
+  bottom: 40px;
+}
+/* line 32, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-input {
+  height: 36px;
+  position: absolute;
+  bottom: 0;
+}
+/* line 36, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-input input {
+  width: 240px;
+  height: 30px;
+  margin-left: 6px;
+}
+/* line 40, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-input button {
+  width: 32px;
+  height: 32px;
+}
+/* line 43, ../../sass/app_page/_chat.sass */
 #appPage section#messageView .chat .chat-message {
   text-align: left;
+  padding: 5px;
+  line-height: 1.3em;
 }
-/* line 24, ../../sass/app_page/_chat.sass */
+/* line 47, ../../sass/app_page/_chat.sass */
 #appPage section#messageView .chat .chat-message .chat-message-author {
   display: inline-block;
+}
+/* line 49, ../../sass/app_page/_chat.sass */
+#appPage section#messageView .chat .chat-message .chat-message-text {
+  font-style: italic;
 }
 /* line 40, ../../sass/app_page/_app_page.sass */
 #appPage .header-space {

@@ -1,26 +1,50 @@
 .chat
   display: inline-block
   background-color: $trybesLightGray
-  max-width: 400px
-  min-width: 300px
+  width: 314px
   height: 40px
-  margin: 2px 0
+  margin-top: 3px
   &.active
     background-color: $trybesRed
-  .chat-conversation-body
-    width: 90%
-    float: right
-    position: relative
-    overflow: hidden
+  .js-chat-toggle
+    width: 24px
     height: 40px
+    cursor: pointer
+  .chat-conversation-body
+    width: 290px
+    position: relative
+    top: 3px
+    overflow: hidden
+    height: 37px
     background-color: inherit
     +transition(height 0.5s)
     &.show
-      height: 500px
+      margin-left: 24px
+  .js-chat-toggle, .chat-conversation-body
+    float: left
+    top: 3px
+    &.show
       overflow: auto
       z-index: 10
+  .chat-messages
+    position: absolute
+    bottom: 40px
+  .chat-input
+    height: 36px
+    position: absolute
+    bottom: 0
+    input
+      width: 240px
+      height: 30px
+      margin-left: 6px
+    button
+      width: 32px
+      height: 32px
   .chat-message
     text-align: left
+    padding: 5px
+    line-height: 1.3em
     .chat-message-author
       display: inline-block
     .chat-message-text
+      font-style: italic

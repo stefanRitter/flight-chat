@@ -15,6 +15,7 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#appPage').fadeIn();
+    $('#signupPage, #signinPage').remove();
     switchSection.attachTo('header.main-header li');
     toggleChat.attachTo('.chat');
   }
