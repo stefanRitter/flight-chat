@@ -9,7 +9,6 @@ define(function (require) {
   function toggleChat() {
     this.$chatBody = {};
     this.bodyHeight = 0;
-    this.offsetHeight = 0;
 
     // initialize
     this.after('initialize', function () {
@@ -26,6 +25,7 @@ define(function (require) {
 
       this.on('click touch', function(e) {
         if (!this.$node.hasClass('show')) {
+          var offsetLeft = this.$chatBody.offset().left;
           this.$node.addClass('show').removeClass('active');
           this.$chatBody.css({height: this.height, position: 'fixed'});
         } else {

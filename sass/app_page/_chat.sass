@@ -5,12 +5,12 @@
   height: 40px
   margin-top: 3px
   color: Black
-  position: relative
   +transition(background-color 0.5s)
   &.active
     background-color: $trybesRed
   
   .chat-show-indicator
+    opacity: 1
     position: absolute
     top: 20px - 3px
     left: 12px - 5px
@@ -19,12 +19,12 @@
     border-left: 5px solid transparent
     border-right: 5px solid transparent
     border-top: 5px solid Black
-    +transform(rotate(0))
-    +transition(transform 0.5s)
+
   .js-chat-toggle
     width: 24px
     height: 40px
     cursor: pointer
+    position: relative
   .chat-conversation-body
     width: 290px
     position: relative
@@ -74,6 +74,7 @@
   
   &.show
     background-color: darken($trybesLightGray, 20%)
+    +transform(translateZ(1))
     .chat-conversation-body
       margin-left: 24px
     .js-chat-toggle, .chat-conversation-body
@@ -84,7 +85,7 @@
     .chat-messages
       bottom: 40px
     .chat-show-indicator
-      +transform(rotate(180deg))
+      opacity: 0
 
 
 
