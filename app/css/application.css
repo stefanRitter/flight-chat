@@ -370,7 +370,7 @@ header.main-header ul li.active .arrow-up {
   width: 100%;
   height: 60px;
   margin: 0 auto;
-  border-bottom: 1px solid #a1abb2;
+  border-bottom: 1px solid #222e42;
 }
 /* line 26, ../../sass/app_page/_chat.sass */
 .chat-link img.chat-message-author {
@@ -438,18 +438,25 @@ header.main-header ul li.active .arrow-up {
   width: 25px;
 }
 /* line 69, ../../sass/app_page/_chat.sass */
+.chat button .arrow-right {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 2px;
+  border-left: 10px solid #222e42;
+}
+/* line 74, ../../sass/app_page/_chat.sass */
 .chat button.js-view-link {
   background-color: #d44513;
 }
 
-/* line 72, ../../sass/app_page/_chat.sass */
+/* line 77, ../../sass/app_page/_chat.sass */
 .chat-messages {
   position: absolute;
   bottom: 55px;
   width: 100%;
 }
 
-/* line 77, ../../sass/app_page/_chat.sass */
+/* line 82, ../../sass/app_page/_chat.sass */
 .chat-message {
   width: 80%;
   float: left;
@@ -457,7 +464,7 @@ header.main-header ul li.active .arrow-up {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 83, ../../sass/app_page/_chat.sass */
+/* line 88, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-author {
   display: block;
   height: 30px;
@@ -465,7 +472,7 @@ header.main-header ul li.active .arrow-up {
   border: 5px solid transparent;
   float: left;
 }
-/* line 89, ../../sass/app_page/_chat.sass */
+/* line 94, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-text {
   background-color: #222e42;
   color: white;
@@ -476,16 +483,16 @@ header.main-header ul li.active .arrow-up {
   padding: 5px;
   float: left;
 }
-/* line 98, ../../sass/app_page/_chat.sass */
+/* line 103, ../../sass/app_page/_chat.sass */
 .chat-message.self {
   float: right;
   text-align: right;
 }
-/* line 101, ../../sass/app_page/_chat.sass */
+/* line 106, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-author {
   float: right;
 }
-/* line 103, ../../sass/app_page/_chat.sass */
+/* line 108, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-text {
   float: right;
   color: black;

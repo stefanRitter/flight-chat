@@ -6,6 +6,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     app = express(),
+    chatServer = require('./chat_server/server'),
     errorHandler = require('./routes/error').errorHandler,
     datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
 
@@ -17,7 +18,8 @@ mongoClient.connect(datastoreURI, function(err, db) {
 
   // get session handler
   var SessionHandler = require('./routes/session'),
-      sessionHandler = new SessionHandler(db);
+      sessionHandler = new SessionHandler(db),
+      server = {};
 
   // all environments
   app.set('port', process.env.PORT || 3000);
@@ -51,7 +53,10 @@ mongoClient.connect(datastoreURI, function(err, db) {
   routes(app, db, sessionHandler);
 
   // server
-  http.createServer(app).listen(app.get('port'), function(){
+  server = http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
   });
+
+  // chat server
+  chatServer.listen(server, db);
 });

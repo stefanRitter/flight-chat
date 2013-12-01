@@ -154,7 +154,7 @@
         <form class="chat-input" data-event="dataSendChatMessage">
           <input type="text" name="text" value="" placeholder="Send a message...">
           <input type="hidden" name="chatId" value="">
-          <button type="submit">go</button>
+          <button type="submit"><div class="arrow-right"></div></button>
           <button href="imageUploaderView" class="js-view-link">img</button>
         </form>
       </div>
@@ -173,6 +173,7 @@
       <script src="bower_components/es5-shim/es5-shim.min.js"></script>
       <script src="bower_components/es5-shim/es5-sham.min.js"></script>
     <![endif]-->
+    <script src="/socket.io/socket.io.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
