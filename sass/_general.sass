@@ -20,13 +20,15 @@
   z-index: 1
 
 .app-view
-  position: fixed
+  position: absolute
+  top: 0
+  left: 0
   z-index: 6000
-  @extend %composite-layer
-  +transform(translate(100%, -100%))
+  //@extend %composite-layer
+  +transform(translate(100%, 0))
   +transition(transform 0.3s)
   &.show
-    +transform(translate(0, -100%))
+    +transform(translate(0, 0))
 
 input, button
   +appearance(none)
