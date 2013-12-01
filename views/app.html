@@ -151,9 +151,10 @@
             <div class="chat-message-text">Test, test</div>
           </div>
         </div>
-        <form class="chat-input" data-event="dataSendChatMessage">
+        <form class="chat-input" data-event="dataSendMessage">
           <input type="text" name="text" value="" placeholder="Send a message...">
-          <input type="hidden" name="chatId" value="">
+          <input type="hidden" name="conversationId" value="0">
+          <input type="hidden" name="userId" value="0">
           <button type="submit"><div class="arrow-right"></div></button>
           <button href="imageUploaderView" class="js-view-link">img</button>
         </form>

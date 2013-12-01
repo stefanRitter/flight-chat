@@ -11,7 +11,6 @@ define(function (require) {
 
     this.load = {
       chatView: function() {
-        console.log('chatView');
         $('#chatView').addClass('show');
       },
       imageUploaderView: function() {
@@ -25,7 +24,7 @@ define(function (require) {
     // initialize
     this.after('initialize', function () {
       this.link = this.$node.attr('href');
-      $('#chatView, #imageUploaderView').css({display: 'block'});
+      $('.app-view').css({display: 'block'});
 
       this.on('click touch', function(e) {
         e.preventDefault();

@@ -17,6 +17,7 @@ define(function (require) {
 
     this.triggerSwitch = function () {
       if (this.existingUser) {
+        this.trigger('dataSocketInit');
         this.trigger('uiSwitchPage', {name: 'appPage'});
       } else {
         this.trigger('uiSwitchPage', {name: 'signinPage'});

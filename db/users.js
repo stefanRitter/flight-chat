@@ -22,7 +22,7 @@ function UsersDAO(db) {
         user;
 
     // Create user document
-    user = {'name': name, 'email': email, 'password': passwordHash, verified: false};
+    user = {'name': name, 'email': email, 'password': passwordHash, verified: false, lastLogin: Date.now()};
 
     // persist
     users.insert(user, function (err, result) {
@@ -43,6 +43,7 @@ function UsersDAO(db) {
 
       if (user) {
         if (bcrypt.compareSync(password, user.password)) {
+          // TODO: set last login previousLogin = lastLogin, lastLogin: Date.now(), increment logins
           callback(null, user);
         }
         else {

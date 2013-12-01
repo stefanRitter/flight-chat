@@ -6,7 +6,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     app = express(),
-    chatServer = require('./chat_server/server'),
+    socketioServer = require('./socketio_server/server'),
     errorHandler = require('./routes/error').errorHandler,
     datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
 
@@ -58,5 +58,5 @@ mongoClient.connect(datastoreURI, function(err, db) {
   });
 
   // chat server
-  chatServer.listen(server, db);
+  socketioServer.listen(server, db);
 });

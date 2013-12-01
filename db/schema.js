@@ -13,10 +13,10 @@ db.users.insert({
   buddies: [ 1, 2, 3],
   verified: false,
 
-  created: Date,
-  lastModified: Date,
+  lastUpdated: Date.now(),
   logins: 5,
-  lastLogin: Date
+  lastLogin: Date.now(),
+  previousLogin: this.lastLogin
 });
 db.users.ensureIndex({sports:1});
 db.users.ensureIndex({location:'2d'});
@@ -44,7 +44,8 @@ db.conversations.insert({
     user: 0,
     text: 'hey you',
     img: 'aws/5.jpg'
-  }]
+  }],
+  sockets: []
 });
 db.conversations.enforceIndex({users:1});
 

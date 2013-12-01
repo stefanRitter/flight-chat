@@ -17,7 +17,8 @@ define(function (require) {
     $('.app-page').hide();
     $('#appPage').fadeIn();
     $('#signupPage, #signinPage').remove();
-    
+
+    // ui
     switchSection.attachTo('header.main-header li');
     formSubmit.attachTo('button[type=submit]');
     viewLink.attachTo('.js-view-link');

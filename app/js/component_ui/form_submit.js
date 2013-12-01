@@ -14,7 +14,7 @@ define(function (require) {
     this.$siblings = [];
     this.$form = {};
     this.$error = {};
-    this.buttonText = '';
+    this.buttonHtml = '';
     this.event = '';
     this.active = false;
 
@@ -39,7 +39,7 @@ define(function (require) {
 
     this.reactivateFrom = function(e) {
       this.$siblings.css('opacity', 1);
-      this.$node.html(this.buttonText);
+      this.$node.html(this.buttonHtml);
       this.off('click touch', this.doNothing);
       this.on('click touch', this.submit);
     };
@@ -53,17 +53,26 @@ define(function (require) {
     };
 
 
+    this.processFormReset = function(e) {
+      if (this.active) {
+        this.reactivateFrom(e);
+        this.$form[0].reset();
+      }
+    };
+
+
     // initialize
     this.after('initialize', function () {
       this.$siblings = this.$node.siblings('input');
       this.$form = this.$node.closest('form');
-      this.buttonText = this.$node.text();
+      this.buttonHtml = this.$node.html();
       this.$error = this.$form.find('.error');
       this.event = this.$form.data('event');
 
       this.on('click touch', this.submit);
       this.on('uiFormProcessed', this.reactivateFrom);
       this.on('uiFormError', this.processFormErrors);
+      this.on('uiFormReset', this.processFormReset);
     });
   }
 });
