@@ -19,7 +19,7 @@ define(function (require) {
     $('#signupPage, #signinPage').remove();
     
     switchSection.attachTo('header.main-header li');
-    formSubmit.attachTo('#appPage button[type=submit]');
+    formSubmit.attachTo('button[type=submit]');
     viewLink.attachTo('.js-view-link');
   }
 });

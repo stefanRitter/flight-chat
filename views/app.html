@@ -26,20 +26,48 @@
       <section id="messageView" class="out">
         <div class="header-space"></div>
         <div class="chats">
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
-          <a href="chatView" class="chat-link js-view-link"></a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user1.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Stefan</div>
+            <div class="chat-message-text">Say something here, like whatever</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link active">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
+          <a href="chatView" class="chat-link js-view-link">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-user-name">Jeroen</div>
+            <div class="chat-message-text">Test, test</div>
+            <div class="arrow-right"></div>
+          </a>
         </div>
       </section>
 
@@ -107,32 +135,32 @@
         <div class="header-space"></div>
         <div class="chat-messages">
           <div class="chat-message">
-            <strong class="chat-message-author">Gerhard:</strong>
-            <span class="chat-message-text">Hey</span>
+            <img src="/img/user1.jpg" class="chat-message-author" />
+            <div class="chat-message-text">Hey</div>
+          </div>
+          <div class="chat-message self">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-message-text">Hey, how are you?</div>
           </div>
           <div class="chat-message">
-            <strong class="chat-message-author">Paul:</strong>
-            <span class="chat-message-text">Hey, how are you?</span>
+            <img src="/img/user1.jpg" class="chat-message-author" />
+            <div class="chat-message-text">Bam, this is amazing! Let's write a really long message to see what that looks like</div>
           </div>
-          <div class="chat-message">
-            <strong class="chat-message-author">Gerhard:</strong>
-            <span class="chat-message-text">Bam, this is amazing!</span>
-          </div>
-          <div class="chat-message">
-            <strong class="chat-message-author">Paul:</strong>
-            <span class="chat-message-text">Test, test</span>
+          <div class="chat-message self">
+            <img src="/img/user2.jpg" class="chat-message-author" />
+            <div class="chat-message-text">Test, test</div>
           </div>
         </div>
         <form class="chat-input" data-event="dataSendChatMessage">
-          <input type="text" name="text" value="" placeholder="  Send a message...">
+          <input type="text" name="text" value="" placeholder="Send a message...">
           <input type="hidden" name="chatId" value="">
           <button type="submit">go</button>
-          <button class="js-toggle-image-uploader">img</button>
+          <button href="imageUploaderView" class="js-view-link">img</button>
         </form>
       </div>
       
       <header class="main-header">
-        <a href="back" class="js-view-link">Back</a>
+        <a href="back" class="js-view-link arrow-left"></a>
       </header>
     </div>
 

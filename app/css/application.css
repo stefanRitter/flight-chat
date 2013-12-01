@@ -270,6 +270,24 @@ strong {
   border-top: 10px solid #222e42;
 }
 
+/* line 70, ../../sass/_general.sass */
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #d8d8d9;
+}
+
+/* line 77, ../../sass/_general.sass */
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #d8d8d9;
+}
+
 /* line 2, ../../sass/app_page/_header.sass */
 header.main-header {
   position: fixed;
@@ -319,32 +337,16 @@ header.main-header ul li.active .arrow-up {
   height: 43px;
 }
 
-/* line 2, ../../sass/app_page/_chat.sass */
-.chats, .chat {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto 0 auto;
-}
-
-/* line 7, ../../sass/app_page/_chat.sass */
-.chat-link {
-  display: block;
-  width: 100%;
-  height: 60px;
-  background-color: green;
-  border-top: 1px solid black;
-}
-
-/* line 14, ../../sass/app_page/_chat.sass */
+/* line 1, ../../sass/app_page/_chat.sass */
 #chatView {
   background-color: #222e42;
   text-align: center;
 }
-/* line 17, ../../sass/app_page/_chat.sass */
+/* line 4, ../../sass/app_page/_chat.sass */
 #chatView header {
   z-index: 8000;
 }
-/* line 19, ../../sass/app_page/_chat.sass */
+/* line 6, ../../sass/app_page/_chat.sass */
 #chatView header a {
   text-align: left;
   display: block;
@@ -353,23 +355,141 @@ header.main-header ul li.active .arrow-up {
   margin: 10px 0 0 20px;
 }
 
+/* line 13, ../../sass/app_page/_chat.sass */
+.chats, .chat {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+  background-color: whitesmoke;
+  color: black;
+}
+
+/* line 20, ../../sass/app_page/_chat.sass */
+.chat-link {
+  display: block;
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  border-bottom: 1px solid #a1abb2;
+}
 /* line 26, ../../sass/app_page/_chat.sass */
+.chat-link img.chat-message-author {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+  float: left;
+}
+/* line 32, ../../sass/app_page/_chat.sass */
+.chat-link .chat-user-name, .chat-link .chat-message-text {
+  margin-top: 7px;
+  float: left;
+  width: 76%;
+  text-align: left;
+  overflow: hidden;
+}
+/* line 38, ../../sass/app_page/_chat.sass */
+.chat-link .chat-user-name {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+/* line 41, ../../sass/app_page/_chat.sass */
+.chat-link .chat-message-text {
+  height: 20px;
+}
+/* line 43, ../../sass/app_page/_chat.sass */
+.chat-link .arrow-right {
+  float: right;
+  position: relative;
+  top: -8px;
+  margin-right: 5px;
+}
+/* line 48, ../../sass/app_page/_chat.sass */
+.chat-link.active {
+  background-color: #d44513;
+}
+
+/* line 51, ../../sass/app_page/_chat.sass */
 .chat {
   height: 100%;
   position: relative;
 }
-/* line 29, ../../sass/app_page/_chat.sass */
+/* line 54, ../../sass/app_page/_chat.sass */
 .chat form {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
+}
+/* line 58, ../../sass/app_page/_chat.sass */
+.chat input[type=text] {
+  width: 64%;
+  height: 37px;
+  padding: 1px 10px;
+  border-bottom: 1px black solid;
+}
+/* line 63, ../../sass/app_page/_chat.sass */
+.chat button {
+  width: 40px;
+  height: 40px;
+}
+/* line 66, ../../sass/app_page/_chat.sass */
+.chat button img {
+  margin-top: 3px;
+  width: 25px;
+}
+/* line 69, ../../sass/app_page/_chat.sass */
+.chat button.js-view-link {
+  background-color: #d44513;
 }
 
-/* line 34, ../../sass/app_page/_chat.sass */
+/* line 72, ../../sass/app_page/_chat.sass */
 .chat-messages {
   position: absolute;
-  bottom: 40px;
+  bottom: 55px;
   width: 100%;
+}
+
+/* line 77, ../../sass/app_page/_chat.sass */
+.chat-message {
+  width: 80%;
+  float: left;
+  text-align: left;
+  clear: both;
+  margin-bottom: 10px;
+}
+/* line 83, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-author {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: 5px solid transparent;
+  float: left;
+}
+/* line 89, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-text {
+  background-color: #222e42;
+  color: white;
+  min-height: 20px;
+  max-width: 80%;
+  margin-top: 5px;
+  line-height: 1.3em;
+  padding: 5px;
+  float: left;
+}
+/* line 98, ../../sass/app_page/_chat.sass */
+.chat-message.self {
+  float: right;
+  text-align: right;
+}
+/* line 101, ../../sass/app_page/_chat.sass */
+.chat-message.self .chat-message-author {
+  float: right;
+}
+/* line 103, ../../sass/app_page/_chat.sass */
+.chat-message.self .chat-message-text {
+  float: right;
+  color: black;
+  background-color: #a1abb2;
 }
 
 /* line 1, ../../sass/app_page/_profile.sass */

@@ -1,16 +1,3 @@
-
-.chats, .chat
-  width: 100%
-  max-width: 800px
-  margin: 0 auto 0 auto
-
-.chat-link
-  display: block
-  width: 100%
-  height: 60px
-  background-color: Green
-  border-top: 1px solid Black
-
 #chatView
   background-color: $trybesDarkBlue
   text-align: center
@@ -23,15 +10,99 @@
       font-weight: bold
       margin: 10px 0 0 20px
 
+.chats, .chat
+  width: 100%
+  max-width: 800px
+  margin: 0 auto 0 auto
+  background-color: $trybesLightBackground
+  color: Black
+
+.chat-link
+  display: block
+  width: 100%
+  height: 60px
+  margin: 0 auto
+  border-bottom: 1px solid $trybesGray
+  img.chat-message-author
+    display: block
+    height: 50px
+    width: 50px
+    margin: 5px
+    float: left
+  .chat-user-name, .chat-message-text
+    margin-top: 7px
+    float: left
+    width: 76%
+    text-align: left
+    overflow: hidden
+  .chat-user-name
+    font-size: 1.3em
+    font-weight: 600
+  .chat-message-text
+    height: 20px
+  .arrow-right
+    float: right
+    position: relative
+    top: -8px
+    margin-right: 5px
+  &.active
+    background-color: $trybesRed
+
 .chat
   height: 100%
   position: relative
   form
     width: 100%
     position: absolute
-    bottom: 0
+    bottom: 15px
+  input[type=text]
+    width: 64%
+    height: 37px
+    padding: 1px 10px
+    border-bottom: 1px Black solid
+  button
+    width: 40px
+    height: 40px
+    img
+      margin-top: 3px
+      width: 25px
+    &.js-view-link
+      background-color: $trybesRed
 
 .chat-messages
   position: absolute
-  bottom: 40px
+  bottom: 55px
   width: 100%
+
+.chat-message
+  width: 80%
+  float: left
+  text-align: left
+  clear: both
+  margin-bottom: 10px
+  .chat-message-author
+    display: block
+    height: 30px
+    width: 30px
+    border: 5px solid transparent
+    float: left
+  .chat-message-text
+    background-color: $trybesDarkBlue
+    color: White
+    min-height: 20px
+    max-width: 80%
+    margin-top: 5px
+    line-height: 1.3em
+    padding: 5px
+    float: left
+  &.self
+    float: right
+    text-align: right
+    .chat-message-author
+      float: right
+    .chat-message-text
+      float: right
+      color: Black
+      background-color: $trybesGray
+
+
