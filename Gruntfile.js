@@ -1,9 +1,6 @@
 
 module.exports = function(grunt) {
   'use strict';
-
-  // load all grunt tasks
-  require('load-grunt-tasks')(grunt);
   
   // configuration
   grunt.initConfig({
@@ -12,6 +9,7 @@ module.exports = function(grunt) {
       dist: 'dist'
     },
     pkg: grunt.file.readJSON('package.json'),
+    
     jshint: {
       options: {
         jshintrc: '.jshintrc'
@@ -19,15 +17,51 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/{,*/}*.js',
-        '!<%= yeoman.app %>/js/lib/*',
+        '!<%= yeoman.app %>/js/templates.js',
         'test/spec/{,*/}*.js'
       ]
+    },
+    
+    compass: {
+      dist: {
+        options: {
+          sassDir: 'sass',
+          cssDir: '<%= yeoman.app %>/css'
+        }
+      }
+    },
+
+    hogan: {
+      publish: {
+        options: {
+          prettify: true
+        },
+        files:{
+          '<%= yeoman.app %>/js/templates.js': ['templates/**/*.html']
+        }
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: ['<%= yeoman.app %>/js/{,*/}*.js', '!<%= yeoman.app %>/js/templates.js', 'test/spec/{,*/}*.js'],
+        tasks: ['jshint']
+      },
+      css: {
+        files: 'sass/**/*.sass',
+        tasks: ['compass']
+      },
+      templates: {
+        files: ['templates/**/*.html'],
+        tasks: ['hogan']
+      }
     }
   });
 
   // tasks
-  grunt.registerTask('default', [
-    'jshint'
-  ]);
+  grunt.registerTask('default', ['jshint', 'compass', 'hogan']);
+  grunt.registerTask('watch', ['watch']);
 
+  // load all grunt tasks
+  require('load-grunt-tasks')(grunt);
 };

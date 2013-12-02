@@ -23,6 +23,7 @@ define(function (require) {
       _this.trigger(_this.select('submitButtons'), 'uiFormReset');
     };
 
+
     // initialize
     this.after('initialize', function () {
 
@@ -37,6 +38,7 @@ define(function (require) {
 
       this.on('dataSendMessage', this.emit);
     });
+
 
     // helpers
     function serialize(formData) {

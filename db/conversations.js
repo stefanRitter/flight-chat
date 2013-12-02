@@ -13,12 +13,10 @@ function ConversationsDAO(db) {
 
   var conversations = db.collection('conversations');
 
-  this.put = function(message) {
-    console.log(message.text, message.userId);
-
+  this.put = function(message, socket, callback) {
     var conversation = { isNew: false, id: '0'};
 
-    return conversation;
+    return callback(message, conversation, socket);
   };
 
   this.removeSocket = function(socket) {

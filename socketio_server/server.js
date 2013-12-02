@@ -19,27 +19,8 @@ function listen(server, db) {
 
     socket.on('message', function(message){
       if (verifyMessage(message)) {
-        
-        // get conversation from DB or create a new one and verfiy if this is a correct request
-        var conversation = conversations.put(message, socket),
-            res = {};
-        
-        if (conversation !== null) {
-          
-          if (socket.connectedConversations.indexOf(conversation.id) === -1) {
-            socket.connectedConversations.push(conversation.id);
-            socket.join(conversation.id);
-          }
-          
-          res = {
-            conversationId: conversation.id,
-            text: message.text,
-            user: message.userId,
-            isNew: conversation.isNew
-          };
-          socket.broadcast.to(conversation.id).emit('message', res);
-          socket.emit('message', res);
-        }
+        // get conversation from DB and handle it
+        var conversation = conversations.put(message, socket, handleMessage);
       }
     });
 
@@ -52,6 +33,26 @@ function listen(server, db) {
       }
     });
   });
+}
+
+function handleMessage(message, conversation, socket) {
+  'use strict';
+
+  if (conversation !== null) {
+    if (socket.connectedConversations.indexOf(conversation.id) === -1) {
+      socket.connectedConversations.push(conversation.id);
+      socket.join(conversation.id);
+    }
+    
+    var res = {
+      conversationId: conversation.id,
+      text: message.text,
+      user: message.userId,
+      isNew: conversation.isNew
+    };
+    socket.broadcast.to(conversation.id).emit('message', res);
+    socket.emit('message', res);
+  }
 }
 
 function verifyMessage(message) {
