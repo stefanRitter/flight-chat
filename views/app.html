@@ -26,7 +26,7 @@
       <section id="messageView" class="out">
         <div class="header-space"></div>
         <div class="chats" id="chats">
-          <a href="chatView" class="chat-link js-view-link" data-conversationId="">
+          <a href="chatView" class="chat-link js-view-link" data-conversationid="0" data-userid="0">
             <img src="/img/user2.jpg" class="chat-message-author" />
             <div class="chat-user-name">Jeroen</div>
             <div class="chat-message-text">Test, test</div>
@@ -94,39 +94,7 @@
     </div>
 
 
-    <div id="chatView" class="app-view">
-      <div class="chat">
-        <div class="header-space"></div>
-        <div class="chat-messages">
-          <div class="chat-message">
-            <img src="/img/user1.jpg" class="chat-message-author" />
-            <div class="chat-message-text">Hey</div>
-          </div>
-          <div class="chat-message self">
-            <img src="/img/user2.jpg" class="chat-message-author" />
-            <div class="chat-message-text">Hey, how are you?</div>
-          </div>
-          <div class="chat-message">
-            <img src="/img/user1.jpg" class="chat-message-author" />
-            <div class="chat-message-text">Bam, this is amazing! Let's write a really long message to see what that looks like</div>
-          </div>
-          <div class="chat-message self">
-            <img src="/img/user2.jpg" class="chat-message-author" />
-            <div class="chat-message-text">Test, test</div>
-          </div>
-        </div>
-        <form class="chat-input" data-event="dataSendMessage">
-          <input type="text" name="text" value="" placeholder="Send a message...">
-          <input type="hidden" name="conversationId" value="0">
-          <input type="hidden" name="userId" value="0">
-          <button type="submit"><div class="arrow-right"></div></button>
-          <button href="imageUploaderView" class="js-view-link">img</button>
-        </form>
-      </div>
-      
-      <header class="main-header">
-        <a href="back" class="js-view-link arrow-left"></a>
-      </header>
+    <div id="app-view">
     </div>
 
 
@@ -140,6 +108,7 @@
     <![endif]-->
     <script src="/socket.io/socket.io.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/hogan/hogan.js"></script>
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
   </body>

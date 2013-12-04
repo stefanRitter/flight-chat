@@ -34,7 +34,8 @@ module.exports = function(grunt) {
     hogan: {
       publish: {
         options: {
-          prettify: true
+          prettify: true,
+          amdWrapper: true
         },
         files:{
           '<%= yeoman.app %>/js/templates.js': ['templates/**/*.html']

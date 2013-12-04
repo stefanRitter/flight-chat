@@ -6,7 +6,7 @@ define(function (require) {
       loader = new Image();
 
   loader.className = 'animRotateRound';
-  loader.src = '/img/spinner-white.png';
+  loader.src = 'img/spinner-white.png';
 
   return defineComponent(formSubmit);
 

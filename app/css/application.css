@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -171,7 +171,7 @@ header.main-header, #appPage section {
 #firstLoad {
   z-index: 7000;
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
 }
 /* line 10, ../../sass/_general.sass */
@@ -182,7 +182,7 @@ header.main-header, #appPage section {
 }
 
 /* line 15, ../../sass/_general.sass */
-.app-page, .app-view {
+.app-page, #app-view {
   width: 100%;
   height: 100%;
   display: none;
@@ -191,7 +191,7 @@ header.main-header, #appPage section {
 }
 
 /* line 22, ../../sass/_general.sass */
-.app-view {
+#app-view {
   position: absolute;
   top: 0;
   left: 0;
@@ -205,17 +205,32 @@ header.main-header, #appPage section {
   -moz-transition: -moz-transform 0.3s;
   -o-transition: -o-transform 0.3s;
   transition: transform 0.3s;
+  background-color: #222e42;
+  text-align: center;
+  display: none;
 }
-/* line 30, ../../sass/_general.sass */
-.app-view.show {
+/* line 33, ../../sass/_general.sass */
+#app-view.show {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+/* line 35, ../../sass/_general.sass */
+#app-view header {
+  z-index: 8000;
+}
+/* line 37, ../../sass/_general.sass */
+#app-view header a {
+  text-align: left;
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin: 10px 0 0 20px;
+}
 
-/* line 33, ../../sass/_general.sass */
+/* line 44, ../../sass/_general.sass */
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -224,35 +239,35 @@ input, button {
   vertical-align: bottom;
 }
 
-/* line 38, ../../sass/_general.sass */
+/* line 49, ../../sass/_general.sass */
 button {
   cursor: pointer;
 }
 
-/* line 41, ../../sass/_general.sass */
+/* line 52, ../../sass/_general.sass */
 a {
   color: #222e42;
   text-decoration: none;
 }
-/* line 44, ../../sass/_general.sass */
+/* line 55, ../../sass/_general.sass */
 a.white-link {
   color: white;
   border-bottom: 3px white solid;
 }
 
-/* line 48, ../../sass/_general.sass */
+/* line 59, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 51, ../../sass/_general.sass */
+/* line 62, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 56, ../../sass/_general.sass */
+/* line 67, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -261,7 +276,7 @@ strong {
   border-bottom: 10px solid #222e42;
 }
 
-/* line 63, ../../sass/_general.sass */
+/* line 74, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
@@ -270,7 +285,7 @@ strong {
   border-top: 10px solid #222e42;
 }
 
-/* line 70, ../../sass/_general.sass */
+/* line 81, ../../sass/_general.sass */
 .arrow-right {
   width: 0;
   height: 0;
@@ -279,7 +294,7 @@ strong {
   border-left: 10px solid #d8d8d9;
 }
 
-/* line 77, ../../sass/_general.sass */
+/* line 88, ../../sass/_general.sass */
 .arrow-left {
   width: 0;
   height: 0;
@@ -338,24 +353,6 @@ header.main-header ul li.active .arrow-up {
 }
 
 /* line 1, ../../sass/app_page/_chat.sass */
-#chatView {
-  background-color: #222e42;
-  text-align: center;
-}
-/* line 4, ../../sass/app_page/_chat.sass */
-#chatView header {
-  z-index: 8000;
-}
-/* line 6, ../../sass/app_page/_chat.sass */
-#chatView header a {
-  text-align: left;
-  display: block;
-  color: white;
-  font-weight: bold;
-  margin: 10px 0 0 20px;
-}
-
-/* line 13, ../../sass/app_page/_chat.sass */
 .chats, .chat {
   width: 100%;
   max-width: 800px;
@@ -364,7 +361,7 @@ header.main-header ul li.active .arrow-up {
   color: black;
 }
 
-/* line 20, ../../sass/app_page/_chat.sass */
+/* line 8, ../../sass/app_page/_chat.sass */
 .chat-link {
   display: block;
   width: 100%;
@@ -372,7 +369,7 @@ header.main-header ul li.active .arrow-up {
   margin: 0 auto;
   border-bottom: 1px solid #222e42;
 }
-/* line 26, ../../sass/app_page/_chat.sass */
+/* line 14, ../../sass/app_page/_chat.sass */
 .chat-link img.chat-message-author {
   display: block;
   height: 50px;
@@ -380,7 +377,7 @@ header.main-header ul li.active .arrow-up {
   margin: 5px;
   float: left;
 }
-/* line 32, ../../sass/app_page/_chat.sass */
+/* line 20, ../../sass/app_page/_chat.sass */
 .chat-link .chat-user-name, .chat-link .chat-message-text {
   margin-top: 7px;
   float: left;
@@ -388,75 +385,75 @@ header.main-header ul li.active .arrow-up {
   text-align: left;
   overflow: hidden;
 }
-/* line 38, ../../sass/app_page/_chat.sass */
+/* line 26, ../../sass/app_page/_chat.sass */
 .chat-link .chat-user-name {
   font-size: 1.3em;
   font-weight: 600;
 }
-/* line 41, ../../sass/app_page/_chat.sass */
+/* line 29, ../../sass/app_page/_chat.sass */
 .chat-link .chat-message-text {
   height: 20px;
 }
-/* line 43, ../../sass/app_page/_chat.sass */
+/* line 31, ../../sass/app_page/_chat.sass */
 .chat-link .arrow-right {
   float: right;
   position: relative;
   top: -8px;
   margin-right: 5px;
 }
-/* line 48, ../../sass/app_page/_chat.sass */
+/* line 36, ../../sass/app_page/_chat.sass */
 .chat-link.active {
   background-color: #d44513;
 }
 
-/* line 51, ../../sass/app_page/_chat.sass */
+/* line 39, ../../sass/app_page/_chat.sass */
 .chat {
   height: 100%;
   position: relative;
 }
-/* line 54, ../../sass/app_page/_chat.sass */
+/* line 42, ../../sass/app_page/_chat.sass */
 .chat form {
   width: 100%;
   position: absolute;
   bottom: 15px;
 }
-/* line 58, ../../sass/app_page/_chat.sass */
+/* line 46, ../../sass/app_page/_chat.sass */
 .chat input[type=text] {
   width: 64%;
   height: 37px;
   padding: 1px 10px;
   border-bottom: 1px black solid;
 }
-/* line 63, ../../sass/app_page/_chat.sass */
+/* line 51, ../../sass/app_page/_chat.sass */
 .chat button {
   width: 40px;
   height: 40px;
 }
-/* line 66, ../../sass/app_page/_chat.sass */
+/* line 54, ../../sass/app_page/_chat.sass */
 .chat button img {
   margin-top: 3px;
   width: 25px;
 }
-/* line 69, ../../sass/app_page/_chat.sass */
+/* line 57, ../../sass/app_page/_chat.sass */
 .chat button .arrow-right {
   display: inline-block;
   margin-top: 2px;
   margin-left: 2px;
   border-left: 10px solid #222e42;
 }
-/* line 74, ../../sass/app_page/_chat.sass */
+/* line 62, ../../sass/app_page/_chat.sass */
 .chat button.js-view-link {
   background-color: #d44513;
 }
 
-/* line 77, ../../sass/app_page/_chat.sass */
+/* line 65, ../../sass/app_page/_chat.sass */
 .chat-messages {
   position: absolute;
   bottom: 55px;
   width: 100%;
 }
 
-/* line 82, ../../sass/app_page/_chat.sass */
+/* line 70, ../../sass/app_page/_chat.sass */
 .chat-message {
   width: 80%;
   float: left;
@@ -464,7 +461,7 @@ header.main-header ul li.active .arrow-up {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 88, ../../sass/app_page/_chat.sass */
+/* line 76, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-author {
   display: block;
   height: 30px;
@@ -472,7 +469,7 @@ header.main-header ul li.active .arrow-up {
   border: 5px solid transparent;
   float: left;
 }
-/* line 94, ../../sass/app_page/_chat.sass */
+/* line 82, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-text {
   background-color: #222e42;
   color: white;
@@ -483,16 +480,16 @@ header.main-header ul li.active .arrow-up {
   padding: 5px;
   float: left;
 }
-/* line 103, ../../sass/app_page/_chat.sass */
+/* line 91, ../../sass/app_page/_chat.sass */
 .chat-message.self {
   float: right;
   text-align: right;
 }
-/* line 106, ../../sass/app_page/_chat.sass */
+/* line 94, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-author {
   float: right;
 }
-/* line 108, ../../sass/app_page/_chat.sass */
+/* line 96, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-text {
   float: right;
   color: black;
