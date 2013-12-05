@@ -3,31 +3,29 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      templates = require('js/templates'),
-      formSubmit = require('component_ui/form_submit');
+      viewChat = require('component_ui/view_chat');
 
   return defineComponent(viewLink);
 
   function viewLink() {
-    var _this = this;
 
     this.defaultAttrs({
-      linkSelector: '.js-view-link'
+      linkSelector: '.js-view-link',
+      appView: '#app-view'
     });
 
     this.load = {
       chatView: function($link) {
-        var userId = $link.data('userid'),
-            conversationId = $link.data('conversationid'),
-            template = templates['templates/chat_view.html'].render({userId: userId, conversationId: conversationId});
-
-        $('#app-view').html(template).addClass('show');
-        formSubmit.attachTo('#app-view button[type=submit]');
+        viewChat.attachTo('#app-view', {
+          userId: $link.data('userid'),
+          conversationId: $link.data('conversationid')
+        });
       },
       imageUploaderView: function($link) {
         console.error('imageUploaderView not implemted yet');
       },
-      back: function() {
+      back: function($link, self) {
+        self.trigger(self.select('appView'), 'uiDestroyView', {});
         $('#app-view').removeClass('show');
       }
     };
@@ -35,7 +33,7 @@ define(function (require) {
     this.handleClick = function(e) {
       e.preventDefault();
       var $link = $(e.target).closest('.js-view-link');
-      _this.load[$link.attr('href')]($link);
+      this.load[$link.attr('href')]($link, this);
     };
 
     // initialize

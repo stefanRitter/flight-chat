@@ -15,7 +15,7 @@ define(function (require) {
     this.socket = {};
 
     this.emit = function(e, data) {
-      this.socket.emit('message', serialize(data.formData));
+      this.socket.emit('message', data);
     };
 
     this.receiveMessage = function (message, _this) {
@@ -38,15 +38,5 @@ define(function (require) {
 
       this.on('dataSendMessage', this.emit);
     });
-
-
-    // helpers
-    function serialize(formData) {
-      var data = {};
-      for(var i = 0, len = formData.length; i < len; ++i) {
-        data[formData[i].name] = formData[i].value;
-      }
-      return data;
-    }
   }
 });

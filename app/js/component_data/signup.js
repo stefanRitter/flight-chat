@@ -5,9 +5,9 @@ define(function (require) {
   var defineComponent = require('flight/lib/component'),
       __DOMAIN = require('component_data/domain');
 
-  return defineComponent(authenicate);
+  return defineComponent(signup);
 
-  function authenicate() {
+  function signup() {
     // attributes
     this.defaultAttrs({
       submitButtons: 'input[type=submit], button[type=submit]'
