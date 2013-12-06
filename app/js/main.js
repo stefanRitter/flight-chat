@@ -6,6 +6,7 @@ requirejs.config({
     'flight': 'bower_components/flight',
     'component_ui': 'js/component_ui',
     'component_data': 'js/component_data',
+    'mixin': 'js/mixin',
     'page': 'js/page'
   }
 });

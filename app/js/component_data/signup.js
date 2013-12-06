@@ -3,9 +3,10 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain');
+      __DOMAIN = require('component_data/domain'),
+      withValidateEmail = require('mixin/with_validate_email');
 
-  return defineComponent(signup);
+  return defineComponent(signup, withValidateEmail);
 
   function signup() {
     // attributes
@@ -23,7 +24,7 @@ define(function (require) {
       if (name === '') {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'please pick a user name'});
       }
-      if (!validateEmail(email)) {
+      if (!this.validateEmail(email)) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid email'});
       }
       if (password === '') {
@@ -39,6 +40,7 @@ define(function (require) {
           return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: data.error});
         }
         _this.trigger('uiSwitchPage', {name: 'appPage'});
+        _this.trigger('uiFormProcessed');
       }).fail(function(err){
         _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
       });
@@ -49,11 +51,5 @@ define(function (require) {
     this.after('initialize', function () {
       this.on('dataSignup', this.signupUser);
     });
-
-
-    // helpers
-    function validateEmail(email) {
-      return email.match(/^[\S]+@[\S]+\.[\S]+$/);
-    }
   }
 });

@@ -5,7 +5,6 @@ define(function (require) {
   // dependencies
   var switchPage = require('component_ui/switch_page'),
       authenticate = require('component_data/authenticate_user'),
-      socketio = require('component_data/socketio_com'),
       formSubmit = require('component_ui/form_submit');
 
 
@@ -18,7 +17,6 @@ define(function (require) {
     $('#firstLoad').remove();
     switchPage.attachTo(document);
     authenticate.attachTo(document);
-    socketio.attachTo(document);
     formSubmit.attachTo(document);
   }
 });

@@ -15,6 +15,8 @@ define(function (require) {
 
       this.on('click touch', function(e) {
         e.preventDefault();
+        e.stopPropagation();
+
         this.trigger('uiSwitchPage', {name: this.link} );
       });
     });

@@ -3,9 +3,10 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain');
+      __DOMAIN = require('component_data/domain'),
+      withValidateEmail = require('mixin/with_validate_email');
 
-  return defineComponent(authenicate);
+  return defineComponent(authenicate, withValidateEmail);
 
   function authenicate() {
     // attributes
@@ -17,7 +18,6 @@ define(function (require) {
 
     this.triggerSwitch = function () {
       if (this.existingUser) {
-        this.trigger('dataSocketInit');
         this.trigger('uiSwitchPage', {name: 'appPage'});
       } else {
         this.trigger('uiSwitchPage', {name: 'signinPage'});
@@ -51,7 +51,7 @@ define(function (require) {
       // reset
       this.existingUser = false;
       
-      if (!validateEmail(email)) {
+      if (!this.validateEmail(email)) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid email'});
       }
       if (password === '') {
@@ -74,6 +74,7 @@ define(function (require) {
           _this.existingUser = true;
         }
         _this.triggerSwitch();
+        _this.trigger('uiFormProcessed');
 
       }).fail(function(err){
         _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
@@ -86,11 +87,5 @@ define(function (require) {
       this.on('dataUserLogin', this.authenticateUser);
       this.isAuthenticatedUser();
     });
-
-
-    // helpers
-    function validateEmail(email) {
-      return email.match(/^[\S]+@[\S]+\.[\S]+$/);
-    }
   }
 });

@@ -35,6 +35,9 @@ define(function (require) {
       });
 
       this.on('dataEmitMessage', this.emit);
+
+      // start connection
+      this.trigger('dataSocketInit');
     });
   }
 });
