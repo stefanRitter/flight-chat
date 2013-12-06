@@ -8,10 +8,7 @@ define(function (require) {
   return defineComponent(socketioCom);
 
   function socketioCom() {
-    // attributes
-    this.defaultAttrs({
-      submitButtons: 'input[type=submit], button[type=submit]'
-    });
+
     this.socket = {};
 
 

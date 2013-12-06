@@ -8,10 +8,7 @@ define(function (require) {
   return defineComponent(conversations);
 
   function conversations() {
-    // attributes
-    this.defaultAttrs({
-      
-    });
+
     this.activeConversations = {};
 
 
