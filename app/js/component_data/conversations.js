@@ -9,7 +9,9 @@ define(function (require) {
 
   function conversations() {
     // attributes
-    this.defaultAttrs({ });
+    this.defaultAttrs({
+      
+    });
     this.activeConversations = {};
 
 

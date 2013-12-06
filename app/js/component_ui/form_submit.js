@@ -16,7 +16,7 @@ define(function (require) {
     this.$form = [];
     this.$error = [];
     this.buttonHtml = '';
-    this.event = '';
+    this.eventName = '';
     this.active = false;
 
     this.defaultAttrs({
@@ -27,12 +27,11 @@ define(function (require) {
       e.preventDefault();
 
       this.$button = $(e.target).closest('button[type=submit]');
-      console.log(this.$button);
       this.$siblings = this.$button.siblings('input');
       this.$form = this.$button.closest('form');
       this.buttonHtml = this.$button.html();
       this.$error = this.$form.find('.error');
-      this.event = this.$form.data('event');
+      this.eventName = this.$form.data('event');
 
       this.off('click touch', this.submit);
       this.on('click touch', this.doNothing);
@@ -41,7 +40,7 @@ define(function (require) {
       this.$siblings.css('opacity', 0.6);
       
       var data = this.$form.serializeArray();
-      this.trigger(this.event, {formData: data});
+      this.trigger(this.eventName, {formData: data});
     };
 
 
@@ -72,9 +71,7 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
-      this.on('click touch', {
-        buttonSelector: this.submit
-      });
+      this.on('click touch', { buttonSelector: this.submit });
       this.on('uiFormProcessed', this.reactivateForm);
       this.on('uiFormError', this.processFormErrors);
       this.on('uiFormReset', this.processFormReset);
