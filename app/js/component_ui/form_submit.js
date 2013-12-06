@@ -11,20 +11,33 @@ define(function (require) {
   return defineComponent(formSubmit);
 
   function formSubmit() {
+    this.$button = [];
     this.$siblings = [];
-    this.$form = {};
-    this.$error = {};
+    this.$form = [];
+    this.$error = [];
     this.buttonHtml = '';
     this.event = '';
     this.active = false;
 
+    this.defaultAttrs({
+      buttonSelector: 'button[type=submit]'
+    });
+
     this.submit = function(e) {
       e.preventDefault();
+
+      this.$button = $(e.target).closest('button[type=submit]');
+      console.log(this.$button);
+      this.$siblings = this.$button.siblings('input');
+      this.$form = this.$button.closest('form');
+      this.buttonHtml = this.$button.html();
+      this.$error = this.$form.find('.error');
+      this.event = this.$form.data('event');
+
       this.off('click touch', this.submit);
       this.on('click touch', this.doNothing);
-      this.active = true;
 
-      this.$node.html(loader);
+      this.$button.html(loader);
       this.$siblings.css('opacity', 0.6);
       
       var data = this.$form.serializeArray();
@@ -37,40 +50,32 @@ define(function (require) {
     };
 
 
-    this.reactivateFrom = function(e) {
+    this.reactivateForm = function(e) {
       this.$siblings.css('opacity', 1);
-      this.$node.html(this.buttonHtml);
+      this.$button.html(this.buttonHtml);
       this.off('click touch', this.doNothing);
       this.on('click touch', this.submit);
     };
 
 
     this.processFormErrors = function(e, error) {
-      if (this.active) {
-        this.reactivateFrom(e);
-        this.$error.text(error.error);
-      }
+      this.reactivateForm(e);
+      this.$error.text(error.error);
     };
 
 
     this.processFormReset = function(e) {
-      if (this.active) {
-        this.reactivateFrom(e);
-        this.$form[0].reset();
-      }
+      this.reactivateForm(e);
+      this.$form[0].reset();
     };
 
 
     // initialize
     this.after('initialize', function () {
-      this.$siblings = this.$node.siblings('input');
-      this.$form = this.$node.closest('form');
-      this.buttonHtml = this.$node.html();
-      this.$error = this.$form.find('.error');
-      this.event = this.$form.data('event');
-
-      this.on('click touch', this.submit);
-      this.on('uiFormProcessed', this.reactivateFrom);
+      this.on('click touch', {
+        buttonSelector: this.submit
+      });
+      this.on('uiFormProcessed', this.reactivateForm);
       this.on('uiFormError', this.processFormErrors);
       this.on('uiFormReset', this.processFormReset);
     });

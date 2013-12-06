@@ -5,7 +5,6 @@ define(function (require) {
   // dependencies
   var switchSection = require('component_ui/switch_section'),
       viewLink = require('component_ui/view_link'),
-      formSubmit = require('component_ui/form_submit'),
       conversations = require('component_data/conversations');
 
 
@@ -24,7 +23,6 @@ define(function (require) {
 
     // ui
     switchSection.attachTo('header.main-header li');
-    formSubmit.attachTo('button[type=submit]');
     viewLink.attachTo(document);
   }
 });

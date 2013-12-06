@@ -8,9 +8,9 @@ define(function (require) {
 
   function switchSection () {
     // attributes
-    this.$self = null;
-    this.$nav = null;
-    this.$sections = null;
+    this.$self = [];
+    this.$nav = [];
+    this.$sections = [];
 
     // initialize
     this.after('initialize', function () {

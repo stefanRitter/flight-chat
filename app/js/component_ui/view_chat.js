@@ -3,8 +3,7 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      templates = require('js/templates'),
-      formSubmit = require('component_ui/form_submit');
+      templates = require('js/templates');
 
   return defineComponent(viewLink);
 
@@ -27,7 +26,6 @@ define(function (require) {
           template = templates['templates/chat_view.html'].render({userId: userId, conversationId: conversationId});
 
       this.$node.html(template).addClass('show');
-      formSubmit.attachTo('#app-view button[type=submit]');
 
       this.on('uiDestroyView', this.destroyView);
     });
