@@ -18,6 +18,7 @@ module.exports = function(grunt) {
         'Gruntfile.js',
         '<%= yeoman.app %>/js/{,*/}*.js',
         '!<%= yeoman.app %>/js/templates.js',
+        '!<%= yeoman.app %>/js/component_data/conversations.js',
         'test/spec/{,*/}*.js'
       ]
     },
@@ -45,7 +46,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['<%= yeoman.app %>/js/{,*/}*.js', '!<%= yeoman.app %>/js/templates.js', 'test/spec/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/js/{,*/}*.js', 'test/spec/{,*/}*.js'],
         tasks: ['jshint']
       },
       css: {

@@ -39,18 +39,18 @@ function handleMessage(message, conversation, socket) {
   'use strict';
 
   if (conversation !== null) {
-    if (socket.connectedConversations.indexOf(conversation.id) === -1) {
-      socket.connectedConversations.push(conversation.id);
-      socket.join(conversation.id);
+    if (socket.connectedConversations.indexOf(conversation._id) === -1) {
+      socket.connectedConversations.push(conversation._id);
+      socket.join(conversation._id);
     }
     
     var res = {
-      conversationId: conversation.id,
+      conversationId: conversation._id,
       text: message.text,
       user: message.userId,
-      isNew: conversation.isNew
+      _id: message._id
     };
-    socket.broadcast.to(conversation.id).emit('message', res);
+    socket.broadcast.to(conversation._id).emit('message', res);
     socket.emit('message', res);
   }
 }

@@ -21,7 +21,7 @@ define(function (require) {
 
 
     this.receiveMessage = function (message, _this) {
-      _this.trigger('dataMessageReceived', message);
+      _this.trigger('dataMessageIncoming', message);
     };
 
 

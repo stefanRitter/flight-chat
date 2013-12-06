@@ -17,11 +17,11 @@ define(function (require) {
     this.$error = [];
     this.buttonHtml = '';
     this.eventName = '';
-    this.active = false;
 
     this.defaultAttrs({
       buttonSelector: 'button[type=submit]'
     });
+
 
     this.submit = function(e) {
       e.preventDefault();
