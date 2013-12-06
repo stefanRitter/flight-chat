@@ -14,13 +14,14 @@ define(function (require) {
     });
     this.socket = {};
 
+
     this.emit = function(e, data) {
       this.socket.emit('message', data);
     };
 
+
     this.receiveMessage = function (message, _this) {
-      console.log(message);
-      _this.trigger(_this.select('submitButtons'), 'uiFormReset');
+      _this.trigger('dataMessageReceived', message);
     };
 
 
@@ -36,7 +37,7 @@ define(function (require) {
         });
       });
 
-      this.on('dataSendMessage', this.emit);
+      this.on('dataEmitMessage', this.emit);
     });
   }
 });

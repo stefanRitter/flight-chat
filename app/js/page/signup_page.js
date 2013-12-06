@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var signupHandler = require('component_data/signup'),
-      pageLink = require('component_ui/page_link');
+      linkPage = require('component_ui/link_page');
 
 
   // exports
@@ -15,7 +15,7 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signupPage').fadeIn();
-    pageLink.attachTo('#signupPage .js-page-link');
+    linkPage.attachTo('#signupPage .js-page-link');
     signupHandler.attachTo(document);
   }
 });

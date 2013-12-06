@@ -13,11 +13,6 @@ define(function (require) {
     this.defaultAttrs({
     });
 
-    this.destroyView = function() {
-      console.debug('teard down view');
-      this.teardown();
-    };
-
     // initialize
     this.after('initialize', function () {
 
@@ -27,7 +22,7 @@ define(function (require) {
 
       this.$node.html(template).addClass('show');
 
-      this.on('uiDestroyView', this.destroyView);
+      this.on('uiDestroyView', this.teardown);
     });
   }
 });

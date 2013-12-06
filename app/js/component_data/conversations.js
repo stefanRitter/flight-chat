@@ -15,24 +15,36 @@ define(function (require) {
     this.activeConversations = {};
 
 
-    this.addMessage = function (e, data) {
+    this.pushMessage = function (e, data) {
       var message = serialize(data.formData);
+      this.handleMessage(message);
+      this.trigger('dataEmitMessage', message);
+    };
 
+
+    this.addMessage = function (e, message) {
+      this.handleMessage(message);
+      console.log(message);
+    };
+
+
+    this.handleMessage = function (message) {
       if (this.activeConversations[message.conversationId]) {
         this.activeConversations[message.conversationId].unshift(message);
       } else {
         this.activeConversations[message.conversationId] = [];
         this.activeConversations[message.conversationId].unshift(message);
+        this.trigger('uiNewConversation', message);
       }
-
-      this.trigger('dataSendMessage', message);
     };
 
 
     // initialize
     this.after('initialize', function () {
-      this.on('dataAddMessage', this.addMessage);
+      this.on('dataAddMessage', this.pushMessage);
+      this.on('dataMessageReceived', this.addMessage);
     });
+
 
     // helpers
     function serialize(formData) {

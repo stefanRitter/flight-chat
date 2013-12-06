@@ -4,7 +4,7 @@ define(function (require) {
 
   // dependencies
   var switchSection = require('component_ui/switch_section'),
-      viewLink = require('component_ui/view_link'),
+      linkView = require('component_ui/link_view'),
       conversations = require('component_data/conversations');
 
 
@@ -23,6 +23,6 @@ define(function (require) {
 
     // ui
     switchSection.attachTo('header.main-header li');
-    viewLink.attachTo(document);
+    linkView.attachTo(document);
   }
 });

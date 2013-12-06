@@ -3,7 +3,7 @@ define(function (require) {
   'use strict';
 
   // dependencies
-  var pageLink = require('component_ui/page_link');
+  var linkPage = require('component_ui/link_page');
 
 
   // exports
@@ -14,6 +14,6 @@ define(function (require) {
   function initialize() {
     $('.app-page').hide();
     $('#signinPage').fadeIn();
-    pageLink.attachTo('#signinPage .js-page-link');
+    linkPage.attachTo('#signinPage .js-page-link');
   }
 });
