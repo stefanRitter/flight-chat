@@ -5,7 +5,7 @@ define(function (require) {
   var defineComponent = require('flight/lib/component'),
       withFormDataSerialize = require('mixin/with_form_data_serialize');
 
-  return defineComponent(conversations);
+  return defineComponent(conversations, withFormDataSerialize);
 
   function conversations() {
 
@@ -13,12 +13,11 @@ define(function (require) {
 
 
     this.emitMessage = function (e, data) {
-      var message = serialize(data.formData);
+      var message = this.serialize(data.formData);
       message._id = quickHash(Date.now() + message.userId);
       
       this.handleConversation(message);
       this.activeConversations[message.conversationId][message._id] = message;
-      console.log(this.activeConversations[message.conversationId][message._id]);
       this.trigger('dataEmitMessage', message);
     };
 
@@ -48,14 +47,6 @@ define(function (require) {
         this.trigger('dataNewConversation', message);
       }
     };
-
-    function serialize(formData) {
-      var data = {};
-      for(var i = 0, len = formData.length; i < len; ++i) {
-        data[formData[i].name] = formData[i].value;
-      }
-      return data;
-    }
 
     function quickHash(str) {
       var hash = 0,
