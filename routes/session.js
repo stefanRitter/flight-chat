@@ -77,7 +77,7 @@ function SessionHandler (db) {
       sessions.startSession(user.email, function(err, sessionId) {
         if (err) { return next(err); }
 
-        res.cookie('session', sessionId);
+        res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
         return res.json({userId: user.email});
       });
     });
@@ -108,7 +108,7 @@ function SessionHandler (db) {
         sessions.startSession(user.email, function(err, sessionId) {
           if (err) { return next(err); }
 
-          res.cookie('session', sessionId);
+          res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
           return res.json({userId: user.email});
         });
       });
