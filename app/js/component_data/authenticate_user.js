@@ -3,7 +3,6 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain'),
       withValidateEmail = require('mixin/with_validate_email');
 
   return defineComponent(authenicate, withValidateEmail);
@@ -27,18 +26,19 @@ define(function (require) {
 
     this.isAuthenticatedUser = function (e, user) {
       var _this = this;
-      $.ajax(__DOMAIN + '/app/authenticated', {
-        method: 'GET',
-        statusCode: {
-          401: function() {
-            _this.triggerSwitch();
-          },
-          200: function() {
+      
+      $.ajax(window.__APP.__DOMAIN + '/app/authenticated', {
+        method: 'GET'
+      
+      }).fail(function() {
+          _this.triggerSwitch();
+        }).done(function(data) {
+          if (data.userId) {
             _this.existingUser = true;
-            _this.triggerSwitch();
+            window.__APP.__USERID = data.userId;
           }
-        }
-      });
+          _this.triggerSwitch();
+        });
     };
 
 
@@ -58,7 +58,7 @@ define(function (require) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'missing password'});
       }
 
-      $.ajax(__DOMAIN + '/app/login', {
+      $.ajax(window.__APP.__DOMAIN + '/app/login', {
         method: 'POST',
         data: formData
 
@@ -72,6 +72,7 @@ define(function (require) {
           }
         } else {
           _this.existingUser = true;
+          window.__APP.__USERID = data.userId;
         }
         _this.triggerSwitch();
         _this.trigger('uiFormProcessed');

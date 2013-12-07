@@ -27,7 +27,6 @@ define(function (require) {
       e.stopPropagation();
       
       if (!this.active) {
-        console.log('submit');
         this.$button = $(e.target).closest('button[type=submit]');
         this.$siblings = this.$button.siblings('input');
         this.$form = this.$button.closest('form');

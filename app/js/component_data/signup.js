@@ -3,7 +3,6 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain'),
       withValidateEmail = require('mixin/with_validate_email');
 
   return defineComponent(signup, withValidateEmail);
@@ -32,13 +31,14 @@ define(function (require) {
       }
 
 
-      $.ajax(__DOMAIN + '/app/signup', {
+      $.ajax(window.__APP.__DOMAIN + '/app/signup', {
         method: 'POST',
         data: formData
       }).done(function(data) {
         if (data.error) {
           return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: data.error});
         }
+        window.__APP.__USERID = data.userId;
         _this.trigger('uiSwitchPage', {name: 'appPage'});
         _this.trigger('uiFormProcessed');
       }).fail(function(err){

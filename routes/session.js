@@ -39,7 +39,7 @@ function SessionHandler (db) {
   
   this.isAuthenticated = function(req, res, next) {
     if (req.email) {
-      res.send(200);
+      res.status(200).json({userId: req.email});
     } else {
       res.send(401);
     }
@@ -78,7 +78,7 @@ function SessionHandler (db) {
         if (err) { return next(err); }
 
         res.cookie('session', sessionId);
-        return res.json({});
+        return res.json({userId: user.email});
       });
     });
   };
@@ -109,7 +109,7 @@ function SessionHandler (db) {
           if (err) { return next(err); }
 
           res.cookie('session', sessionId);
-          return res.json({user: user});
+          return res.json({userId: user.email});
         });
       });
     } else {

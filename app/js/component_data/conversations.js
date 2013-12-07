@@ -3,7 +3,7 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain');
+      withFormDataSerialize = require('mixin/with_form_data_serialize');
 
   return defineComponent(conversations);
 

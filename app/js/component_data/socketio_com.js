@@ -2,8 +2,7 @@
 define(function (require) {
   'use strict';
 
-  var defineComponent = require('flight/lib/component'),
-      __DOMAIN = require('component_data/domain');
+  var defineComponent = require('flight/lib/component');
 
   return defineComponent(socketioCom);
 

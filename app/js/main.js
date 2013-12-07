@@ -26,6 +26,9 @@ require(
 
     window.FastClick.attach(document.body);
 
+    window.__APP = {};
+    window.__APP.__DOMAIN = '';
+
     require(['page/default'], function(initializePage) {
       initializePage();
     });
