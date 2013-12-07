@@ -24,8 +24,6 @@ require(
     debug.enable(true);
     compose.mixin(registry, [advice.withAdvice, withLogging]);
 
-    window.FastClick.attach(document.body);
-
     window.__APP = {};
     window.__APP.__DOMAIN = '';
 
