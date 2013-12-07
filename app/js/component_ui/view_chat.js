@@ -14,12 +14,14 @@ define(function (require) {
 
     this.sendMessage = function (e, message) {
       this.pushMessage(message, 'self', true);
+      this.scroll();
       this.trigger('uiFormProcessed');
     };
 
 
     this.receiveMessage = function (e, message) {
       this.pushMessage(message, '', false);
+      this.scroll();
       this.trigger('uiConversationSeen', {conversationId: message.conversationId});
     };
 
@@ -46,6 +48,8 @@ define(function (require) {
           _this.pushMessage(message, self, false);
         }
       }
+
+      this.scroll();
     };
 
 
@@ -79,9 +83,11 @@ define(function (require) {
         notSent: notSent
       });
 
-      this.$chatMessages
-        .append(template)
-        .animate({ scrollTop: this.$chatMessages[0].scrollHeight}, 300);
+      this.$chatMessages.append(template);
+    };
+
+    this.scroll = function () {
+      this.$chatMessages.animate({ scrollTop: this.$chatMessages[0].scrollHeight}, 300);
     };
   }
 });
