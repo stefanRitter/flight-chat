@@ -2,11 +2,7 @@
 define(function (require) {
   'use strict';
 
-  var defineComponent = require('flight/lib/component'),
-      loader = new Image();
-
-  loader.className = 'animRotateRound';
-  loader.src = 'img/spinner-white.png';
+  var defineComponent = require('flight/lib/component');
 
   return defineComponent(formSubmit);
 
@@ -19,6 +15,7 @@ define(function (require) {
     this.buttonHtml = '';
     this.eventName = '';
     this.active = false;
+    this.loader = new Image();
 
     this.defaultAttrs({
       buttonSelector: 'button[type=submit]'
@@ -39,7 +36,7 @@ define(function (require) {
         this.eventName = this.$form.data('event');
         this.active = true;
 
-        this.$button.html(loader);
+        this.$button.html(this.loader);
         this.$siblings.css('opacity', 0.6);
         
         var data = this.$form.serializeArray();
@@ -69,6 +66,9 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
+      this.loader.className = 'animRotateRound';
+      this.loader.src = 'img/spinner-white.png';
+
       this.on('click touch', { buttonSelector: this.submit });
       this.on('uiFormProcessed', this.reactivateForm);
       this.on('uiFormError', this.processFormErrors);
