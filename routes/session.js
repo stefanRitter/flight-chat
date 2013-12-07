@@ -19,7 +19,7 @@ function SessionHandler (db) {
 
     sessions.getUserEmail(sessionId, function(err, email) {
       if (!err && email) {
-        req.email = email;
+        req.user = { _id: 0, imageUrl: 'img/user1.jpg', name: 'Jeroen' };
       }
       return next();
     });
@@ -38,8 +38,8 @@ function SessionHandler (db) {
   };
   
   this.isAuthenticated = function(req, res, next) {
-    if (req.email) {
-      res.status(200).json({userId: req.email});
+    if (req.user) {
+      res.status(200).json({user: req.user});
     } else {
       res.send(401);
     }
@@ -78,7 +78,7 @@ function SessionHandler (db) {
         if (err) { return next(err); }
 
         res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
-        return res.json({userId: user.email});
+        return res.json({user: {_id: user._id, name: user.name, imageUrl: 'img/user1.jpg'}});
       });
     });
   };
@@ -109,7 +109,7 @@ function SessionHandler (db) {
           if (err) { return next(err); }
 
           res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
-          return res.json({userId: user.email});
+          return res.json({user: {_id: user._id, name: user.name, imageUrl: 'img/user1.jpg'}});
         });
       });
     } else {

@@ -38,7 +38,7 @@ define(function (require) {
         if (data.error) {
           return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: data.error});
         }
-        window.__APP.__USERID = data.userId;
+        window.__APP.__USER = data.user;
         _this.trigger('uiSwitchPage', {name: 'appPage'});
         _this.trigger('uiFormProcessed');
       }).fail(function(err){

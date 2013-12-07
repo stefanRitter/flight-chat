@@ -41,7 +41,7 @@ db.conversations.insert({
   _id: 0,
   users: [0,1],
   messages: [ {
-    user: 0,
+    user: {_id: 0, imageUrl: 'aws/234234.jpg', name: 'Jeroen'},
     text: 'hey you',
     img: 'aws/5.jpg'
   }],

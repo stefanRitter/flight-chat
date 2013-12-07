@@ -29,8 +29,12 @@ function listen(server, db) {
       _socket.emit('message', {
         conversationId: '5000',
         text: 'It is now: ' + Date.now(),
-        userId: 'img/user2.jpg',
-        _id: Date.now()
+        _id: Date.now(),
+        user: {
+          _id: 0,
+          imageUrl: 'img/user2.jpg',
+          name: 'Jeroen'
+        }
       });
     },3000);
 
@@ -56,10 +60,15 @@ function handleMessage(message, conversation, socket) {
     
     var res = {
       conversationId: conversation._id,
+      _id: message._id,
       text: message.text,
-      userId: message.userId,
-      _id: message._id
-    };
+      user: {
+          _id: 0,
+          imageUrl: 'img/user2.jpg',
+          name: 'Jeroen'
+        }
+      };
+
     socket.broadcast.to(conversation._id).emit('message', res);
     socket.emit('message', res);
   }

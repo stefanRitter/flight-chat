@@ -561,7 +561,7 @@ header.main-header ul li.active .arrow-up {
   transition: transform 0.5s;
 }
 /* line 22, ../../sass/app_page/_app_page.sass */
-#appPage section#feedView {
+#appPage section#feedSection {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
@@ -570,7 +570,7 @@ header.main-header ul li.active .arrow-up {
   z-index: 1;
 }
 /* line 27, ../../sass/app_page/_app_page.sass */
-#appPage section#profileView {
+#appPage section#profileSection {
   z-index: 2;
   -webkit-transform: translate(0, -100%);
   -moz-transform: translate(0, -100%);
@@ -579,7 +579,7 @@ header.main-header ul li.active .arrow-up {
   transform: translate(0, -100%);
 }
 /* line 30, ../../sass/app_page/_app_page.sass */
-#appPage section#profileView.out {
+#appPage section#profileSection.out {
   -webkit-transform: translate(-100%, -100%);
   -moz-transform: translate(-100%, -100%);
   -ms-transform: translate(-100%, -100%);

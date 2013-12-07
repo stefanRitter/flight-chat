@@ -33,9 +33,9 @@ define(function (require) {
       }).fail(function() {
           _this.triggerSwitch();
         }).done(function(data) {
-          if (data.userId) {
+          if (data.user) {
             _this.existingUser = true;
-            window.__APP.__USERID = data.userId;
+            window.__APP.__USER = data.user;
           }
           _this.triggerSwitch();
         });
@@ -72,7 +72,7 @@ define(function (require) {
           }
         } else {
           _this.existingUser = true;
-          window.__APP.__USERID = data.userId;
+          window.__APP.__USER = data.user;
         }
         _this.triggerSwitch();
         _this.trigger('uiFormProcessed');

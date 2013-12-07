@@ -31,9 +31,8 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
-      var userId = this.attr.userId,
-          conversationId = this.attr.conversationId,
-          template = templates['templates/chat_view.html'].render({userId: userId, conversationId: conversationId});
+      var conversationId = this.attr.conversationId,
+          template = templates['templates/chat_view.html'].render({conversationId: conversationId});
 
       this.$node.html(template).addClass('show');
       this.$chatMessages = $('#chatMessages');
@@ -51,7 +50,7 @@ define(function (require) {
     this.pushMessage = function (message, self, notSent) {
       var template = templates['templates/chat_message.html'].render({
         _id: message._id,
-        userId: message.userId,
+        imageUrl: message.user.imageUrl,
         text: message.text,
         conversationId: message.conversationId,
         self: self,
