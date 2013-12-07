@@ -29,6 +29,26 @@ define(function (require) {
     };
 
 
+    this.loadConversation = function (e, conversation) {
+      var _this = this,
+          self = '',
+          userId = window.__APP.__USER._id,
+          message = {};
+
+      for (message in conversation) {
+        if (conversation.hasOwnProperty(message)) {
+          message = conversation[message];
+          if (message.user._id === userId) {
+            self = 'self';
+          } else {
+            self = '';
+          }
+          _this.pushMessage(message, self, false);
+        }
+      }
+    };
+
+
     // initialize
     this.after('initialize', function () {
       var conversationId = this.attr.conversationId,
@@ -37,11 +57,13 @@ define(function (require) {
       this.$node.html(template).addClass('show');
       this.$chatMessages = $('#chatMessages');
 
+      this.on(document, 'dataConversation', this.loadConversation);
       this.on(document, 'dataEmitMessage', this.sendMessage);
       this.on(document, 'dataMessageSent', this.confirmSend);
       this.on(document, 'dataMessageReceived', this.receiveMessage);
       this.on('uiDestroyView', this.teardown);
 
+      this.trigger('uiNeedsConversation', {conversationId: conversationId});
       this.trigger('uiConversationSeen', {conversationId: conversationId});
     });
 

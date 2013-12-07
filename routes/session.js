@@ -19,7 +19,7 @@ function SessionHandler (db) {
 
     sessions.getUserEmail(sessionId, function(err, email) {
       if (!err && email) {
-        req.user = { _id: 0, imageUrl: 'img/user1.jpg', name: 'Jeroen' };
+        req.user = { _id: 1, imageUrl: 'img/user1.jpg', name: 'Stefan' };
       }
       return next();
     });

@@ -10,7 +10,7 @@ define(function (require) {
 
   function conversations() {
 
-    this.activeConversations = {};
+    this.activeConvs = {};
 
 
     this.emitMessage = function (e, data) {
@@ -19,25 +19,34 @@ define(function (require) {
       message._id = this.quickHash(Date.now() + '_' + message.user._id);
 
       this.handleConversation(message);
-      this.activeConversations[message.conversationId][message._id] = message;
+      this.activeConvs[message.conversationId][message._id] = message;
       this.trigger('dataEmitMessage', message);
     };
 
 
     this.reEmitMessage = function (e, data) {
       var message = this.serialize(data.formData);
-      message = this.activeConversations[message.conversationId][message._id];
+      message = this.activeConvs[message.conversationId][message._id];
       this.trigger('dataEmitMessage', message);
     };
 
 
     this.addMessage = function (e, message) {
       this.handleConversation(message);
-      if (this.activeConversations[message.conversationId][message._id]) {
+      if (this.activeConvs[message.conversationId][message._id]) {
         this.trigger('dataMessageSent', message);
       } else {
-        this.activeConversations[message.conversationId][message._id] = message;
+        this.activeConvs[message.conversationId][message._id] = message;
         this.trigger('dataMessageReceived', message);
+      }
+    };
+
+
+    this.getConversation = function (e, data) {
+      if (this.activeConvs[data.conversationId]) {
+        this.trigger('dataConversation', this.activeConvs[data.conversationId]);
+      } else {
+        // do an ajax call
       }
     };
 
@@ -47,13 +56,14 @@ define(function (require) {
       this.on('uiEmitMessage', this.emitMessage);
       this.on('uiReEmitMessage', this.reEmitMessage);
       this.on('dataMessageIncoming', this.addMessage);
+      this.on('uiNeedsConversation', this.getConversation);
     });
 
 
     // helpers
     this.handleConversation = function (message) {
-      if (!this.activeConversations[message.conversationId]) {
-        this.activeConversations[message.conversationId] = {};
+      if (!this.activeConvs[message.conversationId]) {
+        this.activeConvs[message.conversationId] = {};
         this.trigger('dataNewConversation', message);
       }
     };
