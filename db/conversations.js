@@ -14,7 +14,7 @@ function ConversationsDAO(db) {
   var conversations = db.collection('conversations');
 
   this.put = function(message, socket, callback) {
-    var conversation = { _id: '0'};
+    var conversation = { _id: '5000'};
 
     return callback(message, conversation, socket);
   };

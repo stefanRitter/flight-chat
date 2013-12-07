@@ -7,9 +7,9 @@ define(function (require) {
       signinPage = require('page/signin_page'),
       signupPage = require('page/signup_page');
 
-  return defineComponent(formSubmit);
+  return defineComponent(switchPage);
 
-  function formSubmit() {
+  function switchPage() {
     // attributes
     this.load = {
       'signinPage': signinPage,

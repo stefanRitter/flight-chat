@@ -20,12 +20,12 @@ define(function (require) {
 
     this.receiveMessage = function (e, message) {
       this.pushMessage(message, '', false);
-      this.trigger(this.select(document), 'uiConversationSeen', {conversationId: message.conversationId});
+      this.trigger('uiConversationSeen', {conversationId: message.conversationId});
     };
 
 
     this.confirmSend = function (e, message) {
-      //this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
+      this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
     };
 
 
@@ -43,7 +43,7 @@ define(function (require) {
       this.on(document, 'dataMessageReceived', this.receiveMessage);
       this.on('uiDestroyView', this.teardown);
 
-      this.trigger(this.select(document), 'uiConversationSeen', {conversationId: conversationId});
+      this.trigger('uiConversationSeen', {conversationId: conversationId});
     });
 
 

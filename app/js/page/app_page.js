@@ -6,7 +6,8 @@ define(function (require) {
   var switchSection = require('component_ui/switch_section'),
       linkView = require('component_ui/link_view'),
       socketio = require('component_data/socketio_com'),
-      conversations = require('component_data/conversations');
+      conversations = require('component_data/conversations'),
+      sectionConversations = require('component_ui/section_conversations');
 
 
   // exports
@@ -24,7 +25,8 @@ define(function (require) {
     conversations.attachTo(document);
 
     // ui
-    switchSection.attachTo('header.main-header li');
     linkView.attachTo(document);
+    switchSection.attachTo('header.main-header li');
+    sectionConversations.attachTo('#messageSection');
   }
 });

@@ -587,7 +587,7 @@ header.main-header ul li.active .arrow-up {
   transform: translate(-100%, -100%);
 }
 /* line 34, ../../sass/app_page/_app_page.sass */
-#appPage section#messageView {
+#appPage section#messageSection {
   z-index: 3;
   text-align: center;
   -webkit-transform: translate(0, -200%);
@@ -597,7 +597,7 @@ header.main-header ul li.active .arrow-up {
   transform: translate(0, -200%);
 }
 /* line 38, ../../sass/app_page/_app_page.sass */
-#appPage section#messageView.out {
+#appPage section#messageSection.out {
   -webkit-transform: translate(100%, -200%);
   -moz-transform: translate(100%, -200%);
   -ms-transform: translate(100%, -200%);

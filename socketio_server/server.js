@@ -27,7 +27,7 @@ function listen(server, db) {
     var _socket = socket;
     setInterval(function() {
       _socket.emit('message', {
-        conversationId: 0,
+        conversationId: '5000',
         text: 'It is now: ' + Date.now(),
         userId: 'img/user2.jpg',
         _id: Date.now()

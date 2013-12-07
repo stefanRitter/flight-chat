@@ -18,7 +18,7 @@ define(function (require) {
       chatView: function($link) {
         viewChat.attachTo('#app-view', {
           userId: $link.data('userid'),
-          conversationId: $link.data('conversationid')
+          conversationId: $link.attr('id')
         });
       },
       imageUploaderView: function($link) {
