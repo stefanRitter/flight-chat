@@ -6,7 +6,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     app = express(),
-    socketioServer = require('./socketio_server/server'),
+    socketioServer = require('./socketio_server'),
     errorHandler = require('./routes/error').errorHandler,
     datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
 

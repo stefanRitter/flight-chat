@@ -15,6 +15,12 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
+        'server.js',
+        'socketio_server.js',
+        'Gruntfile.js',
+        'db/{,*/}*.js',
+        'routes/{,*/}*.js',
+        'test/{,*/}*.js',
         '<%= yeoman.app %>/js/{,*/}*.js',
         '!<%= yeoman.app %>/js/templates.js',
         '!<%= yeoman.app %>/js/mixin/with_quick_hash.js'

@@ -1,5 +1,5 @@
 var socketio = require('socket.io'),
-    ConversationsDAO = require('../db/conversations').ConversationsDAO,
+    ConversationsDAO = require('./db/conversations').ConversationsDAO,
     io = {};
 
 module.exports.listen = listen;
