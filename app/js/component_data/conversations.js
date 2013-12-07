@@ -3,9 +3,10 @@ define(function (require) {
   'use strict';
 
   var defineComponent = require('flight/lib/component'),
-      withFormDataSerialize = require('mixin/with_form_data_serialize');
+      withFormDataSerialize = require('mixin/with_form_data_serialize'),
+      withQuickHash = require('mixin/with_quick_hash');
 
-  return defineComponent(conversations, withFormDataSerialize);
+  return defineComponent(conversations, withFormDataSerialize, withQuickHash);
 
   function conversations() {
 
@@ -14,10 +15,17 @@ define(function (require) {
 
     this.emitMessage = function (e, data) {
       var message = this.serialize(data.formData);
-      message._id = quickHash(Date.now() + message.userId);
+      message._id = this.quickHash(Date.now() + '_' + message.userId);
       
       this.handleConversation(message);
       this.activeConversations[message.conversationId][message._id] = message;
+      this.trigger('dataEmitMessage', message);
+    };
+
+
+    this.reEmitMessage = function (e, data) {
+      var message = this.serialize(data.formData);
+      message = this.activeConversations[message.conversationId][message._id];
       this.trigger('dataEmitMessage', message);
     };
 
@@ -36,6 +44,7 @@ define(function (require) {
     // initialize
     this.after('initialize', function () {
       this.on('uiEmitMessage', this.emitMessage);
+      this.on('uiReEmitMessage', this.reEmitMessage);
       this.on('dataMessageIncoming', this.addMessage);
     });
 
@@ -47,19 +56,5 @@ define(function (require) {
         this.trigger('dataNewConversation', message);
       }
     };
-
-    function quickHash(str) {
-      var hash = 0,
-          l = str.length,
-          i, cha;
-      
-      if (l === 0) { return hash; }
-      for (i = 0; i < l; i+=1) {
-        cha = str.charCodeAt(i);
-        hash = ((hash<<5)-hash)+cha;
-        hash |= 0; // Convert to 32bit integer
-      }
-      return hash;
-    }
   }
 });

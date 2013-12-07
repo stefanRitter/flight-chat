@@ -1,8 +1,9 @@
 <div class="chat">
   <div class="chat-messages" id="chatMessages">
+    <div class="header-space"></div>
     <!-- chat_message.html -->
   </div>
-  <form class="chat-input" data-event="uiEmitMessage">
+  <form class="chat-input" data-event="uiEmitMessage" data-reset="true">
     <input type="text" name="text" value="" placeholder="Send a message...">
     <input type="hidden" name="conversationId" value="{{conversationId}}">
     <input type="hidden" name="userId" value="{{userId}}">

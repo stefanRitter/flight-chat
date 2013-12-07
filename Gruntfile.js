@@ -15,9 +15,9 @@ module.exports = function(grunt) {
         jshintrc: '.jshintrc'
       },
       all: [
-        '{,*/}*.js',
+        '<%= yeoman.app %>/js/{,*/}*.js',
         '!<%= yeoman.app %>/js/templates.js',
-        '!<%= yeoman.app %>/js/component_data/conversations.js'
+        '!<%= yeoman.app %>/js/mixin/with_quick_hash.js'
       ]
     },
     
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: ['{,*/}*.js'],
+        files: ['<%= yeoman.app %>/js/{,*/}*.js'],
         tasks: ['jshint']
       },
       css: {

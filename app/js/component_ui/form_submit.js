@@ -40,6 +40,8 @@ define(function (require) {
         
         var data = this.$form.serializeArray();
         this.trigger(this.eventName, {formData: data});
+
+        if (this.$form.data('reset')) { this.$form[0].reset(); }
       }
     };
 

@@ -11,37 +11,21 @@ define(function (require) {
   function viewLink() {
     this.$chatMessages = [];
 
-    this.sendMessage = function (e, message) {
-      var template = templates['templates/chat_message.html'].render({
-        _id: message._id,
-        self: 'self',
-        userId: message.userId,
-        text: message.text,
-        notSent: true
-      });
 
-      this.$chatMessages.append(template);
+    this.sendMessage = function (e, message) {
+      this.pushMessage(message, 'self', true);
       this.trigger('uiFormProcessed');
     };
 
 
     this.receiveMessage = function (e, message) {
-      var template = templates['templates/chat_message.html'].render({
-        _id: message._id,
-        self: '',
-        userId: message.userId,
-        text: message.text,
-        notSent: false
-      });
-
-      this.$chatMessages.append(template);
+      this.pushMessage(message, '', false);
       this.trigger(this.select(document), 'uiConversationSeen', {conversationId: message.conversationId});
     };
 
 
     this.confirmSend = function (e, message) {
-      // remove resend option from sent message
-      this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
+      //this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
     };
 
 
@@ -64,8 +48,19 @@ define(function (require) {
 
 
     // helpers
-    this.showMessage = function (message) {
+    this.pushMessage = function (message, self, notSent) {
+      var template = templates['templates/chat_message.html'].render({
+        _id: message._id,
+        userId: message.userId,
+        text: message.text,
+        conversationId: message.conversationId,
+        self: self,
+        notSent: notSent
+      });
 
+      this.$chatMessages
+        .append(template)
+        .animate({ scrollTop: this.$chatMessages[0].scrollHeight}, 300);
     };
   }
 });

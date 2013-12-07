@@ -3,10 +3,25 @@
   <div class="chat-message-text">{{text}}</div>
   {{#notSent}}
     <div class="chat-message-not-sent">
-      <form class="chat-input" data-event="uiReEmitMessage">
+      <form class="chat-re-emit-input" data-event="uiReEmitMessage">
         <input type="hidden" name="_id" value="{{_id}}">
-        <button type="submit"><div class="arrow-right"></div></button>
+        <input type="hidden" name="conversationId" value="{{conversationId}}">
+        <button type="submit"><img src="img/spinner-white.png" class="animRotateRound"></button>
       </form>
+      
+      <script type="text/javascript">
+        (function() {
+          setTimeout(function(){
+            var $form = $('#'+{{_id}}).find('.chat-re-emit-input');
+            if ($form.length > 0) {
+              $form.find('button').addClass('red').html(
+                '<span class="retry">retry</span>' +
+                '<span class="arrow-right"></span>'
+              );
+            }
+          }, 10000);
+        })();
+      </script>
     </div>
   {{/notSent}}
 </div>

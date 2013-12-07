@@ -413,13 +413,13 @@ header.main-header ul li.active .arrow-up {
   position: relative;
 }
 /* line 42, ../../sass/app_page/_chat.sass */
-.chat form {
+.chat form.chat-input {
   width: 100%;
   position: absolute;
   bottom: 15px;
 }
 /* line 46, ../../sass/app_page/_chat.sass */
-.chat input[type=text] {
+.chat form.chat-input input[type=text] {
   width: 64%;
   height: 37px;
   padding: 1px 10px;
@@ -452,9 +452,15 @@ header.main-header ul li.active .arrow-up {
   position: absolute;
   bottom: 55px;
   width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* line 71, ../../sass/app_page/_chat.sass */
+.chat-messages .header-space {
+  height: 109px;
 }
 
-/* line 70, ../../sass/app_page/_chat.sass */
+/* line 74, ../../sass/app_page/_chat.sass */
 .chat-message {
   width: 80%;
   float: left;
@@ -462,7 +468,7 @@ header.main-header ul li.active .arrow-up {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 76, ../../sass/app_page/_chat.sass */
+/* line 80, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-author {
   display: block;
   height: 30px;
@@ -470,7 +476,7 @@ header.main-header ul li.active .arrow-up {
   border: 5px solid transparent;
   float: left;
 }
-/* line 82, ../../sass/app_page/_chat.sass */
+/* line 86, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-text {
   background-color: #222e42;
   color: white;
@@ -481,16 +487,47 @@ header.main-header ul li.active .arrow-up {
   padding: 5px;
   float: left;
 }
-/* line 91, ../../sass/app_page/_chat.sass */
+/* line 95, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent {
+  float: right;
+}
+/* line 97, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent button {
+  margin-right: 5px;
+  margin-top: 5px;
+  width: 30px;
+  height: 30px;
+}
+/* line 102, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent button.red {
+  width: 55px;
+  background-color: #d44513;
+}
+/* line 105, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent button img {
+  margin-top: 1px;
+  margin-left: -3px;
+}
+/* line 108, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent button span.retry {
+  display: inline-block;
+  position: relative;
+  top: -7px;
+}
+/* line 112, ../../sass/app_page/_chat.sass */
+.chat-message .chat-message-not-sent button span.arrow-right {
+  margin-left: 5px;
+}
+/* line 114, ../../sass/app_page/_chat.sass */
 .chat-message.self {
   float: right;
   text-align: right;
 }
-/* line 94, ../../sass/app_page/_chat.sass */
+/* line 117, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-author {
   float: right;
 }
-/* line 96, ../../sass/app_page/_chat.sass */
+/* line 119, ../../sass/app_page/_chat.sass */
 .chat-message.self .chat-message-text {
   float: right;
   color: black;

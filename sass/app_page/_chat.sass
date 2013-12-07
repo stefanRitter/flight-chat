@@ -39,15 +39,15 @@
 .chat
   height: 100%
   position: relative
-  form
+  form.chat-input
     width: 100%
     position: absolute
     bottom: 15px
-  input[type=text]
-    width: 64%
-    height: 37px
-    padding: 1px 10px
-    border-bottom: 1px Black solid
+    input[type=text]
+      width: 64%
+      height: 37px
+      padding: 1px 10px
+      border-bottom: 1px Black solid
   button
     width: 40px
     height: 40px
@@ -66,6 +66,10 @@
   position: absolute
   bottom: 55px
   width: 100%
+  height: 100%
+  overflow-y: scroll
+  .header-space
+    height: 109px
 
 .chat-message
   width: 80%
@@ -88,6 +92,25 @@
     line-height: 1.3em
     padding: 5px
     float: left
+  .chat-message-not-sent
+    float: right
+    button
+      margin-right: 5px
+      margin-top: 5px
+      width: 30px
+      height: 30px
+      &.red
+        width: 55px
+        background-color: $trybesRed
+      img
+        margin-top: 1px
+        margin-left: -3px
+      span.retry
+        display: inline-block
+        position: relative
+        top: -7px
+      span.arrow-right
+        margin-left: 5px
   &.self
     float: right
     text-align: right
@@ -97,5 +120,3 @@
       float: right
       color: Black
       background-color: $trybesGray
-
-
