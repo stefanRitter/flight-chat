@@ -22,7 +22,15 @@ function UsersDAO(db) {
         user;
 
     // Create user document
-    user = {'name': name, 'email': email, 'password': passwordHash, verified: false, lastLogin: Date.now()};
+    user =
+      {
+        'name': name,
+        'email': email,
+        'password': passwordHash,
+        verified: false,
+        lastLogin: Date.now(),
+        imageUrl: 'img/user.jpg'
+      };
 
     // persist
     users.insert(user, function (err, result) {

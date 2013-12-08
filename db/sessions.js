@@ -15,14 +15,14 @@ function SessionsDAO(db) {
   var sessions = db.collection('sessions');
 
 
-  this.startSession = function(email, callback) {
+  this.startSession = function(user, callback) {
 
     // Generate session id
     var currentDate = (new Date()).valueOf().toString(),
         random = Math.random().toString(),
         sessionId = crypto.createHash('sha1').update(currentDate + random).digest('hex'),
 
-        session = {'email': email, '_id': sessionId};
+        session = {'user': {_id: user._id, name: user.name, imageUrl: user.imageUrl}, '_id': sessionId};
 
     // Insert session document
     sessions.insert(session, function (err, result) {
@@ -39,7 +39,7 @@ function SessionsDAO(db) {
   };
 
 
-  this.getUserEmail = function(sessionId, callback) {
+  this.getUser = function(sessionId, callback) {
 
     if (!sessionId) {
       callback(new Error('Session not set'), null);
@@ -54,7 +54,7 @@ function SessionsDAO(db) {
         return;
       }
 
-      callback(null, session.email);
+      callback(null, session.user);
     });
   };
 }

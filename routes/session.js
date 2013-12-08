@@ -17,9 +17,9 @@ function SessionHandler (db) {
     var sessionId = req.cookies.session;
     console.log('session: ' + sessionId);
 
-    sessions.getUserEmail(sessionId, function(err, email) {
-      if (!err && email) {
-        req.user = { _id: 1, imageUrl: 'img/user1.jpg', name: 'Stefan' };
+    sessions.getUser(sessionId, function(err, user) {
+      if (!err && user) {
+        req.user = user;
       }
       return next();
     });
@@ -74,11 +74,11 @@ function SessionHandler (db) {
         }
       }
 
-      sessions.startSession(user.email, function(err, sessionId) {
+      sessions.startSession(user, function(err, sessionId) {
         if (err) { return next(err); }
 
         res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
-        return res.json({user: {_id: user._id, name: user.name, imageUrl: 'img/user1.jpg'}});
+        return res.json({user: {_id: user._id, name: user.name, imageUrl: user.imageUrl}});
       });
     });
   };
@@ -109,7 +109,7 @@ function SessionHandler (db) {
           if (err) { return next(err); }
 
           res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
-          return res.json({user: {_id: user._id, name: user.name, imageUrl: 'img/user1.jpg'}});
+          return res.json({user: {_id: user._id, name: user.name, imageUrl: user.imageUrl}});
         });
       });
     } else {
