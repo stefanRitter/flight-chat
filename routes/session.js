@@ -105,7 +105,7 @@ function SessionHandler (db) {
           }
         }
 
-        sessions.startSession(user.email, function(err, sessionId) {
+        sessions.startSession(user, function(err, sessionId) {
           if (err) { return next(err); }
 
           res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });

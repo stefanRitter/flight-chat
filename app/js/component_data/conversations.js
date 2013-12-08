@@ -15,12 +15,16 @@ define(function (require) {
 
     this.emitMessage = function (e, data) {
       var message = this.serialize(data.formData);
-      message.user = window.__APP.__USER;
-      message._id = this.quickHash(Date.now() + '_' + message.user._id);
+      if (message.text) {
+        message.user = window.__APP.__USER;
+        message._id = this.quickHash(Date.now() + '_' + message.user._id);
 
-      this.handleConversation(message);
-      this.activeConvs[message.conversationId][message._id] = message;
-      this.trigger('dataEmitMessage', message);
+        this.handleConversation(message);
+        this.activeConvs[message.conversationId][message._id] = message;
+        this.trigger('dataEmitMessage', message);
+      } else {
+        this.trigger('uiFormProcessed');
+      }
     };
 
 
