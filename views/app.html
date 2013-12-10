@@ -12,23 +12,23 @@
   <body>
     
     <div id="appPage" class="app-page">
-      <section id="feedSection">
-        <div class="header-space"></div>
-      </section>
-      
+  
+      <div class="fs-flipsnap">
+        <section id="profileSection" class="out profile">
+          <div class="header-space"></div>
+          <p><a href="/app/logout">Logout</a></p>
+        </section>
+        
+        <section id="feedSection">
+          <div class="header-space"></div>
+        </section>
 
-      <section id="profileSection" class="out profile">
-        <div class="header-space"></div>
-        <p><a href="/app/logout">Logout</a></p>
-      </section>
-      
-
-      <section id="messageSection" class="out">
-        <div class="header-space"></div>
-        <div class="chats" id="chats">
-        </div>
-      </section>
-
+        <section id="messageSection" class="out">
+          <div class="header-space"></div>
+          <div class="chats" id="chats">
+          </div>
+        </section>
+      </div>
 
       <header class="main-header">
         <ul>
@@ -103,6 +103,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/hogan/hogan.js"></script>
+    <script src="bower_components/flipsnap/flipsnap.min.js"></script>
     <script src="bower_components/requirejs/require.js" data-main="js/main.js"></script>
   </body>
 </html>

@@ -14,6 +14,8 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
+      window.Flipsnap('.fs-flipsnap');
+
       this.$self = $(this.$node.data('id'));
       this.$nav = $('header.main-header li');
       this.$sections = $('section');

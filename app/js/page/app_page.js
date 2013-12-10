@@ -3,10 +3,10 @@ define(function (require) {
   'use strict';
 
   // dependencies
-  var switchSection = require('component_ui/switch_section'),
-      linkView = require('component_ui/link_view'),
-      socketio = require('component_data/socketio_com'),
+  var socketio = require('component_data/socketio_com'),
       conversations = require('component_data/conversations'),
+      switchSection = require('component_ui/switch_section'),
+      linkView = require('component_ui/link_view'),
       sectionConversations = require('component_ui/section_conversations');
 
 

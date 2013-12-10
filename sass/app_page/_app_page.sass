@@ -3,37 +3,36 @@
 @import profile
 
 #appPage
+  width: 100%
+  height: 100%
   overflow: hidden
+
+  .fs-flipsnap
+    width: 300%
+    height: 100%
 
   a
     color: inherit
 
   section
     @extend %composite-layer
-    width: 100%
+    float: left
+    width: 33.333%
     height: 100%
     position: relative
     background-color: $trybesDarkBlue
     color: White
     overflow: auto
-    +transition(transform 0.5s)
 
   // feed
   section#feedSection
-    +transform(translate(0,0))
     z-index: 1
 
   // profile
   section#profileSection
     z-index: 2
-    +transform(translate(0,-100%))
-    &.out
-      +transform(translate(-100%,-100%))
 
   // messages
   section#messageSection
     z-index: 3
     text-align: center
-    +transform(translate(0,-200%))
-    &.out
-      +transform(translate(100%,-200%))

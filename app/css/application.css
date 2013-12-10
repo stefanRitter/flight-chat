@@ -541,68 +541,41 @@ header.main-header ul li.active .arrow-up {
 
 /* line 5, ../../sass/app_page/_app_page.sass */
 #appPage {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
-/* line 8, ../../sass/app_page/_app_page.sass */
+/* line 10, ../../sass/app_page/_app_page.sass */
+#appPage .fs-flipsnap {
+  width: 300%;
+  height: 100%;
+}
+/* line 14, ../../sass/app_page/_app_page.sass */
 #appPage a {
   color: inherit;
 }
-/* line 11, ../../sass/app_page/_app_page.sass */
+/* line 17, ../../sass/app_page/_app_page.sass */
 #appPage section {
-  width: 100%;
+  float: left;
+  width: 33.333%;
   height: 100%;
   position: relative;
   background-color: #222e42;
   color: white;
   overflow: auto;
-  -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  -o-transition: -o-transform 0.5s;
-  transition: transform 0.5s;
 }
-/* line 22, ../../sass/app_page/_app_page.sass */
+/* line 28, ../../sass/app_page/_app_page.sass */
 #appPage section#feedSection {
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0);
   z-index: 1;
 }
-/* line 27, ../../sass/app_page/_app_page.sass */
+/* line 32, ../../sass/app_page/_app_page.sass */
 #appPage section#profileSection {
   z-index: 2;
-  -webkit-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  -o-transform: translate(0, -100%);
-  transform: translate(0, -100%);
 }
-/* line 30, ../../sass/app_page/_app_page.sass */
-#appPage section#profileSection.out {
-  -webkit-transform: translate(-100%, -100%);
-  -moz-transform: translate(-100%, -100%);
-  -ms-transform: translate(-100%, -100%);
-  -o-transform: translate(-100%, -100%);
-  transform: translate(-100%, -100%);
-}
-/* line 34, ../../sass/app_page/_app_page.sass */
+/* line 36, ../../sass/app_page/_app_page.sass */
 #appPage section#messageSection {
   z-index: 3;
   text-align: center;
-  -webkit-transform: translate(0, -200%);
-  -moz-transform: translate(0, -200%);
-  -ms-transform: translate(0, -200%);
-  -o-transform: translate(0, -200%);
-  transform: translate(0, -200%);
-}
-/* line 38, ../../sass/app_page/_app_page.sass */
-#appPage section#messageSection.out {
-  -webkit-transform: translate(100%, -200%);
-  -moz-transform: translate(100%, -200%);
-  -ms-transform: translate(100%, -200%);
-  -o-transform: translate(100%, -200%);
-  transform: translate(100%, -200%);
 }
 
 /* line 2, ../../sass/auth_pages/_auth_pages.sass */
