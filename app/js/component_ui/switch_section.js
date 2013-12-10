@@ -8,24 +8,32 @@ define(function (require) {
 
   function switchSection () {
     // attributes
-    this.$self = [];
+    this.flipsnap = {};
+    this.self = [];
     this.$nav = [];
-    this.$sections = [];
 
     // initialize
     this.after('initialize', function () {
-      window.Flipsnap('.fs-flipsnap');
+      this.flipsnap = window.Flipsnap('.fs-flipsnap');
 
-      this.$self = $(this.$node.data('id'));
+      this.self = this.$node.attr('id');
       this.$nav = $('header.main-header li');
-      this.$sections = $('section');
 
       this.on('click touch', function(e) {
-        this.$sections.addClass('out');
-        this.$self.removeClass('out');
         this.$nav.removeClass('active');
         this.$node.addClass('active');
+        this.flipsnap.moveToPoint(this.self);
       });
+
+      this.on(document, 'resize', function () {
+        this.flipsnap.refresh();
+      });
+
+      var _this = this;
+      this.flipsnap.element.addEventListener('fspointmove', function() {
+        _this.$nav.removeClass('active');
+        $('#'+_this.flipsnap.currentPoint).addClass('active');
+      }, false);
     });
   }
 });
