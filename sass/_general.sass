@@ -21,6 +21,7 @@
   z-index: 1
 
 #app-view
+  display: none
   position: absolute
   top: 0
   left: 0
@@ -30,7 +31,6 @@
   +transition(transform 0.3s)
   background-color: $trybesDarkBlue
   text-align: center
-  display: none
   &.show
     +transform(translate(0, 0))
   header
@@ -40,7 +40,11 @@
       display: block
       color: White
       font-weight: bold
-      margin: 10px 0 0 20px
+      padding: 10px 0 0 20px
+      width: 60px
+      height: 30px
+      .arrow-left
+        display: inline-block
 
 input, button
   +appearance(none)

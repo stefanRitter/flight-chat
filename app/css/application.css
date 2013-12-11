@@ -193,6 +193,7 @@ header.main-header, #appPage section {
 
 /* line 23, ../../sass/_general.sass */
 #app-view {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -208,7 +209,6 @@ header.main-header, #appPage section {
   transition: transform 0.3s;
   background-color: #222e42;
   text-align: center;
-  display: none;
 }
 /* line 34, ../../sass/_general.sass */
 #app-view.show {
@@ -228,10 +228,16 @@ header.main-header, #appPage section {
   display: block;
   color: white;
   font-weight: bold;
-  margin: 10px 0 0 20px;
+  padding: 10px 0 0 20px;
+  width: 60px;
+  height: 30px;
+}
+/* line 46, ../../sass/_general.sass */
+#app-view header a .arrow-left {
+  display: inline-block;
 }
 
-/* line 45, ../../sass/_general.sass */
+/* line 49, ../../sass/_general.sass */
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -240,35 +246,35 @@ input, button {
   vertical-align: bottom;
 }
 
-/* line 50, ../../sass/_general.sass */
+/* line 54, ../../sass/_general.sass */
 button {
   cursor: pointer;
 }
 
-/* line 53, ../../sass/_general.sass */
+/* line 57, ../../sass/_general.sass */
 a {
   color: #222e42;
   text-decoration: none;
 }
-/* line 56, ../../sass/_general.sass */
+/* line 60, ../../sass/_general.sass */
 a.white-link {
   color: white;
   border-bottom: 3px white solid;
 }
 
-/* line 60, ../../sass/_general.sass */
+/* line 64, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 63, ../../sass/_general.sass */
+/* line 67, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 68, ../../sass/_general.sass */
+/* line 72, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -277,7 +283,7 @@ strong {
   border-bottom: 10px solid #222e42;
 }
 
-/* line 75, ../../sass/_general.sass */
+/* line 79, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
@@ -286,7 +292,7 @@ strong {
   border-top: 10px solid #222e42;
 }
 
-/* line 82, ../../sass/_general.sass */
+/* line 86, ../../sass/_general.sass */
 .arrow-right {
   width: 0;
   height: 0;
@@ -295,7 +301,7 @@ strong {
   border-left: 10px solid #d8d8d9;
 }
 
-/* line 89, ../../sass/_general.sass */
+/* line 93, ../../sass/_general.sass */
 .arrow-left {
   width: 0;
   height: 0;

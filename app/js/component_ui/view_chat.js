@@ -53,19 +53,32 @@ define(function (require) {
     };
 
 
+    this.destroyView = function() {
+      setTimeout(function() {
+        $('#app-view').css({display: 'none'});
+      }, 350);
+      this.teardown();
+    };
+
+
     // initialize
     this.after('initialize', function () {
       var conversationId = this.attr.conversationId,
           template = templates['templates/chat_view.html'].render({conversationId: conversationId});
 
-      this.$node.html(template).addClass('show');
+      this.$node.html(template).css('display', 'block');
       this.$chatMessages = $('#chatMessages');
+
+      var _this = this;
+      setTimeout(function() {
+        _this.$node.addClass('show');
+      }, 100);
 
       this.on(document, 'dataConversation', this.loadConversation);
       this.on(document, 'dataEmitMessage', this.sendMessage);
       this.on(document, 'dataMessageSent', this.confirmSend);
       this.on(document, 'dataMessageReceived', this.receiveMessage);
-      this.on('uiDestroyView', this.teardown);
+      this.on('uiDestroyView', this.destroyView);
 
       this.trigger('uiNeedsConversation', {conversationId: conversationId});
       this.trigger('uiConversationSeen', {conversationId: conversationId});

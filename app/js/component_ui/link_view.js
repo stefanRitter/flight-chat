@@ -37,8 +37,6 @@ define(function (require) {
 
     // initialize
     this.after('initialize', function () {
-      $('#app-view').css({display: 'block'});
-
       this.on('click touch', {
         linkSelector: this.handleClick
       });
