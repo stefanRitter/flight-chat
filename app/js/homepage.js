@@ -9,11 +9,6 @@ jQuery(function() {
   imgSpinnerBlack.src = '/img/spinner-white.png';
   imgSpinnerBlack.className = 'animRotateRound';
 
-  // cicle background
-  /*setInterval(function() {
-   $('html').toggleClass('background-outdoor');
-  }, 3000);*/
-
   $('button').on('click touch', function(e) {
     var email = $('input[type=email]').val();
     if (validateEmail(email)) {
