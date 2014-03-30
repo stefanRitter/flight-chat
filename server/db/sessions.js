@@ -6,40 +6,34 @@ module.exports.Sessions = function(db) {
   var sessions = db.collection('sessions');
 
   this.startSession = function(user, callback) {
-
     // Generate session id
     var currentDate = (new Date()).valueOf().toString(),
         random = Math.random().toString(),
         sessionId = crypto.createHash('sha1').update(currentDate + random).digest('hex'),
-
         session = {'user': {_id: user._id, name: user.name, imageUrl: user.imageUrl}, '_id': sessionId};
 
-    // Insert session document
-    sessions.insert(session, function (err, result) {
+    // Presist session
+    sessions.insert(session, function(err, result) {
       callback(err, sessionId);
     });
   };
 
   this.endSession = function(sessionId, callback) {
-    // Remove session document
-    sessions.remove({ '_id' : sessionId }, function (err, numRemoved) {
+    sessions.remove({ '_id' : sessionId }, function(err) {
       callback(err);
     });
   };
 
   this.getUser = function(sessionId, callback) {
-
     if (!sessionId) {
-      callback(new Error('Session not set'), null);
-      return;
+      return callback(new Error('Session not set'), null);
     }
 
     sessions.findOne({ '_id' : sessionId }, function(err, session) {
       if (err) { return callback(err, null); }
 
       if (!session) {
-        callback(new Error('Session: ' + session + ' does not exist'), null);
-        return;
+        return callback(new Error('Session: ' + session + ' does not exist'), null);
       }
 
       callback(null, session.user);

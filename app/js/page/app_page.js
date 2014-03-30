@@ -9,10 +9,8 @@ define(function (require) {
       linkView = require('component_ui/link_view'),
       sectionConversations = require('component_ui/section_conversations');
 
-
   // exports
   return initialize;
-
 
   // module function
   function initialize() {

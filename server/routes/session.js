@@ -1,17 +1,13 @@
 var Users = require('../db/users').Users,
     Sessions = require('../db/sessions').Sessions;
 
-module.exports = SessionHandler;
-
-
-function SessionHandler (db) {
+module.exports = function(db) {
   'use strict';
 
   var users = new Users(db),
       sessions = new Sessions(db);
 
 
-  // MIDDLEWARE
   this.isLoggedInMiddleware = function(req, res, next) {
     var sessionId = req.cookies.session;
     console.log('session: ' + sessionId);
@@ -25,17 +21,17 @@ function SessionHandler (db) {
   };
 
 
-  // GET
-  this.handleLogout = function(req, res, next) {
+  this.handleLogout = function(req, res) {
     var sessionId = req.cookies.session;
     
     sessions.endSession(sessionId, function (err) {
       res.cookie('session', '');
-      return res.redirect('/app');
+      return res.redirect('/');
     });
   };
-  
-  this.isAuthenticated = function(req, res, next) {
+
+
+  this.isAuthenticated = function(req, res) {
     if (req.user) {
       res.status(200).json({user: req.user});
     } else {
@@ -43,33 +39,13 @@ function SessionHandler (db) {
     }
   };
 
-  this.displayPasswordReset = function(req, res, next) {
-    res.render('reset_password', {error: ''});
-  };
 
-
-  // POST
   this.handleLoginRequest = function(req, res, next) {
+    var name = req.body.name;
+    console.log('user submitted: ' + name);
 
-    var email = req.body.email,
-        password = req.body.password;
-
-    console.log('user submitted email: ' + email + ' pass: ' + password);
-
-    users.validateLogin(email, password, function(err, user) {
-
-      if (err) {
-        if (err.noSuchUser) {
-          return res.json({error: {noSuchUser: true}});
-        }
-        else if (err.invalidPassword) {
-          return res.json({error: {invalidPassword: true}});
-        }
-        else {
-          // Some other kind of error
-          return next(err);
-        }
-      }
+    users.validateLogin(name, function(err, user) {
+      if (err) { return next(err); }
 
       sessions.startSession(user, function(err, sessionId) {
         if (err) { return next(err); }
@@ -79,66 +55,4 @@ function SessionHandler (db) {
       });
     });
   };
-
-
-  this.handleSignup = function(req, res, next) {
-    var email = req.body.email,
-        password = req.body.password,
-        name = req.body.name,
-        errors = {};
-
-    if (validateSignup(name, email, password, errors)) {
-      users.createNewUser(name, email, password, function(err, user) {
-
-        if (err) {
-          // this was a duplicate
-          if (err.code === 11000) {
-            errors.error = 'Email already in use. Please choose another or try signing in.';
-            return res.json(errors);
-          }
-          // this was a different error
-          else {
-            return next(err);
-          }
-        }
-
-        sessions.startSession(user, function(err, sessionId) {
-          if (err) { return next(err); }
-
-          res.cookie('session', sessionId, { maxAge: 365 * 24 * 60 * 60 * 1000 });
-          return res.json({user: {_id: user._id, name: user.name, imageUrl: user.imageUrl}});
-        });
-      });
-    } else {
-      console.log('user did not validate');
-      return res.json(errors);
-    }
-  };
-
-
-  this.handlePasswordReset = function(req, res, next) {
-    res.render('reset_password', {error: 'sorry this is still under construction, plz email: team@trybes.org'});
-  };
-
-
-  // HELPERS
-  function validateSignup(name, email, password, errors) {
-    var EMAIL_RE = /^[\S]+@[\S]+\.[\S]+$/;
-
-    errors.error = '';
-
-    if (name === '') {
-      errors.error = 'missing username';
-      return false;
-    }
-    if (!EMAIL_RE.test(email)) {
-      errors.error = 'invalid email address';
-      return false;
-    }
-    if (password === '') {
-      errors.error = 'missing password';
-      return false;
-    }
-    return true;
-  }
-}
+};

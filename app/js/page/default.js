@@ -7,10 +7,8 @@ define(function (require) {
       authenticate = require('component_data/authenticate_user'),
       formSubmit = require('component_ui/form_submit');
 
-
   // exports
   return initialize;
-
 
   // module function
   function initialize() {

@@ -4,8 +4,7 @@ define(function (require) {
 
   var defineComponent = require('flight/lib/component'),
       appPage = require('page/app_page'),
-      signinPage = require('page/signin_page'),
-      signupPage = require('page/signup_page');
+      signinPage = require('page/signin_page');
 
   return defineComponent(switchPage);
 
@@ -13,8 +12,7 @@ define(function (require) {
     // attributes
     this.load = {
       'signinPage': signinPage,
-      'appPage': appPage,
-      'signupPage': signupPage
+      'appPage': appPage
     };
 
     // initialize

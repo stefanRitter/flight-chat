@@ -2,10 +2,9 @@
 define(function (require) {
   'use strict';
 
-  var defineComponent = require('flight/lib/component'),
-      withValidateEmail = require('mixin/with_validate_email');
+  var defineComponent = require('flight/lib/component');
 
-  return defineComponent(authenicate, withValidateEmail);
+  return defineComponent(authenicate);
 
   function authenicate() {
     // attributes
@@ -14,7 +13,6 @@ define(function (require) {
     });
     this.existingUser = false;
 
-
     this.triggerSwitch = function () {
       if (this.existingUser) {
         this.trigger('uiSwitchPage', {name: 'appPage'});
@@ -22,7 +20,6 @@ define(function (require) {
         this.trigger('uiSwitchPage', {name: 'signinPage'});
       }
     };
-
 
     this.isAuthenticatedUser = function (e, user) {
       var _this = this;
@@ -41,21 +38,15 @@ define(function (require) {
         });
     };
 
-
     this.authenticateUser = function(e, data) {
       var _this = this,
           formData = data.formData,
-          email = formData[0].value,
-          password = formData[1].value;
-      
-      // reset
+          name = formData[0].value;
+
       this.existingUser = false;
       
-      if (!this.validateEmail(email)) {
-        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid email'});
-      }
-      if (password === '') {
-        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'missing password'});
+      if (!name) {
+        return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid name'});
       }
 
       $.ajax(window.__APP.__DOMAIN + '/app/login', {
@@ -64,12 +55,7 @@ define(function (require) {
 
       }).done(function(data) {
         if (data.error) {
-          if (data.error.noSuchUser) {
-            return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'no such user'});
-          } else if (data.error.invalidPassword) {
-            $('.reset-password').show();
-            return _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'wrong password'});
-          }
+          _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
         } else {
           _this.existingUser = true;
           window.__APP.__USER = data.user;
@@ -78,10 +64,9 @@ define(function (require) {
         _this.trigger('uiFormProcessed');
 
       }).fail(function(err){
-        _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error, plz contact: team@trybes.org'});
+        _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
       });
     };
-
 
     // initialize
     this.after('initialize', function () {
