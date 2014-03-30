@@ -1,5 +1,3 @@
-
-// dependencies
 var express = require('express'),
     mongoClient = require('mongodb').MongoClient,
     routes = require('./routes'),
@@ -22,10 +20,7 @@ mongoClient.connect(datastoreURI, function(err, db) {
 
   // all environments
   app.set('port', process.env.PORT || 3000);
-  //app.set('views', path.join(__dirname, 'views'));
-  //app.set('view engine', 'html');
   app.enable('strict routing');
-  
   app.use(express.compress());
   app.use(express.favicon(__dirname + '/app/img/favicon.ico'));
   app.use(express.json());
@@ -33,10 +28,7 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   app.use(express.static(path.join(__dirname, 'app')));
-
-  // sessions middleware
   app.use(sessionHandler.isLoggedInMiddleware);
-  
   app.use(express.logger('dev'));
   app.use(express.errorHandler());
 

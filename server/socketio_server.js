@@ -19,7 +19,7 @@ function listen(server, db) {
 
     socket.on('message', function(message){
       if (verifyMessage(message)) {
-        // get conversation from DB and handle it
+        // get conversation from DB
         var conversation = conversations.put(message, socket, handleMessage);
       }
     });
