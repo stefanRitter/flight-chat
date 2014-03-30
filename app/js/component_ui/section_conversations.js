@@ -21,17 +21,14 @@ define(function (require) {
       this.$chats.prepend(template);
     };
 
-
     this.markConversationAsSeen = function (e, data) {
       this.$chats.find('#' + data.conversationId).removeClass('active');
     };
-
 
     this.markConversationAsActive = function (e, data) {
       var conv = this.$chats.find('#' + data.conversationId).addClass('active');
       this.$chats.prepend(conv);
     };
-
 
     // initialize
     this.after('initialize', function () {

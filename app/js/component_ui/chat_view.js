@@ -6,9 +6,9 @@ define(function (require) {
       withFormDataSerialize = require('mixin/with_form_data_serialize'),
       templates = require('js/templates');
 
-  return defineComponent(viewLink, withFormDataSerialize);
+  return defineComponent(chatView, withFormDataSerialize);
 
-  function viewLink() {
+  function chatView() {
     this.$chatMessages = [];
 
 

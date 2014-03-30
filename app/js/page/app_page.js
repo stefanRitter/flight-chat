@@ -3,10 +3,10 @@ define(function (require) {
   'use strict';
 
   // dependencies
-  var socketio = require('component_data/socketio_com'),
+  var templates = require('js/templates'),
+      template = templates['templates/app_view.html'].render(),
+      socketio = require('component_data/socketio_com'),
       conversations = require('component_data/conversations'),
-      switchSection = require('component_ui/switch_section'),
-      linkView = require('component_ui/link_view'),
       sectionConversations = require('component_ui/section_conversations');
 
   // exports
@@ -14,17 +14,18 @@ define(function (require) {
 
   // module function
   function initialize() {
-    $('.app-page').hide();
-    $('#appPage').fadeIn();
-    $('#signupPage, #signinPage').remove();
+    var app = $('#app');
+    app.fadeOut(function() {
+      app.html(template);
 
-    // data
-    socketio.attachTo(document);
-    conversations.attachTo(document);
+      // data
+      socketio.attachTo(document);
+      conversations.attachTo(document);
 
-    // ui
-    linkView.attachTo(document);
-    switchSection.attachTo('header.main-header li');
-    sectionConversations.attachTo('#messageSection');
+      // ui
+      sectionConversations.attachTo('#messageSection');
+
+      app.fadeIn();
+    });
   }
 });
