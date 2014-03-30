@@ -1,5 +1,5 @@
 var socketio = require('socket.io'),
-    ConversationsDAO = require('./db/conversations').ConversationsDAO,
+    Conversations = require('./db/conversations').Conversations,
     io = {};
 
 module.exports.listen = listen;
@@ -7,7 +7,7 @@ module.exports.listen = listen;
 function listen(server, db) {
   'use strict';
 
-  var conversations = new ConversationsDAO(db),
+  var conversations = new Conversations(db),
 
   io = socketio.listen(server);
   io.set('log level', 1);
