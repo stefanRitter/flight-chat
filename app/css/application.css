@@ -64,7 +64,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 5, ../../sass/_base.sass */
-html, body {
+html, body, #app {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -185,15 +185,13 @@ header.main-header, #appPage section {
 .app-page, #app-view {
   width: 100%;
   height: 100%;
-  display: none;
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1;
 }
 
-/* line 23, ../../sass/_general.sass */
+/* line 22, ../../sass/_general.sass */
 #app-view {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -210,7 +208,7 @@ header.main-header, #appPage section {
   background-color: #222e42;
   text-align: center;
 }
-/* line 34, ../../sass/_general.sass */
+/* line 31, ../../sass/_general.sass */
 #app-view.show {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
@@ -218,11 +216,11 @@ header.main-header, #appPage section {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-/* line 36, ../../sass/_general.sass */
+/* line 33, ../../sass/_general.sass */
 #app-view header {
   z-index: 8000;
 }
-/* line 38, ../../sass/_general.sass */
+/* line 35, ../../sass/_general.sass */
 #app-view header a {
   text-align: left;
   display: block;
@@ -232,12 +230,12 @@ header.main-header, #appPage section {
   width: 60px;
   height: 30px;
 }
-/* line 46, ../../sass/_general.sass */
+/* line 43, ../../sass/_general.sass */
 #app-view header a .arrow-left {
   display: inline-block;
 }
 
-/* line 49, ../../sass/_general.sass */
+/* line 46, ../../sass/_general.sass */
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -246,35 +244,35 @@ input, button {
   vertical-align: bottom;
 }
 
-/* line 54, ../../sass/_general.sass */
+/* line 51, ../../sass/_general.sass */
 button {
   cursor: pointer;
 }
 
-/* line 57, ../../sass/_general.sass */
+/* line 54, ../../sass/_general.sass */
 a {
   color: #222e42;
   text-decoration: none;
 }
-/* line 60, ../../sass/_general.sass */
+/* line 57, ../../sass/_general.sass */
 a.white-link {
   color: white;
   border-bottom: 3px white solid;
 }
 
-/* line 64, ../../sass/_general.sass */
+/* line 61, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 67, ../../sass/_general.sass */
+/* line 64, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 72, ../../sass/_general.sass */
+/* line 69, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -283,7 +281,7 @@ strong {
   border-bottom: 10px solid #222e42;
 }
 
-/* line 79, ../../sass/_general.sass */
+/* line 76, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
@@ -292,7 +290,7 @@ strong {
   border-top: 10px solid #222e42;
 }
 
-/* line 86, ../../sass/_general.sass */
+/* line 83, ../../sass/_general.sass */
 .arrow-right {
   width: 0;
   height: 0;
@@ -301,7 +299,7 @@ strong {
   border-left: 10px solid #d8d8d9;
 }
 
-/* line 93, ../../sass/_general.sass */
+/* line 90, ../../sass/_general.sass */
 .arrow-left {
   width: 0;
   height: 0;
@@ -580,23 +578,23 @@ header.main-header ul li.active .arrow-up {
 }
 
 /* line 2, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage, #signupPage {
+#signinPage {
   background-color: black;
   color: white;
   text-align: center;
   margin-top: -5%;
 }
 /* line 8, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage form, #signupPage form {
+#signinPage form {
   display: table-cell;
   vertical-align: middle;
 }
 /* line 11, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage form img, #signupPage form img {
+#signinPage form img {
   width: 100px;
 }
 /* line 14, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage input, #signinPage button, #signinPage label, #signupPage input, #signupPage button, #signupPage label {
+#signinPage input, #signinPage button, #signinPage label {
   display: inline-block;
   width: 230px;
   height: 30px;
@@ -604,7 +602,7 @@ header.main-header ul li.active .arrow-up {
   padding: 10px;
 }
 /* line 21, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage label, #signupPage label {
+#signinPage label {
   width: 250px;
   padding: 0;
   text-align: justify;
@@ -612,7 +610,7 @@ header.main-header ul li.active .arrow-up {
   line-height: 1.3em;
 }
 /* line 28, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage button, #signupPage button {
+#signinPage button {
   width: 250px;
   height: 50px;
   margin-left: -5px;
@@ -623,15 +621,15 @@ header.main-header ul li.active .arrow-up {
   text-indent: 8px;
 }
 /* line 37, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage button img, #signupPage button img {
+#signinPage button img {
   width: 30px;
 }
 /* line 40, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage .error, #signupPage .error {
+#signinPage .error {
   color: #d44513;
   margin-top: 15px;
 }
 /* line 44, ../../sass/auth_pages/_auth_pages.sass */
-#signinPage .reset-password, #signupPage .reset-password {
+#signinPage .reset-password {
   display: none;
 }

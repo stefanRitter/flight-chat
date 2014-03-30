@@ -12,7 +12,6 @@ define(function (require) {
 
   // module function
   function initialize() {
-    $('#firstLoad').remove();
     switchPage.attachTo(document);
     authenticate.attachTo(document);
     formSubmit.attachTo(document);

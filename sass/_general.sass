@@ -15,18 +15,15 @@
 .app-page, #app-view
   width: 100%
   height: 100%
-  display: none
   overflow-x: hidden
   overflow-y: auto
   z-index: 1
 
 #app-view
-  display: none
   position: absolute
   top: 0
   left: 0
   z-index: 6000
-  //@extend %composite-layer
   +transform(translate(100%, 0))
   +transition(transform 0.3s)
   background-color: $trybesDarkBlue
