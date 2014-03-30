@@ -1,4 +1,4 @@
-var ConversationsDAO = require('../db/conversations').ConversationsDAO;
+var Conversations = require('../db/conversations').Conversations;
 
 module.exports = ConversationHandler;
 

@@ -1,19 +1,9 @@
 var crypto = require('crypto');
 
-module.exports.SessionsDAO = SessionsDAO;
-
-function SessionsDAO(db) {
+module.exports.Sessions = function(db) {
   'use strict';
 
-  /* If this constructor is called without the "new" operator, "this" points
-   * to the global object. Log a warning and call it correctly. */
-  if (false === (this instanceof SessionsDAO)) {
-    console.log('Warning: SessionsDAO constructor called without "new" operator');
-    return new SessionsDAO(db);
-  }
-
   var sessions = db.collection('sessions');
-
 
   this.startSession = function(user, callback) {
 
@@ -30,14 +20,12 @@ function SessionsDAO(db) {
     });
   };
 
-
   this.endSession = function(sessionId, callback) {
     // Remove session document
     sessions.remove({ '_id' : sessionId }, function (err, numRemoved) {
       callback(err);
     });
   };
-
 
   this.getUser = function(sessionId, callback) {
 
@@ -57,4 +45,4 @@ function SessionsDAO(db) {
       callback(null, session.user);
     });
   };
-}
+};

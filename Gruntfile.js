@@ -1,6 +1,9 @@
 
 module.exports = function(grunt) {
   'use strict';
+
+  // load all grunt tasks
+  require('load-grunt-tasks')(grunt);
   
   // configuration
   grunt.initConfig({
@@ -71,7 +74,4 @@ module.exports = function(grunt) {
   // tasks
   grunt.registerTask('default', ['jshint', 'compass', 'hogan']);
   grunt.registerTask('watch', ['watch']);
-
-  // load all grunt tasks
-  require('load-grunt-tasks')(grunt);
 };

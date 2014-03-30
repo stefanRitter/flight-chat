@@ -1,16 +1,7 @@
 var bcrypt = require('bcrypt-nodejs');
 
-module.exports.UsersDAO = UsersDAO;
-
-function UsersDAO(db) {
+module.exports.Users = function(db) {
   'use strict';
-
-  /* If this constructor is called without the "new" operator, "this" points
-   * to the global object. Log a warning and call it correctly. */
-  if (false === (this instanceof UsersDAO)) {
-    console.error('Warning: UsersDAO constructor called without "new" operator');
-    return new UsersDAO(db);
-  }
 
   var users = db.collection('users');
 
@@ -69,4 +60,4 @@ function UsersDAO(db) {
       }
     }
   };
-}
+};

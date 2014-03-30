@@ -8,6 +8,6 @@ Thumbs.db
 
 npm-debug.log
 node_modules
-bower_components
+app/bower_components
 
 .sass-cache

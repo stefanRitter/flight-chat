@@ -1,5 +1,5 @@
-var UsersDAO = require('../db/users').UsersDAO,
-    SessionsDAO = require('../db/sessions').SessionsDAO;
+var Users = require('../db/users').Users,
+    Sessions = require('../db/sessions').Sessions;
 
 module.exports = SessionHandler;
 
@@ -7,9 +7,8 @@ module.exports = SessionHandler;
 function SessionHandler (db) {
   'use strict';
 
-  var users = new UsersDAO(db),
-      sessions = new SessionsDAO(db);
-
+  var users = new Users(db),
+      sessions = new Sessions(db);
 
 
   // MIDDLEWARE
@@ -24,7 +23,6 @@ function SessionHandler (db) {
       return next();
     });
   };
-
 
 
   // GET
@@ -48,7 +46,6 @@ function SessionHandler (db) {
   this.displayPasswordReset = function(req, res, next) {
     res.render('reset_password', {error: ''});
   };
-
 
 
   // POST
@@ -122,7 +119,6 @@ function SessionHandler (db) {
   this.handlePasswordReset = function(req, res, next) {
     res.render('reset_password', {error: 'sorry this is still under construction, plz email: team@trybes.org'});
   };
-
 
 
   // HELPERS

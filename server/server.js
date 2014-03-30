@@ -23,8 +23,8 @@ mongoClient.connect(datastoreURI, function(err, db) {
 
   // all environments
   app.set('port', process.env.PORT || 3000);
-  app.set('views', path.join(__dirname, 'views'));
-  app.set('view engine', 'jade');
+  //app.set('views', path.join(__dirname, 'views'));
+  //app.set('view engine', 'html');
   app.enable('strict routing');
   
   app.use(express.compress());
@@ -38,15 +38,8 @@ mongoClient.connect(datastoreURI, function(err, db) {
   // sessions middleware
   app.use(sessionHandler.isLoggedInMiddleware);
   
-  // development only
-  if ('development' === app.get('env')) {
-    app.use(express.logger('dev'));
-    app.use(express.errorHandler());
-  }
-  if ('production' === app.get('env')) {
-    app.use(express.logger('short'));
-    app.use(errorHandler);
-  }
+  app.use(express.logger('dev'));
+  app.use(express.errorHandler());
 
   // routes
   app.use(app.router);

@@ -19,7 +19,7 @@ module.exports = function (config) {
       // loaded without require
       'app/bower_components/es5-shim/es5-shim.js',
       'app/bower_components/es5-shim/es5-sham.js',
-      'app/bower_components/jquery/jquery.js',
+      'app/bower_components/jquery/dist/jquery.js',
       'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'app/bower_components/jasmine-flight/lib/jasmine-flight.js',
 
@@ -42,7 +42,7 @@ module.exports = function (config) {
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['dots'],
+    reporters: ['progress'],
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
@@ -56,8 +56,7 @@ module.exports = function (config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'Chrome',
-      'Firefox'
+      'Chrome'
     ],
 
     // If browser does not capture in given timeout [ms], kill it
