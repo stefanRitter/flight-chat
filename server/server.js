@@ -22,12 +22,12 @@ mongoClient.connect(datastoreURI, function(err, db) {
   app.set('port', process.env.PORT || 3000);
   app.enable('strict routing');
   app.use(express.compress());
-  app.use(express.favicon(__dirname + '/app/img/favicon.ico'));
+  app.use(express.favicon(path.normalize(__dirname + '/../app/img/favicon.ico')));
   app.use(express.json());
   app.use(express.urlencoded());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
-  app.use(express.static(path.join(__dirname, 'app')));
+  app.use(express.static(path.normalize(__dirname + '/../app')));
   app.use(sessionHandler.isLoggedInMiddleware);
   app.use(express.logger('dev'));
   app.use(express.errorHandler());
