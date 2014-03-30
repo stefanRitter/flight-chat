@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "2.x.x",
     "flight": "~1.1.0",
-    "requirejs": "~2.1.5"
+    "requirejs": "~2.1.5",
+    "hogan": "~3.0.0"
   },
   "devDependencies": {
     "jasmine-flight": "~2.2.0"
