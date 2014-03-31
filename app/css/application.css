@@ -577,23 +577,23 @@ header.main-header ul li.active .arrow-up {
   text-align: center;
 }
 
-/* line 2, ../../sass/auth_pages/_auth_pages.sass */
+/* line 2, ../../sass/app_page/_auth_pages.sass */
 #signinPage {
   background-color: black;
   color: white;
   text-align: center;
   margin-top: -5%;
 }
-/* line 8, ../../sass/auth_pages/_auth_pages.sass */
+/* line 8, ../../sass/app_page/_auth_pages.sass */
 #signinPage form {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 11, ../../sass/auth_pages/_auth_pages.sass */
+/* line 11, ../../sass/app_page/_auth_pages.sass */
 #signinPage form img {
   width: 100px;
 }
-/* line 14, ../../sass/auth_pages/_auth_pages.sass */
+/* line 14, ../../sass/app_page/_auth_pages.sass */
 #signinPage input, #signinPage button, #signinPage label {
   display: inline-block;
   width: 230px;
@@ -601,7 +601,7 @@ header.main-header ul li.active .arrow-up {
   margin-top: 15px;
   padding: 10px;
 }
-/* line 21, ../../sass/auth_pages/_auth_pages.sass */
+/* line 21, ../../sass/app_page/_auth_pages.sass */
 #signinPage label {
   width: 250px;
   padding: 0;
@@ -609,7 +609,7 @@ header.main-header ul li.active .arrow-up {
   font-size: 13px;
   line-height: 1.3em;
 }
-/* line 28, ../../sass/auth_pages/_auth_pages.sass */
+/* line 28, ../../sass/app_page/_auth_pages.sass */
 #signinPage button {
   width: 250px;
   height: 50px;
@@ -620,16 +620,16 @@ header.main-header ul li.active .arrow-up {
   letter-spacing: 2px;
   text-indent: 8px;
 }
-/* line 37, ../../sass/auth_pages/_auth_pages.sass */
+/* line 37, ../../sass/app_page/_auth_pages.sass */
 #signinPage button img {
   width: 30px;
 }
-/* line 40, ../../sass/auth_pages/_auth_pages.sass */
+/* line 40, ../../sass/app_page/_auth_pages.sass */
 #signinPage .error {
   color: #d44513;
   margin-top: 15px;
 }
-/* line 44, ../../sass/auth_pages/_auth_pages.sass */
+/* line 44, ../../sass/app_page/_auth_pages.sass */
 #signinPage .reset-password {
   display: none;
 }
