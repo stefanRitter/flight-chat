@@ -205,7 +205,7 @@ header.main-header, #appPage section {
   -moz-transition: -moz-transform 0.3s;
   -o-transition: -o-transform 0.3s;
   transition: transform 0.3s;
-  background-color: #222e42;
+  background-color: #00b2d9;
   text-align: center;
 }
 /* line 31, ../../sass/_general.sass */
@@ -251,7 +251,7 @@ button {
 
 /* line 54, ../../sass/_general.sass */
 a {
-  color: #222e42;
+  color: #00b2d9;
   text-decoration: none;
 }
 /* line 57, ../../sass/_general.sass */
@@ -261,36 +261,43 @@ a.white-link {
 }
 
 /* line 61, ../../sass/_general.sass */
+h1 {
+  font-size: 2em;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+/* line 66, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 64, ../../sass/_general.sass */
+/* line 69, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 69, ../../sass/_general.sass */
+/* line 74, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #222e42;
+  border-bottom: 10px solid #00b2d9;
 }
 
-/* line 76, ../../sass/_general.sass */
+/* line 81, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #222e42;
+  border-top: 10px solid #00b2d9;
 }
 
-/* line 83, ../../sass/_general.sass */
+/* line 88, ../../sass/_general.sass */
 .arrow-right {
   width: 0;
   height: 0;
@@ -299,7 +306,7 @@ strong {
   border-left: 10px solid #d8d8d9;
 }
 
-/* line 90, ../../sass/_general.sass */
+/* line 95, ../../sass/_general.sass */
 .arrow-left {
   width: 0;
   height: 0;
@@ -372,7 +379,7 @@ header.main-header ul li.active .arrow-up {
   width: 100%;
   height: 60px;
   margin: 0 auto;
-  border-bottom: 1px solid #222e42;
+  border-bottom: 1px solid #00b2d9;
 }
 /* line 14, ../../sass/app_page/_chat.sass */
 .chat-link img.chat-message-author {
@@ -444,7 +451,7 @@ header.main-header ul li.active .arrow-up {
   display: inline-block;
   margin-top: 2px;
   margin-left: 2px;
-  border-left: 10px solid #222e42;
+  border-left: 10px solid #00b2d9;
 }
 /* line 62, ../../sass/app_page/_chat.sass */
 .chat button.js-view-link {
@@ -482,7 +489,7 @@ header.main-header ul li.active .arrow-up {
 }
 /* line 86, ../../sass/app_page/_chat.sass */
 .chat-message .chat-message-text {
-  background-color: #222e42;
+  background-color: #00b2d9;
   color: white;
   min-height: 20px;
   max-width: 80%;
@@ -559,7 +566,7 @@ header.main-header ul li.active .arrow-up {
   width: 33.33333%;
   height: 100%;
   position: relative;
-  background-color: #222e42;
+  background-color: #00b2d9;
   color: white;
   overflow: auto;
 }
@@ -614,7 +621,7 @@ header.main-header ul li.active .arrow-up {
   width: 250px;
   height: 50px;
   margin-left: -5px;
-  background-color: #222e42;
+  background-color: #00b2d9;
   color: white;
   font-size: 0.9em;
   letter-spacing: 2px;

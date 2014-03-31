@@ -26,7 +26,7 @@
   z-index: 6000
   +transform(translate(100%, 0))
   +transition(transform 0.3s)
-  background-color: $trybesDarkBlue
+  background-color: $darkBlue
   text-align: center
   &.show
     +transform(translate(0, 0))
@@ -52,11 +52,16 @@ button
   cursor: pointer
 
 a
-  color: $trybesDarkBlue
+  color: $darkBlue
   text-decoration: none
   &.white-link
     color: White
     border-bottom: 3px White solid
+
+h1
+  font-size: 2em
+  font-weight: 100
+  line-height: 1.5
 
 strong
   font-weight: bold
@@ -71,25 +76,25 @@ strong
   height: 0
   border-left: 10px solid transparent
   border-right: 10px solid transparent
-  border-bottom: 10px solid $trybesDarkBlue
+  border-bottom: 10px solid $darkBlue
 
 .arrow-down
   width: 0
   height: 0
   border-left: 10px solid transparent
   border-right: 10px solid transparent
-  border-top: 10px solid $trybesDarkBlue
+  border-top: 10px solid $darkBlue
 
 .arrow-right
   width: 0
   height: 0
   border-top: 10px solid transparent
   border-bottom: 10px solid transparent
-  border-left: 10px solid $trybesLightGray
+  border-left: 10px solid $lightGray
 
 .arrow-left
   width: 0
   height: 0
   border-top: 10px solid transparent
   border-bottom: 10px solid transparent
-  border-right: 10px solid $trybesLightGray
+  border-right: 10px solid $lightGray
