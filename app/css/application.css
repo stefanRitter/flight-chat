@@ -159,7 +159,7 @@ body {
 }
 
 /* line 2, ../../sass/_general.sass */
-header.main-header, #appPage section {
+.main-header, #appPage section {
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
   -ms-transform: translateZ(0);
@@ -315,8 +315,8 @@ strong {
   border-right: 10px solid #d8d8d9;
 }
 
-/* line 2, ../../sass/app_page/_header.sass */
-header.main-header {
+/* line 2, ../../sass/_header.sass */
+.main-header {
   position: fixed;
   z-index: 5000;
   top: 0;
@@ -327,44 +327,13 @@ header.main-header {
   color: white;
   text-align: center;
 }
-/* line 13, ../../sass/app_page/_header.sass */
-header.main-header ul {
-  list-style: none;
-  width: 300px;
-  margin: 0 auto;
-}
-/* line 17, ../../sass/app_page/_header.sass */
-header.main-header ul li {
-  display: block;
-  float: left;
-  position: relative;
-  width: 100px;
-  height: 40px;
-  line-height: 40px;
-  cursor: pointer;
-}
-/* line 25, ../../sass/app_page/_header.sass */
-header.main-header ul li .arrow-up {
-  position: absolute;
-  left: 40px;
-  top: 30px;
-  visibility: hidden;
-}
-/* line 30, ../../sass/app_page/_header.sass */
-header.main-header ul li.active {
-  font-weight: bold;
-}
-/* line 32, ../../sass/app_page/_header.sass */
-header.main-header ul li.active .arrow-up {
-  visibility: visible;
-}
 
-/* line 35, ../../sass/app_page/_header.sass */
+/* line 14, ../../sass/_header.sass */
 .header-space {
-  height: 43px;
+  height: 45px;
 }
 
-/* line 1, ../../sass/app_page/_chat.sass */
+/* line 1, ../../sass/_chat.sass */
 .chats, .chat {
   width: 100%;
   max-width: 800px;
@@ -373,7 +342,7 @@ header.main-header ul li.active .arrow-up {
   color: black;
 }
 
-/* line 8, ../../sass/app_page/_chat.sass */
+/* line 8, ../../sass/_chat.sass */
 .chat-link {
   display: block;
   width: 100%;
@@ -381,7 +350,7 @@ header.main-header ul li.active .arrow-up {
   margin: 0 auto;
   border-bottom: 1px solid #00b2d9;
 }
-/* line 14, ../../sass/app_page/_chat.sass */
+/* line 14, ../../sass/_chat.sass */
 .chat-link img.chat-message-author {
   display: block;
   height: 50px;
@@ -389,7 +358,7 @@ header.main-header ul li.active .arrow-up {
   margin: 5px;
   float: left;
 }
-/* line 20, ../../sass/app_page/_chat.sass */
+/* line 20, ../../sass/_chat.sass */
 .chat-link .chat-user-name, .chat-link .chat-message-text {
   margin-top: 7px;
   float: left;
@@ -397,68 +366,68 @@ header.main-header ul li.active .arrow-up {
   text-align: left;
   overflow: hidden;
 }
-/* line 26, ../../sass/app_page/_chat.sass */
+/* line 26, ../../sass/_chat.sass */
 .chat-link .chat-user-name {
   font-size: 1.3em;
   font-weight: 600;
 }
-/* line 29, ../../sass/app_page/_chat.sass */
+/* line 29, ../../sass/_chat.sass */
 .chat-link .chat-message-text {
   height: 20px;
 }
-/* line 31, ../../sass/app_page/_chat.sass */
+/* line 31, ../../sass/_chat.sass */
 .chat-link .arrow-right {
   float: right;
   position: relative;
   top: -8px;
   margin-right: 5px;
 }
-/* line 36, ../../sass/app_page/_chat.sass */
+/* line 36, ../../sass/_chat.sass */
 .chat-link.active {
   background-color: #d44513;
 }
 
-/* line 39, ../../sass/app_page/_chat.sass */
+/* line 39, ../../sass/_chat.sass */
 .chat {
   height: 100%;
   position: relative;
 }
-/* line 42, ../../sass/app_page/_chat.sass */
+/* line 42, ../../sass/_chat.sass */
 .chat form.chat-input {
   width: 100%;
   position: absolute;
   bottom: 15px;
 }
-/* line 46, ../../sass/app_page/_chat.sass */
+/* line 46, ../../sass/_chat.sass */
 .chat form.chat-input input[type=text] {
   width: 64%;
   height: 37px;
   padding: 1px 10px;
   border-bottom: 1px black solid;
 }
-/* line 51, ../../sass/app_page/_chat.sass */
+/* line 51, ../../sass/_chat.sass */
 .chat button {
   width: 40px;
   height: 40px;
 }
-/* line 54, ../../sass/app_page/_chat.sass */
+/* line 54, ../../sass/_chat.sass */
 .chat button img {
   margin-top: 3px;
   width: 25px;
 }
-/* line 57, ../../sass/app_page/_chat.sass */
+/* line 57, ../../sass/_chat.sass */
 .chat button .arrow-right {
   display: inline-block;
   margin-top: 2px;
   margin-left: 2px;
   border-left: 10px solid #00b2d9;
 }
-/* line 62, ../../sass/app_page/_chat.sass */
+/* line 62, ../../sass/_chat.sass */
 .chat button.js-view-link {
   background-color: #d44513;
 }
 
-/* line 65, ../../sass/app_page/_chat.sass */
+/* line 65, ../../sass/_chat.sass */
 .chat-messages {
   position: absolute;
   bottom: 55px;
@@ -466,12 +435,12 @@ header.main-header ul li.active .arrow-up {
   height: 100%;
   overflow-y: scroll;
 }
-/* line 71, ../../sass/app_page/_chat.sass */
+/* line 71, ../../sass/_chat.sass */
 .chat-messages .header-space {
   height: 109px;
 }
 
-/* line 74, ../../sass/app_page/_chat.sass */
+/* line 74, ../../sass/_chat.sass */
 .chat-message {
   width: 80%;
   float: left;
@@ -479,7 +448,7 @@ header.main-header ul li.active .arrow-up {
   clear: both;
   margin-bottom: 10px;
 }
-/* line 80, ../../sass/app_page/_chat.sass */
+/* line 80, ../../sass/_chat.sass */
 .chat-message .chat-message-author {
   display: block;
   height: 30px;
@@ -487,7 +456,7 @@ header.main-header ul li.active .arrow-up {
   border: 5px solid transparent;
   float: left;
 }
-/* line 86, ../../sass/app_page/_chat.sass */
+/* line 86, ../../sass/_chat.sass */
 .chat-message .chat-message-text {
   background-color: #00b2d9;
   color: white;
@@ -498,69 +467,69 @@ header.main-header ul li.active .arrow-up {
   padding: 5px;
   float: left;
 }
-/* line 95, ../../sass/app_page/_chat.sass */
+/* line 95, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent {
   float: right;
 }
-/* line 97, ../../sass/app_page/_chat.sass */
+/* line 97, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent button {
   margin-right: 5px;
   margin-top: 5px;
   width: 30px;
   height: 30px;
 }
-/* line 102, ../../sass/app_page/_chat.sass */
+/* line 102, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent button.red {
   width: 55px;
   background-color: #d44513;
 }
-/* line 105, ../../sass/app_page/_chat.sass */
+/* line 105, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent button img {
   margin-top: 1px;
   margin-left: -3px;
 }
-/* line 108, ../../sass/app_page/_chat.sass */
+/* line 108, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent button span.retry {
   display: inline-block;
   position: relative;
   top: -7px;
 }
-/* line 112, ../../sass/app_page/_chat.sass */
+/* line 112, ../../sass/_chat.sass */
 .chat-message .chat-message-not-sent button span.arrow-right {
   margin-left: 5px;
 }
-/* line 114, ../../sass/app_page/_chat.sass */
+/* line 114, ../../sass/_chat.sass */
 .chat-message.self {
   float: right;
   text-align: right;
 }
-/* line 117, ../../sass/app_page/_chat.sass */
+/* line 117, ../../sass/_chat.sass */
 .chat-message.self .chat-message-author {
   float: right;
 }
-/* line 119, ../../sass/app_page/_chat.sass */
+/* line 119, ../../sass/_chat.sass */
 .chat-message.self .chat-message-text {
   float: right;
   color: black;
   background-color: #a1abb2;
 }
 
-/* line 4, ../../sass/app_page/_app_page.sass */
+/* line 4, ../../sass/_app_page.sass */
 #appPage {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-/* line 9, ../../sass/app_page/_app_page.sass */
-#appPage .fs-flipsnap {
+/* line 9, ../../sass/_app_page.sass */
+#appPage .overflow {
   width: 300%;
   height: 100%;
 }
-/* line 13, ../../sass/app_page/_app_page.sass */
+/* line 13, ../../sass/_app_page.sass */
 #appPage a {
   color: inherit;
 }
-/* line 16, ../../sass/app_page/_app_page.sass */
+/* line 16, ../../sass/_app_page.sass */
 #appPage section {
   float: left;
   width: 33.33333%;
@@ -569,38 +538,27 @@ header.main-header ul li.active .arrow-up {
   background-color: #00b2d9;
   color: white;
   overflow: auto;
-}
-/* line 27, ../../sass/app_page/_app_page.sass */
-#appPage section#feedSection {
-  z-index: 1;
-}
-/* line 31, ../../sass/app_page/_app_page.sass */
-#appPage section#profileSection {
-  z-index: 2;
-}
-/* line 35, ../../sass/app_page/_app_page.sass */
-#appPage section#messageSection {
   z-index: 3;
   text-align: center;
 }
 
-/* line 2, ../../sass/app_page/_auth_pages.sass */
+/* line 2, ../../sass/_auth_pages.sass */
 #signinPage {
   background-color: black;
   color: white;
   text-align: center;
   margin-top: -5%;
 }
-/* line 8, ../../sass/app_page/_auth_pages.sass */
+/* line 8, ../../sass/_auth_pages.sass */
 #signinPage form {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 11, ../../sass/app_page/_auth_pages.sass */
+/* line 11, ../../sass/_auth_pages.sass */
 #signinPage form img {
   width: 100px;
 }
-/* line 14, ../../sass/app_page/_auth_pages.sass */
+/* line 14, ../../sass/_auth_pages.sass */
 #signinPage input, #signinPage button, #signinPage label {
   display: inline-block;
   width: 230px;
@@ -608,7 +566,7 @@ header.main-header ul li.active .arrow-up {
   margin-top: 15px;
   padding: 10px;
 }
-/* line 21, ../../sass/app_page/_auth_pages.sass */
+/* line 21, ../../sass/_auth_pages.sass */
 #signinPage label {
   width: 250px;
   padding: 0;
@@ -616,7 +574,7 @@ header.main-header ul li.active .arrow-up {
   font-size: 13px;
   line-height: 1.3em;
 }
-/* line 28, ../../sass/app_page/_auth_pages.sass */
+/* line 28, ../../sass/_auth_pages.sass */
 #signinPage button {
   width: 250px;
   height: 50px;
@@ -627,16 +585,16 @@ header.main-header ul li.active .arrow-up {
   letter-spacing: 2px;
   text-indent: 8px;
 }
-/* line 37, ../../sass/app_page/_auth_pages.sass */
+/* line 37, ../../sass/_auth_pages.sass */
 #signinPage button img {
   width: 30px;
 }
-/* line 40, ../../sass/app_page/_auth_pages.sass */
+/* line 40, ../../sass/_auth_pages.sass */
 #signinPage .error {
   color: #d44513;
   margin-top: 15px;
 }
-/* line 44, ../../sass/app_page/_auth_pages.sass */
+/* line 44, ../../sass/_auth_pages.sass */
 #signinPage .reset-password {
   display: none;
 }

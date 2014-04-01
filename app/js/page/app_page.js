@@ -24,7 +24,7 @@ define(function (require) {
       conversations.attachTo(document);
 
       // ui
-      conversationsView.attachTo('#messageSection');
+      conversationsView.attachTo('#conversations');
       viewLink.attachTo(document);
 
       app.fadeIn();
