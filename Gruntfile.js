@@ -18,8 +18,7 @@ module.exports = function(grunt) {
       },
       all: [
         '*.js',
-        'db/**/*.js',
-        'routes/**/*.js',
+        'server/**/*.js',
         'test/**/*.js',
         '<%= yeoman.app %>/js/**/*.js',
         '!<%= yeoman.app %>/js/templates.js',
@@ -52,10 +51,11 @@ module.exports = function(grunt) {
       scripts: {
         files: [
           '*.js',
-          'db/**/*.js',
-          'routes/**/*.js',
+          'server/**/*.js',
           'test/**/*.js',
-          '<%= yeoman.app %>/js/**/*.js'
+          '<%= yeoman.app %>/js/**/*.js',
+          '!<%= yeoman.app %>/js/templates.js',
+          '!<%= yeoman.app %>/js/mixin/with_quick_hash.js'
         ],
         tasks: ['jshint']
       },
@@ -71,6 +71,6 @@ module.exports = function(grunt) {
   });
 
   // tasks
-  grunt.registerTask('default', ['jshint', 'compass', 'hogan']);
-  grunt.registerTask('watch', ['watch']);
+  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('build', ['jshint', 'compass', 'hogan']);
 };
