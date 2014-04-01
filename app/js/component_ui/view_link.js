@@ -11,12 +11,12 @@ define(function (require) {
 
     this.defaultAttrs({
       linkSelector: '.js-view-link',
-      appView: '#app-view'
+      appView: '#appView'
     });
 
     this.load = {
       chatView: function($link) {
-        chatView.attachTo('#app-view', {
+        chatView.attachTo('#appView', {
           conversationId: $link.attr('id')
         });
       },
@@ -25,7 +25,7 @@ define(function (require) {
       },
       back: function($link, self) {
         self.trigger(self.select('appView'), 'uiDestroyView', {});
-        $('#app-view').removeClass('show');
+        $('#appView').removeClass('show');
       }
     };
 

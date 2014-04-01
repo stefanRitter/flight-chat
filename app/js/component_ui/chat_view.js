@@ -55,7 +55,7 @@ define(function (require) {
 
     this.destroyView = function() {
       setTimeout(function() {
-        $('#app-view').css({display: 'none'});
+        $('#appView').css({display: 'none'});
       }, 350);
       this.teardown();
     };

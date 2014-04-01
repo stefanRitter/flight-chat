@@ -7,7 +7,8 @@ define(function (require) {
       template = templates['templates/app_view.html'].render(),
       socketio = require('component_data/socketio_com'),
       conversations = require('component_data/conversations'),
-      sectionConversations = require('component_ui/section_conversations');
+      conversationsView = require('component_ui/conversations_view'),
+      viewLink = require('component_ui/view_link');
 
   // exports
   return initialize;
@@ -23,7 +24,8 @@ define(function (require) {
       conversations.attachTo(document);
 
       // ui
-      sectionConversations.attachTo('#messageSection');
+      conversationsView.attachTo('#messageSection');
+      viewLink.attachTo(document);
 
       app.fadeIn();
     });
