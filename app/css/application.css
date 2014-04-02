@@ -326,9 +326,23 @@ strong {
   background-color: black;
   color: white;
   text-align: center;
+  font-weight: 100;
 }
 
-/* line 14, ../../sass/_header.sass */
+/* line 16, ../../sass/_header.sass */
+.main-header-title {
+  font-size: 20px;
+  line-height: 2;
+}
+
+/* line 20, ../../sass/_header.sass */
+.main-header-logout {
+  float: right;
+  margin-right: 1em;
+  line-height: 2.5;
+}
+
+/* line 25, ../../sass/_header.sass */
 .header-space {
   height: 45px;
 }
