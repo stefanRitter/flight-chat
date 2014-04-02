@@ -168,20 +168,6 @@ body {
 }
 
 /* line 25, ../../sass/_general.sass */
-#firstLoad {
-  z-index: 7000;
-  position: fixed;
-  top: 45%;
-  left: 50%;
-}
-/* line 30, ../../sass/_general.sass */
-#firstLoad img {
-  margin-left: -50px;
-  margin-top: -50px;
-  width: 100px;
-}
-
-/* line 35, ../../sass/_general.sass */
 .app-page, #appView {
   width: 100%;
   height: 100%;
@@ -190,7 +176,7 @@ body {
   z-index: 1;
 }
 
-/* line 42, ../../sass/_general.sass */
+/* line 32, ../../sass/_general.sass */
 #appView {
   position: absolute;
   top: 0;
@@ -208,7 +194,7 @@ body {
   background-color: #00b2d9;
   text-align: center;
 }
-/* line 51, ../../sass/_general.sass */
+/* line 41, ../../sass/_general.sass */
 #appView.show {
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);
@@ -216,11 +202,11 @@ body {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-/* line 53, ../../sass/_general.sass */
+/* line 43, ../../sass/_general.sass */
 #appView header {
   z-index: 8000;
 }
-/* line 55, ../../sass/_general.sass */
+/* line 45, ../../sass/_general.sass */
 #appView header a {
   text-align: left;
   display: block;
@@ -230,12 +216,12 @@ body {
   width: 60px;
   height: 30px;
 }
-/* line 63, ../../sass/_general.sass */
+/* line 53, ../../sass/_general.sass */
 #appView header a .arrow-left {
   display: inline-block;
 }
 
-/* line 66, ../../sass/_general.sass */
+/* line 56, ../../sass/_general.sass */
 input, button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -244,42 +230,42 @@ input, button {
   vertical-align: bottom;
 }
 
-/* line 71, ../../sass/_general.sass */
+/* line 61, ../../sass/_general.sass */
 button {
   cursor: pointer;
 }
 
-/* line 74, ../../sass/_general.sass */
+/* line 64, ../../sass/_general.sass */
 a {
   color: #00b2d9;
   text-decoration: none;
 }
-/* line 77, ../../sass/_general.sass */
+/* line 67, ../../sass/_general.sass */
 a.white-link {
   color: white;
   border-bottom: 3px white solid;
 }
 
-/* line 81, ../../sass/_general.sass */
+/* line 71, ../../sass/_general.sass */
 h1 {
   font-size: 2em;
   font-weight: 100;
   line-height: 1.5;
 }
 
-/* line 86, ../../sass/_general.sass */
+/* line 76, ../../sass/_general.sass */
 strong {
   font-weight: bold;
 }
 
-/* line 89, ../../sass/_general.sass */
+/* line 79, ../../sass/_general.sass */
 .display-table {
   width: 100%;
   height: 100%;
   display: table;
 }
 
-/* line 94, ../../sass/_general.sass */
+/* line 84, ../../sass/_general.sass */
 .arrow-up {
   width: 0;
   height: 0;
@@ -288,7 +274,7 @@ strong {
   border-bottom: 10px solid #00b2d9;
 }
 
-/* line 101, ../../sass/_general.sass */
+/* line 91, ../../sass/_general.sass */
 .arrow-down {
   width: 0;
   height: 0;
@@ -297,7 +283,7 @@ strong {
   border-top: 10px solid #00b2d9;
 }
 
-/* line 108, ../../sass/_general.sass */
+/* line 98, ../../sass/_general.sass */
 .arrow-right {
   width: 0;
   height: 0;
@@ -306,13 +292,31 @@ strong {
   border-left: 10px solid #d8d8d9;
 }
 
-/* line 115, ../../sass/_general.sass */
+/* line 105, ../../sass/_general.sass */
 .arrow-left {
   width: 0;
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #d8d8d9;
+}
+
+/* line 1, ../../sass/_firstload.sass */
+#firstLoad {
+  z-index: 7000;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  line-height: 2;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+/* line 12, ../../sass/_firstload.sass */
+#firstLoad img {
+  width: 100px;
 }
 
 /* line 2, ../../sass/_header.sass */
