@@ -49,7 +49,7 @@ define(function (require) {
         return this.trigger(this.select('submitButtons'), 'uiFormError', {error: 'invalid name'});
       }
 
-      $.ajax(window.__APP.__DOMAIN + '/app/login', {
+      $.ajax('/app/login', {
         method: 'POST',
         data: formData
 
