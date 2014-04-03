@@ -11,3 +11,7 @@ node_modules
 app/bower_components
 
 .sass-cache
+
+.bower-cache
+.bower-registry
+.bower-tmp
