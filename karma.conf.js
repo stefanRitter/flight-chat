@@ -20,6 +20,7 @@ module.exports = function (config) {
       'app/bower_components/es5-shim/es5-shim.js',
       'app/bower_components/es5-shim/es5-sham.js',
       'app/bower_components/jquery/dist/jquery.js',
+      'app/bower_components/hogan/web/builds/2.0.0/hogan-2.0.0.js',
       'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'app/bower_components/jasmine-flight/lib/jasmine-flight.js',
 

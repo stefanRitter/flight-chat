@@ -12,7 +12,8 @@ requirejs.config({
     'component_ui': '../js/component_ui',
     'component_data': '../js/component_data',
     'mixin': '../js/mixin',
-    'page': '../js/page'
+    'page': '../js/page',
+    'js/templates': '../js/templates'
   },
 
   // ask Require.js to load these files (all our tests)
