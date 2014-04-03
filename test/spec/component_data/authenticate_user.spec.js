@@ -4,7 +4,6 @@ describeComponent('component_data/authenticate_user', function () {
 
   describe('checks if user is authenticated', function () {
     var d = {};
-    window.__APP = {}; // TODO: remove global
 
     beforeEach(function() {
       jQuery.ajax = spyOn(jQuery, 'ajax').andCallFake( function() {
