@@ -26,10 +26,11 @@ define(function (require) {
       
       $.ajax('/app/authenticated', {
         method: 'GET'
-      
-      }).fail(function() {
+      })
+        .fail(function() {
           _this.triggerSwitch();
-        }).done(function(data) {
+        })
+        .done(function(data) {
           if (data.user) {
             _this.existingUser = true;
             window.__APP.__USER = data.user;
