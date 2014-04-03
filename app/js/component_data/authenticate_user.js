@@ -24,7 +24,7 @@ define(function (require) {
     this.isAuthenticatedUser = function (e, user) {
       var _this = this;
       
-      $.ajax(window.__APP.__DOMAIN + '/app/authenticated', {
+      $.ajax('/app/authenticated', {
         method: 'GET'
       
       }).fail(function() {

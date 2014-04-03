@@ -25,7 +25,6 @@ require(
     compose.mixin(registry, [advice.withAdvice, withLogging]);
 
     window.__APP = {};
-    window.__APP.__DOMAIN = '';
 
     require(['page/default'], function(initializePage) {
       initializePage();
