@@ -5,10 +5,11 @@ define(function() {
     
     this.quickHash = function(str) {
       var hash = 0,
-          l = str.length,
-          i, cha;
-      
-      if (l === 0) { return hash; }
+          l, i, cha;
+
+      str += Date.now().toString();
+      l = str.length;
+
       for (i = 0; i < l; i+=1) {
         cha = str.charCodeAt(i);
         hash = ((hash<<5)-hash)+cha;
