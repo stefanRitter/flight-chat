@@ -25,8 +25,8 @@ define(function (require) {
       var _this = this;
       
       $.ajax('/app/authenticated', {
-        method: 'GET'
-      })
+          method: 'GET'
+        })
         .fail(function() {
           _this.triggerSwitch();
         })
@@ -51,22 +51,22 @@ define(function (require) {
       }
 
       $.ajax('/app/login', {
-        method: 'POST',
-        data: formData
-
-      }).done(function(data) {
-        if (data.error) {
+          method: 'POST',
+          data: formData
+        })
+        .done(function(data) {
+          if (data.error) {
+            _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
+          } else {
+            _this.existingUser = true;
+            window.__APP.__USER = data.user;
+          }
+          _this.triggerSwitch();
+          _this.trigger('uiFormProcessed');
+        })
+        .fail(function(err){
           _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
-        } else {
-          _this.existingUser = true;
-          window.__APP.__USER = data.user;
-        }
-        _this.triggerSwitch();
-        _this.trigger('uiFormProcessed');
-
-      }).fail(function(err){
-        _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
-      });
+        });
     };
 
     // initialize

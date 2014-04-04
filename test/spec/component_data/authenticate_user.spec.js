@@ -2,7 +2,7 @@
 
 describeComponent('component_data/authenticate_user', function () {
 
-  describe('checks if user is authenticated', function () {
+  describe('checks if user is authenticated on initialization', function () {
     var d = {};
 
     beforeEach(function() {
@@ -31,6 +31,18 @@ describeComponent('component_data/authenticate_user', function () {
       setupComponent();
       d.resolve({user: {}});
       expect(eventSpy.mostRecentCall.data).toEqual({name: 'appPage'});
+    });
+  });
+
+
+  describe('authenticates user on dataUserLogin', function () {
+    var d = {};
+
+    beforeEach(function() {
+      jQuery.ajax = spyOn(jQuery, 'ajax').andCallFake( function() {
+        d = $.Deferred();
+        return d.promise();
+      });
     });
   });
 });
