@@ -11,6 +11,8 @@ describeMixin('mixin/with_form_data_serialize', function() {
     expect(this.component).toBeDefined();
   });
 
-  it('should do something');
-
+  it('should map jQuery.serialize() array to an object', function() {
+    var serialized = this.component.serialize([{name: 'formFieldName', value: 'value'}]);
+    expect(serialized).toEqual({formFieldName: 'value'});
+  });
 });
