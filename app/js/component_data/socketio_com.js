@@ -10,16 +10,13 @@ define(function (require) {
 
     this.socket = {};
 
-
     this.emit = function(e, data) {
       this.socket.emit('message', data);
     };
 
-
     this.receiveMessage = function (message, _this) {
       _this.trigger('dataMessageIncoming', message);
     };
-
 
     // initialize
     this.after('initialize', function () {
