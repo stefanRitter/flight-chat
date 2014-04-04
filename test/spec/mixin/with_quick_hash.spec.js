@@ -13,6 +13,7 @@ describeMixin('mixin/with_quick_hash', function() {
   it('should generate a hash based on the current time', function() {
     spyOn(Date, 'now').andReturn(1396638303179);
     var hashed = this.component.quickHash('test');
-    expect(hashed).toEqual(3556498);
+    expect(Date.now).toHaveBeenCalled();
+    expect(hashed).toEqual(65200455);
   });
 });
