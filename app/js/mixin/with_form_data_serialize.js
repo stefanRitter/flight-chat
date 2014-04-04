@@ -4,7 +4,7 @@ define(function() {
 
   var withFormDataSerialize = function () {
     
-    this.serialize = function (formData) {
+    this.serialize = function(formData) {
       var data = {},
           len = formData.length,
           i;
