@@ -21,7 +21,6 @@ define(function (require) {
       buttonSelector: 'button[type=submit]'
     });
 
-
     this.submit = function(e) {
       e.preventDefault();
       e.stopPropagation();
@@ -45,19 +44,16 @@ define(function (require) {
       }
     };
 
-
     this.reactivateForm = function(e) {
       this.active = false;
       this.$siblings.css('opacity', 1);
       this.$button.html(this.buttonHtml);
     };
 
-
     this.processFormErrors = function(e, error) {
       this.reactivateForm(e);
       this.$error.text(error.error);
     };
-
 
     this.processFormReset = function(e) {
       this.reactivateForm(e);

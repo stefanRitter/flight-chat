@@ -28,7 +28,7 @@ function listen(server, db) {
     setInterval(function() {
       _socket.emit('message', {
         conversationId: '5000',
-        text: 'It is now: ' + Date.now(),
+        text: 'It is now: ' + (new Date()).toGMTString(),
         _id: Date.now(),
         user: {
           _id: 0,

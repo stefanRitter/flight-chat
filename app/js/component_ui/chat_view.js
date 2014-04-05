@@ -11,13 +11,11 @@ define(function (require) {
   function chatView() {
     this.$chatMessages = [];
 
-
     this.sendMessage = function (e, message) {
       this.pushMessage(message, 'self', true);
       this.scroll();
       this.trigger('uiFormProcessed');
     };
-
 
     this.receiveMessage = function (e, message) {
       this.pushMessage(message, '', false);
@@ -25,11 +23,9 @@ define(function (require) {
       this.trigger('uiConversationSeen', {conversationId: message.conversationId});
     };
 
-
     this.confirmSend = function (e, message) {
       this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
     };
-
 
     this.loadConversation = function (e, conversation) {
       var _this = this,
@@ -52,14 +48,12 @@ define(function (require) {
       this.scroll();
     };
 
-
     this.destroyView = function() {
       setTimeout(function() {
         $('#appView').css({display: 'none'});
       }, 350);
       this.teardown();
     };
-
 
     // initialize
     this.after('initialize', function () {
