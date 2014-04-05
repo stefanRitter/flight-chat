@@ -61,8 +61,8 @@ define(function (require) {
             _this.existingUser = true;
             window.__APP.__USER = data.user;
           }
-          _this.triggerSwitch();
           _this.trigger('uiFormProcessed');
+          _this.triggerSwitch();
         })
         .fail(function(err){
           _this.trigger(_this.select('submitButtons'), 'uiFormError', {error: 'unknown error'});
