@@ -9,9 +9,7 @@ define(function (require) {
   return defineComponent(conversations, withFormDataSerialize, withQuickHash);
 
   function conversations() {
-
     this.activeConvs = {};
-
 
     this.emitMessage = function (e, data) {
       var message = this.serialize(data.formData);
@@ -27,13 +25,11 @@ define(function (require) {
       }
     };
 
-
     this.reEmitMessage = function (e, data) {
       var message = this.serialize(data.formData);
       message = this.activeConvs[message.conversationId][message._id];
       this.trigger('dataEmitMessage', message);
     };
-
 
     this.addMessage = function (e, message) {
       this.handleConversation(message);
@@ -45,7 +41,6 @@ define(function (require) {
       }
     };
 
-
     this.getConversation = function (e, data) {
       if (this.activeConvs[data.conversationId]) {
         this.trigger('dataConversation', this.activeConvs[data.conversationId]);
@@ -54,7 +49,6 @@ define(function (require) {
       }
     };
 
-
     // initialize
     this.after('initialize', function () {
       this.on('uiEmitMessage', this.emitMessage);
@@ -62,7 +56,6 @@ define(function (require) {
       this.on('dataMessageIncoming', this.addMessage);
       this.on('uiNeedsConversation', this.getConversation);
     });
-
 
     // helpers
     this.handleConversation = function (message) {
