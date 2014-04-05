@@ -1,4 +1,3 @@
-
 define(function (require) {
   'use strict';
 
@@ -10,15 +9,15 @@ define(function (require) {
 
   function switchPage() {
     // attributes
-    this.load = {
+    this.defaultAttrs({
       'signinPage': signinPage,
       'appPage': appPage
-    };
+    });
 
     // initialize
     this.after('initialize', function () {
       this.on('uiSwitchPage', function(e, page) {
-        this.load[page.name]();
+        this.attr[page.name]();
       });
     });
   }
