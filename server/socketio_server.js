@@ -32,8 +32,8 @@ function listen(server, db) {
         _id: Date.now(),
         user: {
           _id: 0,
-          imageUrl: 'img/user2.jpg',
-          name: 'Jeroen'
+          imageUrl: 'img/logo.png',
+          name: 'Flight Chat'
         }
       });
     },3000);
@@ -64,8 +64,8 @@ function handleMessage(message, conversation, socket) {
       text: message.text,
       user: {
           _id: 0,
-          imageUrl: 'img/user2.jpg',
-          name: 'Jeroen'
+          imageUrl: 'img/logo.png',
+          name: 'Flight Chat'
         }
       };
 
