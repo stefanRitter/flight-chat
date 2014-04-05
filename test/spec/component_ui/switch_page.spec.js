@@ -1,16 +1,11 @@
 'use strict';
 
 describeComponent('component_ui/switch_page', function () {
-
-  // Initialize the component and attach it to the DOM
-  beforeEach(function () {
+  it('should load the next page on uiSwitchPage', function() {
     setupComponent();
+    
+    spyOn(this.component.attr, 'signinPage');
+    this.component.trigger('uiSwitchPage', {name: 'signinPage'});
+    expect(this.component.attr.signinPage).toHaveBeenCalled();
   });
-
-  it('should be defined', function () {
-    expect(this.component).toBeDefined();
-  });
-
-  it('should do something');
-
 });
