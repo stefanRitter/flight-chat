@@ -30,6 +30,7 @@
     "karma-phantomjs-launcher": "~0.1.0",
     "karma-safari-launcher": "~0.1.1",
     "grunt": "~0.4.4",
+    "grunt-karma": "~0.6.0",
     "grunt-contrib-jshint": "~0.9.2",
     "grunt-contrib-compass": "~0.7.2",
     "grunt-contrib-watch": "~0.6.1",
