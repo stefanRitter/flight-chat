@@ -47,6 +47,13 @@ module.exports = function(grunt) {
       }
     },
 
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        background: true
+      }
+    },
+
     watch: {
       scripts: {
         files: [
@@ -57,7 +64,8 @@ module.exports = function(grunt) {
           '!<%= yeoman.app %>/js/templates.js',
           '!<%= yeoman.app %>/js/mixin/with_quick_hash.js'
         ],
-        tasks: ['jshint']
+        //run unit tests with karma (server needs to be already running)
+        tasks: ['jshint', 'karma:unit:run']
       },
       css: {
         files: 'sass/**/*.sass',
@@ -71,6 +79,6 @@ module.exports = function(grunt) {
   });
 
   // tasks
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('default', ['karma:unit:start watch','watch']);
   grunt.registerTask('build', ['jshint', 'compass', 'hogan']);
 };
