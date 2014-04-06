@@ -35,6 +35,10 @@
     "grunt-contrib-compass": "~0.7.2",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-templates-hogan": "~0.2.5",
-    "load-grunt-tasks": "~0.4.0"
+    "load-grunt-tasks": "~0.4.0",
+    "gulp-compass": "~1.1.8",
+    "gulp": "~3.6.0",
+    "gulp-jshint": "~1.5.3",
+    "gulp-hogan-compile": "~0.2.1"
   }
 }
