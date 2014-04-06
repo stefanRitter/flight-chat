@@ -3,7 +3,8 @@
 var gulp = require('gulp'),
     compass = require('gulp-compass'),
     hogan = require('gulp-hogan-compile'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    karma = require('gulp-karma');
 
 var paths = {
   scripts: [
@@ -15,7 +16,8 @@ var paths = {
     '!app/js/mixin/with_quick_hash.js'
   ],
   sass: 'sass/**/*.sass',
-  templates: 'templates/**/*.html'
+  templates: 'templates/**/*.html',
+  tests: 'test/**/*.js'
 };
 
 gulp.task('lint', function() {
@@ -44,8 +46,16 @@ gulp.task('hogan', function() {
     .pipe(gulp.dest('app/js/'));
 });
 
+gulp.task('test', function() {
+  gulp.src(paths.tests)
+    .pipe(karma({
+      configFile: 'karma.conf.js',
+      action: 'run'
+    }));
+});
+
 gulp.task('default', function () {
-  gulp.watch(paths.scripts, ['lint']);
+  gulp.watch(paths.scripts, ['lint', 'test']);
   gulp.watch(paths.sass, ['compass']);
   //gulp.watch(paths.templates, ['hogan']);
 });

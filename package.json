@@ -39,6 +39,7 @@
     "gulp-compass": "~1.1.8",
     "gulp": "~3.6.0",
     "gulp-jshint": "~1.5.3",
-    "gulp-hogan-compile": "~0.2.1"
+    "gulp-hogan-compile": "~0.2.1",
+    "gulp-karma": "0.0.4"
   }
 }
