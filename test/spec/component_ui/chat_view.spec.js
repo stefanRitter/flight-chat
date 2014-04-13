@@ -2,15 +2,46 @@
 
 describeComponent('component_ui/chat_view', function () {
 
-  // Initialize the component and attach it to the DOM
-  beforeEach(function () {
-    setupComponent();
+  describe('initialization', function() {
+    
+    it('should trigger uiNeedsConversation on initialization', function() {
+    });
+
+    it('should trigger uiConversationSeen on initialization', function() {
+    });
+
+    it('should render chatView and show it after initialization', function() {
+    });
+
+    it('should render the conversation on dataConversation', function() {
+    });
   });
 
-  it('should be defined', function () {
-    expect(this.component).toBeDefined();
+  describe('chatting behaviour', function() {
+    beforeEach(function() {
+      setupComponent();
+    });
+    
+    it('should confirm a message was sent on dataMessageSent', function() {
+    });
+
+    it('should trigger uiFormProcessed when user has sent a message, on dataEmitMessage', function() {
+    });
+
+    it('should render a new message on dataMessageReceived', function() {
+    });
   });
 
-  it('should do something');
+  describe('tear down', function() {
+    beforeEach(function() {
+      setupComponent();
+    });
 
+    it('should hide the view on uiDestroyView', function() {
+    });
+
+    it('should teadown on uiDestroyView', function() {
+    });
+  });
 });
+
