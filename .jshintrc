@@ -33,6 +33,7 @@
     "setupComponent",
     "spyOn",
     "spyOnEvent",
-    "afterEach"
+    "afterEach",
+    "readFixtures"
   ]
 }

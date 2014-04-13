@@ -33,6 +33,8 @@ module.exports = function (config) {
       {pattern: 'app/js/**/*.js', included: false},
       {pattern: 'test/spec/**/*.spec.js', included: false},
 
+      // get fixtures
+      { pattern: 'test/fixtures/**/*.html', included: false, served: true },
       'test/test-main.js'
     ],
 
@@ -69,6 +71,11 @@ module.exports = function (config) {
 
     // Karma will report all the tests that are slower than given time limit (in
     // ms).
-    reportSlowerThan: 500
+    reportSlowerThan: 500,
+
+    // don't preprocess html files for jasmine-fixtures to work
+    preprocessors: {
+      '**/*.html': []
+    }
   });
 };

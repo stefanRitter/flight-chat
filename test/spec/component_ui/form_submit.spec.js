@@ -14,3 +14,10 @@ describeComponent('component_ui/form_submit', function () {
   it('should do something');
 
 });
+
+/*
+this.on('click touch', { buttonSelector: this.submit });
+this.on('uiFormProcessed', this.reactivateForm);
+this.on('uiFormError', this.processFormErrors);
+this.on('uiFormReset', this.processFormReset);
+*/

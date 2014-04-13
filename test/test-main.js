@@ -23,4 +23,5 @@ requirejs.config({
   callback: window.__karma__.start
 });
 
+window.jasmine.getFixtures().fixturesPath = 'base/test/fixtures/';
 window.__APP = {}; // TODO: remove global
