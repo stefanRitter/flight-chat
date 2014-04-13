@@ -19,7 +19,10 @@ define(function (require) {
       if (href === 'back') {
         this.trigger(document, 'uiDestroyView', {});
       } else {
-        this.trigger(document, 'uiCreateView', {name: href});
+        this.trigger(document, 'uiCreateView', {
+          name: href,
+          id: $link.attr('id')
+        });
       }
     };
 

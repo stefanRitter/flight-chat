@@ -15,6 +15,6 @@ describeComponent('component_ui/view_link', function() {
 
     var eventSpy = spyOnEvent(document, 'uiCreateView');
     $('.js-view-link').trigger('click');
-    expect(eventSpy.mostRecentCall.data).toEqual({name: 'chatView'});
+    expect(eventSpy.mostRecentCall.data).toEqual({name: 'chatView', id: '5'});
   });
 });
