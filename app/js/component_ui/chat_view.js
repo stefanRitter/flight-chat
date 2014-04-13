@@ -1,4 +1,3 @@
-
 define(function (require) {
   'use strict';
 
@@ -65,6 +64,7 @@ define(function (require) {
 
       var _this = this;
       setTimeout(function() {
+        // give browser 100ms to update DOM before showing this views
         _this.$node.addClass('show');
       }, 100);
 
