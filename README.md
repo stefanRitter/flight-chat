@@ -1,5 +1,7 @@
 # Flight Chat
 
+[![Build Status](https://travis-ci.org/stefanRitter/flight-chat.svg?branch=master)](https://travis-ci.org/stefanRitter/flight-chat)
+
 An example Flight chat application using socket.io.
 
 Visist the [App here](http://flight-chat.herokuapp.com/)
