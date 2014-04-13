@@ -18,10 +18,10 @@ describeComponent('component_ui/view_link', function() {
 
   it('should attach and show chatView to appView when user hits a chat link', function() {
     setupComponent(chatViewButtonFixture);
-    
+    var appView = $('#appView');
     $('.js-view-link').trigger('click');
     window.setTimeout(function() {
-      expect($('#appView')).toHaveClass('show');
+      expect(appView).toHaveClass('show');
     }.bind(this), 200);
   });
 });
