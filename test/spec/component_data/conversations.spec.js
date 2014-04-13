@@ -10,6 +10,11 @@ describeComponent('component_data/conversations', function () {
 
   beforeEach(function () {
     setupComponent();
+    window.__APP.__USER = {_id: 1};
+  });
+
+  afterEach(function() {
+    delete window.__APP.__USER;
   });
 
   it('should be defined', function () {
