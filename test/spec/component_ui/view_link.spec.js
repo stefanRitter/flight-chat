@@ -10,14 +10,11 @@ describeComponent('component_ui/view_link', function() {
     expect('uiDestroyView').toHaveBeenTriggeredOn(document);
   });
 
-  it('should attach and show chatView to appView when user hits a chat link', function() {
+  it('should trigger uiCreateView when user hits a chat link', function() {
     setupComponent(readFixtures('chat_view_button.html'));
-    
-    var appView = $('#appView');
+
+    var eventSpy = spyOnEvent(document, 'uiCreateView');
     $('.js-view-link').trigger('click');
-    
-    window.setTimeout(function() {
-      expect(appView).toHaveClass('show');
-    }.bind(this), 200);
+    expect(eventSpy.mostRecentCall.data).toEqual({name: 'chatView'});
   });
 });
