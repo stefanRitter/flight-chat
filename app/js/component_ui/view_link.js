@@ -11,28 +11,29 @@ define(function (require) {
 
     this.defaultAttrs({
       linkSelector: '.js-view-link',
-      appView: '#appView'
-    });
+      appView: '#appView',
 
-    this.load = {
-      chatView: function($link) {
-        chatView.attachTo('#appView', {
+      chatView: function($link, self) {
+        chatView.attachTo(self.select('appView'), {
           conversationId: $link.attr('id')
         });
       },
-      imageUploaderView: function($link) {
+      
+      imageUploaderView: function($link, self) {
         console.error('imageUploaderView not implemted yet');
       },
+      
       back: function($link, self) {
-        self.trigger(self.select('appView'), 'uiDestroyView', {});
-        $('#appView').removeClass('show');
+        var $appView = self.select('appView');
+        self.trigger($appView, 'uiDestroyView', {});
+        $appView.removeClass('show');
       }
-    };
+    });
 
     this.handleClick = function(e) {
       e.preventDefault();
       var $link = $(e.target).closest('.js-view-link');
-      this.load[$link.attr('href')]($link, this);
+      this.attr[$link.attr('href')]($link, this);
     };
 
     // initialize
