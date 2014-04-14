@@ -8,7 +8,37 @@ define(function (require) {
   return defineComponent(chatView, withFormDataSerialize);
 
   function chatView() {
-    this.$chatMessages = [];
+    this.defaultAttrs({
+      view: '#appView',
+      $chatMessages: [],
+    });
+
+    this.after('initialize', function () {
+      this.on('uiCreateView',         this.createView);
+      this.on('dataConversation',     this.loadConversation);
+      this.on('dataEmitMessage',      this.sendMessage);
+      this.on('dataMessageSent',      this.confirmSend);
+      this.on('dataMessageReceived',  this.receiveMessage);
+      this.on('uiDestroyView',        this.destroyView);
+    });
+    
+    this.createView = function(e, data) {
+      if (data.name !== 'chatView') { return; }
+
+      this.attr.convId = data.id;
+      var template = templates['templates/chat_view.html'].render({conversationId: this.attr.convId});
+
+      this.select('view').html(template).css('display', 'block');
+      this.attr.$chatMessages = $('#chatMessages');
+
+      var _this = this;
+      setTimeout(function() {
+        // give browser 100ms to update DOM before showing this views
+        _this.select('view').addClass('show');
+      }, 100);
+      
+      this.trigger(document, 'uiNeedsConversation', {conversationId: this.attr.convId});
+    };
 
     this.sendMessage = function (e, message) {
       this.pushMessage(message, 'self', true);
@@ -19,11 +49,11 @@ define(function (require) {
     this.receiveMessage = function (e, message) {
       this.pushMessage(message, '', false);
       this.scroll();
-      this.trigger('uiConversationSeen', {conversationId: message.conversationId});
     };
 
     this.confirmSend = function (e, message) {
-      this.$chatMessages.find('#' + message._id).find('.chat-message-not-sent').remove();
+      this.attr.$chatMessages.find('#' + message._id)
+        .find('.chat-message-not-sent').remove();
     };
 
     this.loadConversation = function (e, conversation) {
@@ -51,36 +81,15 @@ define(function (require) {
       setTimeout(function() {
         $('#appView').css({display: 'none'});
       }, 350);
-      this.teardown();
+      this.attr.$chatMessages = [];
+      this.trigger(document, 'uiConversationSeen', {conversationId: this.attr.convId});
     };
-
-    // initialize
-    this.after('initialize', function () {
-      var conversationId = this.attr.conversationId,
-          template = templates['templates/chat_view.html'].render({conversationId: conversationId});
-
-      this.$node.html(template).css('display', 'block');
-      this.$chatMessages = $('#chatMessages');
-
-      var _this = this;
-      setTimeout(function() {
-        // give browser 100ms to update DOM before showing this views
-        _this.$node.addClass('show');
-      }, 100);
-
-      this.on(document, 'dataConversation', this.loadConversation);
-      this.on(document, 'dataEmitMessage', this.sendMessage);
-      this.on(document, 'dataMessageSent', this.confirmSend);
-      this.on(document, 'dataMessageReceived', this.receiveMessage);
-      this.on('uiDestroyView', this.destroyView);
-
-      this.trigger('uiNeedsConversation', {conversationId: conversationId});
-      this.trigger('uiConversationSeen', {conversationId: conversationId});
-    });
 
 
     // helpers
     this.pushMessage = function (message, self, notSent) {
+      if (this.attr.$chatMessages.length === 0) { return; }
+
       var template = templates['templates/chat_message.html'].render({
         _id: message._id,
         imageUrl: message.user.imageUrl,
@@ -90,11 +99,15 @@ define(function (require) {
         notSent: notSent
       });
 
-      this.$chatMessages.append(template);
+      this.attr.$chatMessages.append(template);
     };
 
     this.scroll = function () {
-      this.$chatMessages.animate({ scrollTop: this.$chatMessages[0].scrollHeight}, 300);
+      if (this.attr.$chatMessages.length === 0) { return; }
+
+      this.attr.$chatMessages.animate({
+        scrollTop: this.attr.$chatMessages[0].scrollHeight
+      }, 300);
     };
   }
 });

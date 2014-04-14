@@ -8,7 +8,8 @@ define(function (require) {
       socketio = require('component_data/socketio_com'),
       conversations = require('component_data/conversations'),
       conversationsView = require('component_ui/conversations_view'),
-      viewLink = require('component_ui/view_link');
+      viewLink = require('component_ui/view_link'),
+      chatView = require('component_ui/chat_view');
 
   // exports
   return initialize;
@@ -25,6 +26,7 @@ define(function (require) {
 
       // ui
       conversationsView.attachTo('#conversations');
+      chatView.attachTo(document);
       viewLink.attachTo(document);
 
       app.fadeIn();
