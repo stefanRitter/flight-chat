@@ -110,12 +110,13 @@ describeComponent('component_ui/chat_view', function () {
     beforeEach(function() {
       setupComponent(readFixtures('app_view.html'));
       this.component.trigger('uiCreateView', {name: 'chatView', id: 5});
+      this.component.trigger('dataConversation', conversationData);
     });
 
-    it('should hide the view on uiDestroyView', function() {
-    });
-
-    it('should teardown on uiDestroyView', function() {
+    it('should empty this.attr.$chatMessages on uiDestroyView', function() {
+      expect(this.component.attr.$chatMessages.length).not.toEqual(0);
+      this.component.trigger('uiDestroyView', {});
+      expect(this.component.attr.$chatMessages.length).toEqual(0);
     });
 
     it('should trigger uiConversationSeen on destroy', function() {

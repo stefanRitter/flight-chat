@@ -78,8 +78,9 @@ define(function (require) {
     };
 
     this.destroyView = function() {
+      this.select('view').removeClass('show');
       setTimeout(function() {
-        $('#appView').css({display: 'none'});
+        $('#appView').css({display: 'none'}).empty();
       }, 350);
       this.attr.$chatMessages = [];
       this.trigger(document, 'uiConversationSeen', {conversationId: this.attr.convId});
