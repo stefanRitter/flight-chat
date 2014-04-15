@@ -25,6 +25,13 @@ describeComponent('component_ui/chat_view', function () {
     }
   };
 
+  var messageData = {
+    _id: 10,
+    user: {imageUrl: ''},
+    text: 'test text',
+    conversationId: 5,
+  };
+
   beforeEach(function () {
     window.__APP.__USER = {_id: 1};
   });
@@ -66,24 +73,42 @@ describeComponent('component_ui/chat_view', function () {
 
   describe('chatting behaviour', function() {
     beforeEach(function() {
-      setupComponent();
+      setupComponent(readFixtures('app_view.html'));
       this.component.trigger('uiCreateView', {name: 'chatView', id: 5});
+      this.component.trigger('dataConversation', conversationData);
     });
-    
-    it('should confirm a message was sent on dataMessageSent', function() {
+
+    it('should display a newly sent message on dataEmitMessage', function() {
+      expect($('.chat-message').length).toEqual(3);
+      this.component.trigger('dataEmitMessage', messageData);
+      expect($('.chat-message').length).toEqual(4);
     });
 
     it('should trigger uiFormProcessed when user has sent a message, on dataEmitMessage', function() {
+      spyOnEvent(document, 'uiFormProcessed');
+      this.component.trigger('dataEmitMessage', messageData);
+      expect('uiFormProcessed').toHaveBeenTriggeredOn(document);
+    });
+    
+    it('should confirm a message was sent on dataMessageSent', function() {
+      expect($('.chat-message-not-sent').length).toEqual(0);
+      this.component.trigger('dataEmitMessage', messageData);
+      expect($('.chat-message-not-sent').length).toEqual(1);
+      this.component.trigger('dataMessageSent', messageData);
+      expect($('.chat-message-not-sent').length).toEqual(0);
     });
 
     it('should render a new message on dataMessageReceived', function() {
+      expect($('.chat-message').length).toEqual(3);
+      this.component.trigger('dataMessageReceived', messageData);
+      expect($('.chat-message').length).toEqual(4);
     });
   });
 
 
   describe('destroy', function() {
     beforeEach(function() {
-      setupComponent();
+      setupComponent(readFixtures('app_view.html'));
       this.component.trigger('uiCreateView', {name: 'chatView', id: 5});
     });
 

@@ -88,8 +88,6 @@ define(function (require) {
 
     // helpers
     this.pushMessage = function (message, self, notSent) {
-      if (this.attr.$chatMessages.length === 0) { return; }
-
       var template = templates['templates/chat_message.html'].render({
         _id: message._id,
         imageUrl: message.user.imageUrl,
