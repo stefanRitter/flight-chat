@@ -8,5 +8,5 @@ Visist the [App here](http://flight-chat.herokuapp.com/)
 
 Tutorial:
 [Part 1](http://blog.stefanritter.com/post/81767869139/building-a-chat-app-with-flight-part-1-boarding),
-[Part 2](http://blog.stefanritter.com/post/81768433810/building-a-chat-app-with-flight-part-2-boarding),
-Part 3 coming soon
+[Part 2](http://blog.stefanritter.com/post/81768433810/building-a-chat-app-with-flight-part-2-boarding), and
+[Part 3](http://blog.stefanritter.com/post/83540315956/building-a-chat-app-with-flight-part-3-boarding)
