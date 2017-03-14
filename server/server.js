@@ -5,7 +5,7 @@ var express = require('express'),
     path = require('path'),
     app = express(),
     socketioServer = require('./socketio_server'),
-    datastoreURI = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
+    datastoreURI = process.env.MONGODB_URI || process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/trybes';
 
 
 // connect to database
